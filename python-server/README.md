@@ -16,7 +16,7 @@ Here is a template `config.py` file
 ```py
 CONFIG = {
     "log_filepath": "/app/data/moon-trek-python-server.log",
-    "logging_level": "info",
+    "logging_level": "INFO",
     "default_rate_limits": ["20 per day"]
 }
 ```
