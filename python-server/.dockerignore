@@ -1,0 +1,10 @@
+*.log
+*.jpg
+*.jpeg
+*.png
+*.json
+config.py
+
+config/
+.venv/
+__pycache__/

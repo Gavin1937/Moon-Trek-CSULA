@@ -1,0 +1,11 @@
+# files
+*.log
+*.jpg
+*.jpeg
+*.png
+*.json
+config.py
+
+# folders
+/**/.venv/
+/**/__pycache__/
