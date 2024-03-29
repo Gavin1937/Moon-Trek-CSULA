@@ -10,10 +10,10 @@ RUN \
 
 WORKDIR /src/
 
-ARG MR_VERSION="v0.1.9"
+ARG MR_VERSION="0.1.10"
 
 # download & build MoonRegistration-python
-RUN git clone --depth 1 --branch ${MR_VERSION} https://github.com/Gavin1937/MoonRegistration.git && \
+RUN git clone --depth 1 --branch "v${MR_VERSION}" https://github.com/Gavin1937/MoonRegistration.git && \
     cd MoonRegistration/platforms/python && \
     pip3 install wheel && \
     python3 setup.py bdist_wheel --mr-enable-opencv-nonfree && \
@@ -31,7 +31,7 @@ COPY --from=build /opencv/opencv-4.9.0/build/install /usr/
 COPY --from=build /src/MoonRegistration/platforms/python/dist .
 COPY --from=build /src/MoonRegistration/platforms/python/requirements.txt .
 RUN pip3 install -r requirements.txt && \
-    pip3 install MoonRegistration-0.1.9-cp310-cp310-linux_x86_64.whl
+    pip3 install "MoonRegistration-0.1.10-cp310-cp310-linux_x86_64.whl"
 
 WORKDIR /app
 

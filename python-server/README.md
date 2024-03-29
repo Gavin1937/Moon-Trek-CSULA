@@ -32,7 +32,7 @@ CONFIG = {
 
 To deploy this server with Docker:
 
-1. Build docker image with:
+1. In directory `python-server`, build docker image with:
 
 ```sh
 docker build -t moontrek-python-server .
