@@ -44,12 +44,14 @@ docker build -t moontrek-python-server .
 docker run -d --name moontrek-python-server \
     -p 5000:80 \
     -v "$(pwd)/config:/app/config" \
+    -v "$(pwd):/app/data" \
     moontrek-python-server
 ```
 
 > Note:
 > 1. we use `-p` parameter to specify the port we want to expose from container to host system. Expose container port 80 to host system port 5000. By default, docker will launch this server on container port 80.
 > 2. we use `-v` to mount a volume of config file into docker container. So the server can find its `config.py` file.
+> 3. we use the second `-v` to mount current directory into docker container's `/app/data` folder, so it can save its log file to current directory.
 
 ## Deploy manually
 
