@@ -8,11 +8,10 @@ import { ZonedDateTime, ZoneId } from '@js-joda/core'
 import '@js-joda/timezone'
 import EarthMoonAnimation from '../assets/EarthMoonAnimation.json'
 import { Vue3Lottie } from 'vue3-lottie'
-
 // Mode will be used to decide if we want our model to create images and perform registration
 // or if we want it to render to the page for the user to interact with
 const props = defineProps(['mode'])
-
+const emit = defineEmits(['modelAndLayerSet'])
 // Processing will be used to display the loading animation gif
 let processing = ref(true)
 
@@ -334,7 +333,8 @@ onMounted(async () => {
         // Render one frame
         renderer.render(scene, camera)
         // Take a snapshot (model) and save
-        data.images.model.src = renderer.domElement.toDataURL()
+        let modelImg = renderer.domElement.toDataURL()
+        data.images.modelImgFile = await toFile(modelImg, 'modelImg', 'image/png')
 
         // Remove Moon and real lighting
         scene.remove(moon)
@@ -351,20 +351,35 @@ onMounted(async () => {
         // Render another frame
         renderer.render(scene, camera)
         // Take a snapshot (layer) and save
-        data.images.layer.src = renderer.domElement.toDataURL()
+        let layerImg = renderer.domElement.toDataURL()
+        data.images.layerImgFile = await toFile(layerImg, 'layerImg', 'image/png')
+
+        //emit/signal to registration view that model img and layer img has been set
+        //so registration view can call registration function
+        emit('modelAndLayerSet')
 
         // Append user, model, and layer images to Form Data object
-        const formData = new FormData()
-        formData.append('images', await toFile(data.images.user.src, 'userImage', 'image/png'))
-        formData.append('images', await toFile(data.images.model.src, 'modelImage', 'image/png'))
-        formData.append('images', await toFile(data.images.layer.src, 'layerImage', 'image/png'))
+        // const formData = new FormData()
+        // formData.append('images', await toFile(data.images.user.src, 'userImage', 'image/png'))
+        // formData.append('images', await toFile(data.images.model.src, 'modelImage', 'image/png'))
+        // formData.append('images', await toFile(data.images.layer.src, 'layerImage', 'image/png'))
+
+        //call perform registration function that uses WASM library and retrieves homography matrix from
+        //python backend in case of memory error
+
+        // const outputImg = performRegistration(
+        //     props.algo,
+        //     data.images.user,
+        //     data.images.model,
+        //     data.images.layer
+        // )
 
         // Send all to registration endpoint
-        const response = await axios.post('http://localhost:8888/registration/performAll', formData)
-        const { status, relativeImageName } = response.data
+        // const response = await axios.post('http://localhost:8888/registration/performAll', formData)
+        // const { status, relativeImageName } = response.data
 
-        console.log(status, relativeImageName)
-        data.relativeImageName = relativeImageName
+        // console.log(status, relativeImageName)
+        // data.relativeImageName = relativeImageName
 
         // Hide loading animation gif
         processing.value = false
@@ -409,7 +424,7 @@ onMounted(async () => {
     <div v-if="processing">
         <Vue3Lottie :animationData="EarthMoonAnimation" :height="400" :width="400" />
     </div>
-    <div v-else>
+    <div v-if="props.mode == 'animate'">
         <div class="columns is-centered">
             <div class="column has-text-centered">
                 <button class="button" @click="toggleAnchor()">
