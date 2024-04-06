@@ -2,19 +2,24 @@
 import axios from 'axios'
 import ExifReader from 'exifreader'
 import { useRouter } from 'vue-router'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { data } from '../data.js'
 
 const router = useRouter()
-const imageData = reactive({
+const formData = reactive({
     name: 'Select Image',
-    previewImage: new Image(),
+    imageFile: null,
     hasExif: true,
     longitude: 0,
     latitude: 0,
     date: '',
-    time: ''
+    time: '',
+    // algo: 'SURF',
+    // layerName: '',
+    previewImage: new Image()
 })
+
+const error = ref('')
 
 // This is called whenever a new image is selected
 const imageSelected = async () => {
@@ -25,70 +30,87 @@ const imageSelected = async () => {
         const tags = await ExifReader.load(file)
 
         // Update the input text to the selected image's name
-        imageData.name = file.name
+        formData.name = file.name
         // Update the preview to the selected image
-        imageData.previewImage.src = URL.createObjectURL(
-            document.getElementById('moonImage').files[0]
+
+        formData.previewImage.src = URL.createObjectURL(
+            // document.getElementById('moonImage').files[0]
+            file
         )
+
+        formData.imageFile = file
+
+        // data.images.user = document.getElementById('moonImage').files[0]
 
         // Check if the meta data we want is present
         if (tags.GPSLongitude && tags.GPSLatitude && tags.DateTimeOriginal) {
-            // If so, keep imageData.hasExif true
-            imageData.hasExif = true
+            // If so, keep formData.hasExif true
+            formData.hasExif = true
             // Set the date
-            imageData.date = tags.DateTimeOriginal.description
+            formData.date = tags.DateTimeOriginal.description
 
             // Keep all North latitude values positive
             // and make South latitude values negative
             if (tags.GPSLatitudeRef.value[0] === 'N') {
-                imageData.latitude = tags.GPSLatitude.description
+                formData.latitude = tags.GPSLatitude.description
             } else {
-                imageData.latitude = -1 * tags.GPSLatitude.description
+                formData.latitude = -1 * tags.GPSLatitude.description
             }
 
             // Keep all East longitude values positive
             // and make West longitude values negative
             if (tags.GPSLongitudeRef.value[0] === 'E') {
-                imageData.longitude = tags.GPSLongitude.description
+                formData.longitude = tags.GPSLongitude.description
             } else {
-                imageData.longitude = -1 * tags.GPSLongitude.description
+                formData.longitude = -1 * tags.GPSLongitude.description
             }
         } else {
             // If no meta data, reset all values and display the form
-            imageData.hasExif = false
-            imageData.longitude = 0
-            imageData.latitude = 0
-            imageData.date = ''
-            imageData.time = ''
+            formData.hasExif = false
+            formData.longitude = 0
+            formData.latitude = 0
+            formData.date = ''
+            formData.time = ''
         }
     } catch (error) {
         console.log(error)
     }
 }
 
+// const setRegistrationAlgorithm = (value) => {
+//     data.registrationAlgortihm = value
+// }
+
 // This is called whenever an image is submitted
 const imageSubmitted = async () => {
+    //check first that overlay and registration algorithm has been chosen
+    if (!(data.layerName && data.registrationAlgortihm)) {
+        error.value =
+            'Please choose overlay and registration algorithm first before submitting image'
+        return
+    }
+
     let local
 
     // Date is read differently from exif meta data and html inputs
     // so we'll adjust our string based on the case
-    if (imageData.hasExif) {
-        const splt = imageData.date.split(/\D/g)
+    if (formData.hasExif) {
+        const splt = formData.date.split(/\D/g)
         local = `${splt[0]}-${splt[1]}-${splt[2]}T${splt[3]}:${splt[4]}:${splt[5]}`
     } else {
-        local = `${imageData.date}T${imageData.time}:00`
+        local = `${formData.date}T${formData.time}:00`
     }
 
     // Convert the local time stamp to UTC
     const convert = await axios.get('http://localhost:8888/timezone/toUtc', {
         params: {
-            latitude: imageData.latitude,
-            longitude: imageData.longitude,
+            latitude: formData.latitude,
+            longitude: formData.longitude,
             timeStamp: local
         }
     })
 
-    console.log(`\nCoordinates: ${imageData.latitude}, ${imageData.longitude}`)
+    console.log(`\nCoordinates: ${formData.latitude}, ${formData.longitude}`)
     console.log(`Local Date: ${local}`)
     console.log(`UTC Date: ${convert.data.timeStampUTC}`)
 
@@ -96,10 +118,10 @@ const imageSubmitted = async () => {
     data.newUpload = true
 
     // Store all submitted data
-    data.latitude = imageData.latitude
-    data.longitude = imageData.longitude
+    data.latitude = formData.latitude
+    data.longitude = formData.longitude
     data.timeStamp = convert.data.timeStampUTC
-    data.images.user = imageData.previewImage
+    data.images.userImgFile = formData.imageFile
 
     // Forward to registration page
     router.push('/registration')
@@ -113,6 +135,20 @@ const imageSubmitted = async () => {
                 <h1>Upload Your Moon Image</h1>
             </div>
         </div>
+        <form>
+            <label>Choose registration algorithm:</label>
+            <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
+                <option value="SURF">SURF</option>
+                <option value="SIFT">SIFT</option>
+                <option value="AKAZE">AKAZE</option>
+                <option value="BRISK">BRISK</option>
+                <option value="ORB">ORB</option>
+            </select>
+            <label>Overlay transparency:</label>
+            <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
+            <label>Filter px</label>
+            <input type="number" v-model="data.filterPx" />
+        </form>
         <form @submit.prevent="imageSubmitted">
             <div class="field file has-addons has-addons-centered">
                 <label class="file-label">
@@ -128,7 +164,7 @@ const imageSubmitted = async () => {
                                 <i class="fas fa-upload"></i>
                             </span>
                             <span class="file-label">
-                                {{ imageData.name }}
+                                {{ formData.name }}
                             </span>
                         </span>
                     </div>
@@ -137,7 +173,8 @@ const imageSubmitted = async () => {
                     <input class="button" type="submit" value="Upload" />
                 </div>
             </div>
-            <div v-if="!imageData.hasExif" class="columns is-centered">
+            <p v-if="error">{{ error.value }}</p>
+            <div v-if="!formData.hasExif" class="columns is-centered">
                 <div class="column is-3-tablet is-2-desktop is-2-fullhd">
                     <div class="field">
                         <label class="label">Latitude:</label>
@@ -146,7 +183,7 @@ const imageSubmitted = async () => {
                                 class="input"
                                 type="number"
                                 placeholder="latitude"
-                                v-model="imageData.latitude"
+                                v-model="formData.latitude"
                             />
                         </div>
                     </div>
@@ -159,18 +196,18 @@ const imageSubmitted = async () => {
                                 class="input"
                                 type="number"
                                 placeholder="longitude"
-                                v-model="imageData.longitude"
+                                v-model="formData.longitude"
                             />
                         </div>
                     </div>
                 </div>
             </div>
-            <div v-if="!imageData.hasExif" class="columns is-centered">
+            <div v-if="!formData.hasExif" class="columns is-centered">
                 <div class="column is-3-tablet is-2-desktop is-2-fullhd">
                     <div class="field">
                         <label class="label">Date:</label>
                         <div class="control">
-                            <input class="input" type="date" v-model="imageData.date" />
+                            <input class="input" type="date" v-model="formData.date" />
                         </div>
                     </div>
                 </div>
@@ -178,7 +215,7 @@ const imageSubmitted = async () => {
                     <div class="field">
                         <label class="label">Time:</label>
                         <div class="control">
-                            <input class="input" type="time" v-model="imageData.time" />
+                            <input class="input" type="time" v-model="formData.time" />
                         </div>
                     </div>
                 </div>
@@ -187,7 +224,7 @@ const imageSubmitted = async () => {
 
         <div class="columns is-centered">
             <div class="column has-text-centered">
-                <img :src="imageData.previewImage.src" />
+                <img :src="formData.previewImage.src" />
             </div>
         </div>
     </main>
