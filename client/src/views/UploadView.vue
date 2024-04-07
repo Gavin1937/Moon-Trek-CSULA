@@ -144,10 +144,10 @@ const imageSubmitted = async () => {
                 <option value="BRISK">BRISK</option>
                 <option value="ORB">ORB</option>
             </select>
-            <label>Overlay transparency:</label>
+            <!-- <label>Overlay transparency:</label>
             <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
             <label>Filter px</label>
-            <input type="number" v-model="data.filterPx" />
+            <input type="number" v-model="data.filterPx" /> -->
         </form>
         <form @submit.prevent="imageSubmitted">
             <div class="field file has-addons has-addons-centered">
