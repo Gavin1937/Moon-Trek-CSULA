@@ -4,7 +4,7 @@ import { reactive } from 'vue'
 import { data } from '../data.js'
 import { useRouter } from 'vue-router'
 import { performRegistration } from '../util/registrationFunctions.js'
-
+import SideBar from '../components/SideBar.vue'
 const router = useRouter()
 const imgData = reactive({
     user: null,
@@ -75,6 +75,7 @@ const registrate = async () => {
 
 <template>
     <main>
+        <SideBar />
         <!-- data.newUpload is only set to true when the user uploads a new image -->
         <!-- and is set to false when ModelGenerator in "registrate" mode finishes -->
         <ModelGenerator mode="registrate" @model-and-layer-set="registrate" />
@@ -153,8 +154,8 @@ const registrate = async () => {
                 <canvas id="user-img"></canvas>
                 <canvas id="output-img"></canvas>
             </div>
-            <button :on-click="redirectToModel">View model</button>
-            <button :on-click="redirectToUpload">Upload another image</button>
+            <button @click="redirectToModel">View model</button>
+            <button @click="redirectToUpload">Upload another image</button>
             <button>Try infinite zoom on your image</button>
         </div>
     </main>

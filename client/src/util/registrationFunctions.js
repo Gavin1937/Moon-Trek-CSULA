@@ -69,57 +69,81 @@ export const performRegistration = async (
         }
         console.log('output image:', outputImgHandler)
 
-        const userImgWidth = userImgHandler.img_width
-        const userImgHeight = userImgHandler.img_height
-        const outputImgWidth = outputImgHandler.img_width
-        const outputImgHeight = outputImgHandler.img_height
+        // const userImgWidth = userImgHandler.img_width
+        // const userImgHeight = userImgHandler.img_height
+        // const outputImgWidth = outputImgHandler.img_width
+        // const outputImgHeight = outputImgHandler.img_height
 
-        const userImgData = await userImgHandler.to_ImageData()
-        const outputImgData = await outputImgHandler.to_ImageData()
+        // const userImgData = await userImgHandler.to_ImageData()
+        // const outputImgData = await outputImgHandler.to_ImageData()
 
+        // console.log('userImgData', userImgData)
+        // console.log('outputImgData', outputImgData)
+        const userImg = await getImageData(userImgHandler)
+        const outputImg = await getImageData(outputImgHandler)
+
+        return {
+            userImg,
+            outputImg
+        }
+        // return {
+        //     userImg: {
+        //         data: userImgData,
+        //         width: userImgWidth,
+        //         height: userImgHeight
+        //     },
+        //     outputImg: {
+        //         data: outputImgData,
+        //         width: outputImgWidth,
+        //         height: outputImgHeight
+        //     }
+        // }
+    } catch (error) {
+        console.log(error)
+        console.log(error.message)
+        if (
+            error.message === 'Cannot find Homography Matrix' ||
+            error.message === 'No enough keypoints for finding homography matrix'
+        ) {
+            const homographyMatrix = await retrieveHomographyMatrixFromAPI(
+                algoString,
+                userImgFile,
+                modelImgFile
+            )
+            const outputImgHandler = await performRegistrationGivenHomographyMatrix(
+                userImgHandler,
+                modelImgHandler,
+                homographyMatrix,
+                transparency,
+                filter_px
+            )
+            const userImg = await getImageData(userImgHandler)
+            const outputImg = await getImageData(outputImgHandler)
+
+            return {
+                userImg,
+                outputImg
+            }
+        }
+    } finally {
         await userImgHandler.destroy_image()
         await modelImgHandler.destroy_image()
         await layerImgHandler.destroy_image()
         await outputImgHandler.destroy_image()
-
-        console.log('userImgData', userImgData)
-        console.log('outputImgData', outputImgData)
-
-        return {
-            userImg: {
-                data: userImgData,
-                width: userImgWidth,
-                height: userImgHeight
-            },
-            outputImg: {
-                data: outputImgData,
-                width: outputImgWidth,
-                height: outputImgHeight
-            }
-        }
-    } catch (error) {
-        //if memory out of bounds call python API
-        // if (error.message === '') {
-        //     const homographyMatrix = await retrieveHomographyMatrixFromAPI(
-        //         algorithm,
-        //         userImgFile,
-        //         modelImgFile
-        //     )
-        //     const outputImgHandler = await performRegistrationGivenHomographyMatrix(
-        //         userImgHandler,
-        //         modelImgHandler,
-        //         homographyMatrix,
-        //         transparency,
-        //         filter_px
-        //     )
-        //     console.log(outputImgHandler)
-        //     return outputImgHandler
-        console.log(error)
     }
-    //else if homography matrix problem display error
-    // else console.log(error)
 }
 
+const getImageData = async (imgHandler) => {
+    const imgHeight = imgHandler.img_height
+    const imgWidth = imgHandler.img_width
+    const imgData = await imgHandler.to_ImageData()
+
+    return {
+        height: imgHeight,
+        width: imgWidth,
+        data: imgData
+    }
+}
 const convertToAlgo = (word) => {
     if (word === 'SIFT') return RegistrationAlgorithms.SIFT
     else if (word === 'SURF') return RegistrationAlgorithms.SURF
@@ -157,7 +181,8 @@ const retrieveHomographyMatrixFromAPI = async (algoString, userImgFile, modelImg
         const formData = new FormData()
         formData.append('user-file', userImgFile)
         formData.append('model-file', modelImgFile)
-        const response = await axios.post(`${config.python_server}/${algoString}`, formData)
+        // `${config.python_server}/api/registrar/${algoString}`
+        const response = await axios.post(`/api/registrar/${algoString}`, formData)
         if (response.data.ok) {
             console.log(response.data.payload.homography_matrix)
             return response.data.payload.homography_matrix

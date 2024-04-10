@@ -1,0 +1,74 @@
+{
+    "layers": [
+        {
+            "title": "Apollo 15 Metric Cam DEM, Grayscale",
+            "fileName": "Apollo15_MetricCam_Gray_Global_1024ppd",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_MetricCam_Gray_Global_1024ppd/thumbnail/Apollo15_MetricCam_Gray_Global_1024ppd-120.png",
+            "description": "The Apollo 15 DEM grayscale image is generated from the Apollo 15 DEM data, by scaling elevation values from the range of -8000 to +8000 meters to integer values between 0 and 255. Elevation values below and above the -8000 and 8000 are mapped to 0 and 255 respectively",
+            "metadataURL": "https://trek.nasa.gov/moonbeta/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_MetricCam_Gray_Global_1024ppd"
+        },
+        {
+            "title": "Apollo 15 Pan Cam DEM, Aristarchus Plateau 1, ColorHillshade",
+            "fileName": "Apollo15_PanCam_ClrShade_28N307E_3mp",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_25N311E_5mp/thumbnail/Apollo15_PanCam_ClrShade_25N311E_5mp-200.png",
+            "description": "This is a colorized shaded-relief of the digital elevation model (DEM) for the Aristarchus Plateau Area 1. Resolution of the original Apollo 15 Panametric images was 1.5m/pixel which allows an output DEM resolution of 5m/pixel using a softcopy photogrammetry system. It is register to ULCN 2005 control network. The DEM was registered horizontally and vertically to LRO's Lunar Orbiter Laser Altimeter (LOLA) data. Elevation values are in meters and referred to a radius of 1737400m.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_PanCam_ClrShade_25N311E_5mp"
+        },
+        {
+            "title": "LRO Narrow Angle Camera, HillShade Apollo 17",
+            "fileName": "LRO_NAC_Mosaic_36N320E_50cmp",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/NAC_DTM_APOLLO17_SHADE/thumbnail/NAC_DTM_APOLLO17_SHADE-200.png",
+            "description": "This is a shaded-relief derived from a 5m Digital Terrain Model (DTM) of the Apollo 17 landing site created with Narrow Angle Camera (NAC) stereo image pairs from the Lunar Reconnaissance Orbiter Camera (LROC) aboard the Lunar Reconnaissance Orbiter (LRO). The shaded relief image was generated with the sun azimuth of 315 degrees (northwest) and sun altitude of 45 degrees. Image is a TIFF image, 8 bits/sample, 1 samples/pixel in single image plane configuration.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=NAC_DTM_APOLLO17_SHADE"
+        },
+        {
+            "title": "Apollo 15 Pan Cam DEM, Tsiolkovskiy Crater, ColorHillshade",
+            "fileName": "Apollo15_PanCam_ClrShade_19S129E_5mp",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_19S129E_5mp/thumbnail/Apollo15_PanCam_ClrShade_19S129E_5mp-200.png",
+            "description": "This is a colorized shaded-relief of the digital elevation model (DEM) for Tsiolkovskiy Crater. Resolution of the original Apollo 15 Panametric images was 1.5m/pixel which allows an output DEM resolution of 5m/pixel using a softcopy photogrammetry system. It is register to ULCN 2005 control network. The DEM was registered horizontally and vertically to LRO's Lunar Orbiter Laser Altimeter (LOLA) data. Elevation values are in meters and referred to a radius of 1737400m.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_PanCam_ClrShade_19S129E_5mp"
+        },
+        {
+            "title": "Kaguya LGM2011 Surface Gravity, Colorized",
+            "fileName": "Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd/thumbnail/Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd-200.png",
+            "description": "This is an 8bit colorized version for the LGM2011 surface gravity accelerations are the sum of degree-70 SGM100i (SELENE gravity field model) gravity, Newtonian gravity and normal gravity. Over the entire lunar surface, the mean LGM2011 surface gravity acceleration is 1.62486 ms^-2 and the range is ~0.0253 ms^-2 (1.6%). The extreme values of lunar surface gravity are located on the far-side: The minimum of 1.61064 ms-2 is on the rim of Engelhard (far-side highlands, at 6.1 degrees N, 159.2 degrees W). The maximum of 1.63594 ms^-2 is at the bottom of a small impact crater (37.5 degrees S, 151.4 degrees W) in Apollo. The LGM2011 products are based on the Japanese (Selenological and Engineering Explorer, or Kaguya) SELENE mission that provides the low- and medium-frequency constituents of the gravity field, down to spatial scales of ~78 km. At spatial scales between ~78 km and ~1.5 km, LGM2011 uses high-frequency topographic information derived from (Lunar Orbiter Laser Altimeter) LOLA laser altimetry to approximate the gravity field signatures of many medium- and small-size impact craters for the first time. For the topography-based gravity approximation, we use Newtonian forward-modelling under the key assumptions that the SELENE and LOLA data are consistent, the high-frequency lunar topography is uncompensated and the topographic mass density is constant. The short-scale component of LGM2011 should not be relied upon in geophysical interpretations. LGM2011 can be used as an a priori model for lunar gravity field simulation and inversion studies, evaluation of past and future lunar gravity field missions, improved topographic mapping, lunar inertial navigation, and the prediction of lunar gravity acceleration and vertical deflections at any future landing sites. Reference: Hirt C, Featherstone WE (2012) A 1.5 km-resolution gravity field model of the Moon. Earth Planet Science Letters (EPSL), 329-330, 22-30, DOI: 10.1016/j.epsl.2012.02.012.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd"
+        },
+        {
+            "title": "LRO Laser Altimeter, Albedo Global",
+            "fileName": "ldam_10",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/ldam_10/thumbnail/ldam_10-200.png",
+            "description": "The Lunar Orbiter Laser Altimeter (LOLA) experiment on Lunar Reconnaissance Orbiter (LRO) is a laser altimeter that also measures the strength of the return pulse from the lunar surface. These data have been used to estimate the reflectance (albedo) of the lunar surface, including regions lacking direct solar illumination. A new calibration of these data was used to generate a 2016 albedo map that features lower uncertainties overall and more consistent results in the polar regions than the previous 2014 version. (Improved calibration of reflectance data from the LRO Lunar Orbiter Laser Altimeter (LOLA) and implications for space weathering; M. Lemelin, P.G. Lucey, G.A. Neumann, E.M. Mazarico, M.K. Barker, A. Kakazu, D. Trang, D.E. Smith, M.T. Zuber; Icarus, Volume 273, 15 July 2016, Pages 315-328)",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=ldam_10"
+        },
+        {
+            "title": "Apollo 17 Metric Cam DEM, ColorHillshade",
+            "fileName": "Apollo17_MetricCam_ClrShade_Global_1024ppd",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo17_MetricCam_ClrShade_Global_1024ppd/thumbnail/Apollo17_MetricCam_ClrShade_Global_1024ppd-200.png",
+            "description": "The Apollo 17 DEM colorshade is generated using the colormap and hillshade functions in Vision Workbench for the DEM files. The min and max values of the colormap correspond to the range [-8499, 10208] in meters relative to the average moon radius of 1737.4km. The DEM colorshade values are stored as 8-bit signed integer at 30m/pixel resolution. These DEM colorshade files were generated using the Vision Workbench library: a software tool produced by the NASA Ames Intelligent Robotics Group (IRG) for automated processing of stereo imagery.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo17_MetricCam_ClrShade_Global_1024ppd"
+        },
+        {
+            "title": "LO HR/MR Cam and Clementine UVVIS Hybrid Image Mosaic",
+            "fileName": "ClemLO_Mosaic_Global_512ppd_v02",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/ClemLO_Mosaic_Global_512ppd_v02/thumbnail/ClemLO_Mosaic_Global_512ppd_v02-200.png",
+            "description": "The is a blend of the Clementine UVVIS mosaic and the Lunar Oribiter mosaic. The Clementine 750 nm Version 2 mosaic is a greyscale data set representing the albedo(brightness of the lunar surface) as measured at the 750 nm wavelength by the UVVIS camera. This lunar base map is a radiometrically and geometrically controlled, photometrically modeled global image mosaic compiled using more than 43,000 images from the 750 nanometer filter observations of the UVVIS. The Five Lunar Orbiter missions were launched by the U.S. in 1966 and 1967 to study the Moon. Lunar Orbiter images were photographic products acquired on the spacecraft during those five missions (LO-I through -V; Hansen, 1970; Bowker and Hughes, 1971). The first three missions mapped potential Apollo lunar landing sites. Lunar Orbiter IV photographed most of the near and far sides of the Moon medium- and high-resolutions. Lunar Orbiter V completed the photography of the far side and collected additional images of 36 sites of scientific interest.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=ClemLO_Mosaic_Global_512ppd_v02"
+        },
+        {
+            "title": "LRO DLRE Surface Temp Avg, Color",
+            "fileName": "LRO_Diviner_ST_Avg_Clr_Global_32ppd",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_Diviner_ST_Avg_Clr_Global_32ppd/thumbnail/LRO_Diviner_ST_Avg_Clr_Global_32ppd-200.png",
+            "description": "Each sample represents the deviation of rock-free regolith surface temperature derived from the global average for each local time as estimated using the technique described in Bandfield et al. (2011). Data from diviner spectral channels 6, 7, and 8 were binned at 32 pixels per degree in ten separate one hour increments of local time from 1930 to 0530. The average global regolith temperature for each local time was subtracted from the regolith temperatures to produce a deviation from the average, allowing for values between separate local time observations to be comparable. For each spatial bin, all retrieved values for the ten local times were averaged to produce a single map.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=LRO_Diviner_ST_Avg_Clr_Global_32ppd"
+        },
+        {
+            "title": "Apollo 15 Metric Cam DEM, ColorHillshade",
+            "fileName": "Apollo15_MetricCam_ClrShade_Global_1024ppd",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_MetricCam_ClrShade_Global_1024ppd/thumbnail/Apollo15_MetricCam_ClrShade_Global_1024ppd-200.png",
+            "description": "The Apollo 15 DEM color-shade is generated using the colormap and hillshade functions in Vision Workbench for the DEM files. The min and max values of the colormap(legend.png)correspond to the range [-8499, 10208 in meters relative to the average moon radius of 1737.4km. The DEM colorshade values are stored as 8-bit signed integer at 14.8m/pixel resolution. These DEM colorshade files were generated using the Vision Workbench library: a software tool produced by the NASA Ames Intelligent Robotics Group(IRG)for automated processing of stereo imagery.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_MetricCam_ClrShade_Global_1024ppd"
+        }
+    ]
+}

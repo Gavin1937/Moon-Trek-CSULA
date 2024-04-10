@@ -73,7 +73,7 @@ const moonLayer = new THREE.Mesh(
     new THREE.SphereGeometry(1.737, 30, 30),
     new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(
-            'http://localhost:8888/static/assets/textures/overlay.png'
+            `http://localhost:8888/static/assets/textures/${data.layerFileName}.png`
         )
     })
 )
