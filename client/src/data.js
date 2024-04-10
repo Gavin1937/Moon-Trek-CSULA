@@ -10,8 +10,6 @@ export const data = reactive({
         modelImgFile: null,
         layerImgFile: null
     },
-    layerName: 'Apollo',
-    registrationAlgortihm: 'SURF'
-    // transparency: 0,
-    // filterPx: -1
+    layerFileName: '',
+    registrationAlgortihm: ''
 })

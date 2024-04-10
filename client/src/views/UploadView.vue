@@ -4,6 +4,7 @@ import ExifReader from 'exifreader'
 import { useRouter } from 'vue-router'
 import { reactive, ref } from 'vue'
 import { data } from '../data.js'
+import SideBar from '../components/SideBar.vue'
 
 const router = useRouter()
 const formData = reactive({
@@ -14,8 +15,6 @@ const formData = reactive({
     latitude: 0,
     date: '',
     time: '',
-    // algo: 'SURF',
-    // layerName: '',
     previewImage: new Image()
 })
 
@@ -84,11 +83,6 @@ const imageSelected = async () => {
 // This is called whenever an image is submitted
 const imageSubmitted = async () => {
     //check first that overlay and registration algorithm has been chosen
-    if (!(data.layerName && data.registrationAlgortihm)) {
-        error.value =
-            'Please choose overlay and registration algorithm first before submitting image'
-        return
-    }
 
     let local
 
@@ -130,6 +124,7 @@ const imageSubmitted = async () => {
 
 <template>
     <main>
+        <SideBar />
         <div class="columns is-centered">
             <div class="column has-text-centered">
                 <h1>Upload Your Moon Image</h1>
