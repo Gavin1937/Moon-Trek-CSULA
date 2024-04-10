@@ -4,12 +4,18 @@ from typing import Union
 from config.config import CONFIG
 from logger import logger
 from flask import Flask, request, Response
+from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import MoonRegistration.MoonRegistrate as mrr
 
 
 app = Flask(__name__)
+
+# add CORS support for this backend
+# we should consider remove CORS and hide it under a reverse proxy when deploying
+# so we can kind prevent people from abusing this api
+CORS(app)
 
 limiter = Limiter(
     get_remote_address,
