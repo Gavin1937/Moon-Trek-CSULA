@@ -11,6 +11,11 @@ const imgData = reactive({
     output: null
 })
 
+const errorHandler = reactive({
+    hasError: false,
+    message: ''
+})
+
 // Returns the URL to the given processed image type
 const getUrl = (type) => {
     if (type === 'resized') {
@@ -44,6 +49,7 @@ const displayOnImgsCanvas = () => {
         colorSpace: 'srgb'
     })
     outputImgCtx.putImageData(imgData.output.data, 0, 0)
+    errorHandler.hasError = false
 }
 
 const registrate = async () => {
@@ -66,9 +72,13 @@ const registrate = async () => {
         console.log(response.userImg)
         imgData.output = response.outputImg
         console.log(response.outputImg)
+        errorHandler.hasError = false
         displayOnImgsCanvas()
     } catch (error) {
         console.log(error)
+        errorHandler.hasError = true
+        errorHandler.message =
+            "Can't perform registration on your image. Try other algorithms or upload another image"
     }
 }
 </script>
@@ -136,6 +146,7 @@ const registrate = async () => {
         </div> -->
 
         <div>
+            <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <form>
                 <label>Choose another registration algorithm:</label>
                 <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
