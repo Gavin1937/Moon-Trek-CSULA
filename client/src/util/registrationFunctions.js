@@ -4,7 +4,9 @@ import {
     ImageHandler,
     draw_layer_image,
     draw_layer_image_no_compute,
-    RegistrationAlgorithms
+    RegistrationAlgorithms,
+    detect_moon,
+    cut_image_from_circle
 } from '../moon-registration/index.js'
 
 export const performRegistration = async (
@@ -23,9 +25,12 @@ export const performRegistration = async (
     console.log('filter_px', filter_px)
     console.log('fpx', fpx)
     let userImgHandler = new ImageHandler()
+    let croppedImgHandler = new ImageHandler()
     let modelImgHandler = new ImageHandler()
     let layerImgHandler = new ImageHandler()
     let outputImgHandler = new ImageHandler()
+    let croppedImgFile = null
+
     try {
         console.log('checking inputs inputs')
         console.log(typeof algoString, algoString)
@@ -42,15 +47,23 @@ export const performRegistration = async (
         console.log('modelImgHandler', modelImgHandler)
         console.log('layerImgHandler', layerImgHandler)
 
+        //get circle/Moon in user image
+        const croppedImg = await getCroppedImageOfMoon(userImgFile)
+
+        croppedImgHandler = croppedImg[0]
+        const croppedImgData = await croppedImgHandler.to_ImageData()
+        croppedImgFile = await getCroppedImageFile(croppedImgData)
+        console.log('croppedImgFile', croppedImgFile)
+
         if (algoString === 'SURF') {
             //call python API for surf homography matrix then call draw_layer_no_compute (registration given homography matrix)
             const homographyMatrix = await retrieveHomographyMatrixFromAPI(
                 algoString,
-                userImgFile,
+                croppedImgFile,
                 modelImgFile
             )
             outputImgHandler = await performRegistrationGivenHomographyMatrix(
-                userImgHandler,
+                croppedImgHandler,
                 modelImgHandler,
                 layerImgHandler,
                 homographyMatrix,
@@ -59,7 +72,7 @@ export const performRegistration = async (
             )
         } else {
             outputImgHandler = await draw_layer_image(
-                userImgHandler,
+                croppedImgHandler,
                 modelImgHandler,
                 layerImgHandler,
                 algorithm,
@@ -69,16 +82,6 @@ export const performRegistration = async (
         }
         console.log('output image:', outputImgHandler)
 
-        // const userImgWidth = userImgHandler.img_width
-        // const userImgHeight = userImgHandler.img_height
-        // const outputImgWidth = outputImgHandler.img_width
-        // const outputImgHeight = outputImgHandler.img_height
-
-        // const userImgData = await userImgHandler.to_ImageData()
-        // const outputImgData = await outputImgHandler.to_ImageData()
-
-        // console.log('userImgData', userImgData)
-        // console.log('outputImgData', outputImgData)
         const userImg = await getImageData(userImgHandler)
         const outputImg = await getImageData(outputImgHandler)
 
@@ -86,44 +89,33 @@ export const performRegistration = async (
             userImg,
             outputImg
         }
-        // return {
-        //     userImg: {
-        //         data: userImgData,
-        //         width: userImgWidth,
-        //         height: userImgHeight
-        //     },
-        //     outputImg: {
-        //         data: outputImgData,
-        //         width: outputImgWidth,
-        //         height: outputImgHeight
-        //     }
-        // }
     } catch (error) {
         console.log(error)
         console.log(error.message)
-        if (
-            error.message === 'Cannot find Homography Matrix' ||
-            error.message === 'No enough keypoints for finding homography matrix' ||
-            error.message === 'memory access out of bounds'
-        ) {
-            const homographyMatrix = await retrieveHomographyMatrixFromAPI(
-                algoString,
-                userImgFile,
-                modelImgFile
-            )
-            const outputImgHandler = await performRegistrationGivenHomographyMatrix(
-                userImgHandler,
-                modelImgHandler,
-                homographyMatrix,
-                transparency,
-                filter_px
-            )
-            const userImg = await getImageData(userImgHandler)
-            const outputImg = await getImageData(outputImgHandler)
 
-            return {
-                userImg,
-                outputImg
+        if (error.message.includes('memory access out of bounds')) {
+            try {
+                const homographyMatrix = await retrieveHomographyMatrixFromAPI(
+                    algoString,
+                    croppedImgFile,
+                    modelImgFile
+                )
+                const outputImgHandler = await performRegistrationGivenHomographyMatrix(
+                    croppedImgHandler,
+                    modelImgHandler,
+                    homographyMatrix,
+                    transparency,
+                    filter_px
+                )
+                const userImg = await getImageData(userImgHandler)
+                const outputImg = await getImageData(outputImgHandler)
+
+                return {
+                    userImg,
+                    outputImg
+                }
+            } catch (error) {
+                console.log('error fetching homography matrix from python API', error)
             }
         }
     } finally {
@@ -131,6 +123,68 @@ export const performRegistration = async (
         await modelImgHandler.destroy_image()
         await layerImgHandler.destroy_image()
         await outputImgHandler.destroy_image()
+    }
+}
+
+const getCroppedImageFile = async (imgData) => {
+    // try {
+    //     const imgData = await imgHandler.to_ImageData()
+    //     const canvas = document.createElement('canvas')
+    //     canvas.width = imgData.width
+    //     canvas.height = imgData.height
+
+    //     const ctx = canvas.getContext('2d', { colorSpace: 'srgb' })
+    //     ctx.putImageData(imgData, 0, 0)
+
+    //     canvas.toBlob((blob) => {
+    //         const croppedImgFile = new File([blob], 'croppedImage', { type: 'image/png' })
+    //         return croppedImgFile
+    //     })
+    // } catch (error) {
+    //     console.log(error)
+    // }
+    return new Promise((resolve, reject) => {
+        try {
+            const canvas = document.createElement('canvas')
+            canvas.width = imgData.width
+            canvas.height = imgData.height
+
+            const ctx = canvas.getContext('2d', { colorSpace: 'srgb' })
+            ctx.putImageData(imgData, 0, 0)
+
+            canvas.toBlob((blob) => {
+                const file = new File([blob], 'croppedImgFile', { type: 'image/png' })
+
+                resolve(file)
+            })
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+const detectMoonFromImg = async (imgHandler) => {
+    try {
+        const moon_circle = await detect_moon(imgHandler)
+        return moon_circle
+    } catch (error) {
+        console.log('error running detect_moon', error)
+    }
+}
+
+const getCroppedImageOfMoon = async (imgFile) => {
+    try {
+        const imgHandler = new ImageHandler()
+        await imgHandler.load_from_fileobject(imgFile)
+        const moon_circle = await detectMoonFromImg(imgHandler)
+        const [croppedImgHandler, rectangle] = await cut_image_from_circle(
+            imgHandler,
+            moon_circle,
+            200
+        )
+        return [croppedImgHandler, rectangle]
+    } catch (error) {
+        console.log('error cropping Moon image', error)
     }
 }
 
@@ -182,7 +236,6 @@ const retrieveHomographyMatrixFromAPI = async (algoString, userImgFile, modelImg
         const formData = new FormData()
         formData.append('user-file', userImgFile)
         formData.append('model-file', modelImgFile)
-        // `${config.python_server}/api/registrar/${algoString}`
         const response = await axios.post(
             `${config.python_server}/api/registrar/${algoString}`,
             formData
