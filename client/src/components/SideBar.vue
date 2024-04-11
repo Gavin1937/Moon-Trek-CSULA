@@ -1,12 +1,14 @@
 <script setup>
 import jsonLayers from '../assets/overlays.json'
 import { data } from '../data.js'
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 
 const selectedLayer = ref('')
+const emit = defineEmits(['layerSet'])
 const setLayerImage = (layerName) => {
     data.layerFileName = layerName
     selectedLayer.value = layerName
+    emit('layerSet')
 }
 </script>
 <template>

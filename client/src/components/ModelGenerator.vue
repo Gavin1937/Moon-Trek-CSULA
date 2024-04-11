@@ -309,6 +309,7 @@ onMounted(async () => {
     moonLayer.add(crisiumPoint)
 
     // Their positions will be fetched and set at least once
+
     await getPositions()
     setPositions()
 

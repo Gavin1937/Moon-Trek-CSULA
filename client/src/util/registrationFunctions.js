@@ -103,7 +103,8 @@ export const performRegistration = async (
         console.log(error.message)
         if (
             error.message === 'Cannot find Homography Matrix' ||
-            error.message === 'No enough keypoints for finding homography matrix'
+            error.message === 'No enough keypoints for finding homography matrix' ||
+            error.message === 'memory access out of bounds'
         ) {
             const homographyMatrix = await retrieveHomographyMatrixFromAPI(
                 algoString,
