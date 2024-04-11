@@ -2,7 +2,7 @@
 import axios from 'axios'
 import ExifReader from 'exifreader'
 import { useRouter } from 'vue-router'
-import { reactive, ref } from 'vue'
+import { reactive } from 'vue'
 import { data } from '../data.js'
 import SideBar from '../components/SideBar.vue'
 
@@ -18,7 +18,10 @@ const formData = reactive({
     previewImage: new Image()
 })
 
-const error = ref('')
+const errorHandler = reactive({
+    hasError: false,
+    message: ''
+})
 
 // This is called whenever a new image is selected
 const imageSelected = async () => {
@@ -76,16 +79,25 @@ const imageSelected = async () => {
     }
 }
 
-// const setRegistrationAlgorithm = (value) => {
-//     data.registrationAlgortihm = value
-// }
+const inputIsValid = () => {
+    if (data.layerFileName === '' || data.registrationAlgortihm === '') {
+        errorHandler.hasError = true
+        if (data.layerFileName === '')
+            errorHandler.message = 'Please select a layer to place on your image'
+        else if (data.registrationAlgortihm === '')
+            errorHandler.message = 'Please select a registration algorithm'
+        else errorHandler.message = 'Please select layer and registration algorithm first'
+        return false
+    }
+    return true
+}
 
 // This is called whenever an image is submitted
 const imageSubmitted = async () => {
     //check first that overlay and registration algorithm has been chosen
-
+    if (!inputIsValid()) return
     let local
-
+    data.newUpload = true
     // Date is read differently from exif meta data and html inputs
     // so we'll adjust our string based on the case
     if (formData.hasExif) {
@@ -168,7 +180,7 @@ const imageSubmitted = async () => {
                     <input class="button" type="submit" value="Upload" />
                 </div>
             </div>
-            <p v-if="error">{{ error.value }}</p>
+            <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <div v-if="!formData.hasExif" class="columns is-centered">
                 <div class="column is-3-tablet is-2-desktop is-2-fullhd">
                     <div class="field">
