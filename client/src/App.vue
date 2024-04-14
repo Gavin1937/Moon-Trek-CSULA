@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 </template>
 
 <style>
-* {
+/* * {
     font-family: Nunito;
     color: #d8dee9;
     background: #13161c;
@@ -19,7 +19,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 
 a {
     color: #5e81ac;
-}
+} */
 
 a:hover {
     color: #b48ead;
