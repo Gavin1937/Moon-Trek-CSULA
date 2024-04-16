@@ -28,11 +28,11 @@ function closeNav() {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Sidebar div-->
-<div id="mySidebar" class="sidebar">
+<!-- <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
-</div>
+</div> -->
 <!-- Sidebar div-->
 
 
@@ -85,7 +85,7 @@ function closeNav() {
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: #ffffff;
 }
 
 .sidebar .closebtn {
@@ -128,7 +128,7 @@ function closeNav() {
 
 .navbar-menu{
     float: left;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     height: 100px;
     width: 50%;
     margin-left: auto;
@@ -144,7 +144,9 @@ function closeNav() {
     font-size: 1.25rem;
     margin: 2.2rem 1.2rem;
     padding-bottom: 40px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    
 
 }
 
@@ -156,6 +158,7 @@ function closeNav() {
 
 .nav-link:hover {
     cursor: pointer;
+    color: grey;
 }
 
 .color-nav {

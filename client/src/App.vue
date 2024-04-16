@@ -10,8 +10,8 @@ import 'bootstrap/dist/js/bootstrap.js'
     <RouterView />
 </template>
 
-<style>
- * {
+<style >
+ body, .button1, h6  {
     font-family: Nunito;
     color: #d8dee9;
     background: #13161c;
