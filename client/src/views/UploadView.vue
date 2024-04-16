@@ -255,6 +255,27 @@ const imageSubmitted = async () => {
 
 .file-upload {
     margin-top: 20px;
+    background-color: #13161c;
+}
+
+.overlayMenu{
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    margin: 10px auto;
+    margin-bottom: 40px;
+
+}
+
+.overlayMenuLeft{
+    float: left;
+    width: 50%;
+}
+.overlayMenuRight{
+    float: right;
+    width: 50%;
 }
 
 .file-input {
@@ -304,4 +325,7 @@ input, .file-cta {
     border-color: #b48ead;
 }
 
+.selectText{
+    color: black;
+}
 </style>
