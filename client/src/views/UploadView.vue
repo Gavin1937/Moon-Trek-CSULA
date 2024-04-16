@@ -258,9 +258,9 @@ const imageSubmitted = async () => {
 }
 
 .file-input {
-    width: 10%; /* Adjust based on your actual needs */
-    height: 10%; /* Adjust the height to fit the design */
-    opacity: 0; /* Hides the actual input but keeps it functional */
+    width: 10%; 
+    height: 10%; 
+    opacity: 0; 
     position: absolute;
     cursor: pointer;
 }
@@ -277,7 +277,7 @@ h1 {
 
 img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 ::placeholder, .file-cta, label, input {
