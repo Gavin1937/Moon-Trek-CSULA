@@ -138,11 +138,32 @@ const imageSubmitted = async () => {
     <main>
         <div class="main-container">
             <div class="container">
-                <SideBar />
+
+                <div class="overlayMenu">
+                    <div class="overlaymenuLeft">
+                        <SideBar />
+                    </div>
+                    <div class="overlayMenuRight">
+                        <form>
+                    <label>Choose registration algorithm:</label>
+                    <select
+                        v-model="data.registrationAlgortihm"
+                        :selected="data.registrationAlgortihm"
+                    >
+                        <option value="SURF">SURF</option>
+                        <option value="SIFT">SIFT</option>
+                        <option value="AKAZE">AKAZE</option>
+                        <option value="BRISK">BRISK</option>
+                        <option value="ORB">ORB</option>
+                    </select>
+                </form>
+                    </div>
+                </div>
+                <!-- <SideBar /> -->
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1>Upload Your Moon Image</h1>
-                  
+
                         <form @submit.prevent="imageSubmitted" class="file-upload-form">
                             <label class="file-label">
                                 <input
@@ -164,16 +185,19 @@ const imageSubmitted = async () => {
                         </form>
                     </div>
                 </div>
-                <form>
+                <!-- <form>
                     <label>Choose registration algorithm:</label>
-                    <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
+                    <select
+                        v-model="data.registrationAlgortihm"
+                        :selected="data.registrationAlgortihm"
+                    >
                         <option value="SURF">SURF</option>
                         <option value="SIFT">SIFT</option>
                         <option value="AKAZE">AKAZE</option>
                         <option value="BRISK">BRISK</option>
                         <option value="ORB">ORB</option>
                     </select>
-                </form>
+                </form> -->
             </div>
             <div class="container-two" v-if="formData.previewImage.src">
                 <div class="content-with-sidebar">
@@ -183,11 +207,21 @@ const imageSubmitted = async () => {
                     <div class="info-container">
                         <div class="field">
                             <label class="label">Latitude:</label>
-                            <input class="input" type="number" placeholder="latitude" v-model="formData.latitude" />
+                            <input
+                                class="input"
+                                type="number"
+                                placeholder="latitude"
+                                v-model="formData.latitude"
+                            />
                         </div>
                         <div class="field">
                             <label class="label">Longitude:</label>
-                            <input class="input" type="number" placeholder="longitude" v-model="formData.longitude" />
+                            <input
+                                class="input"
+                                type="number"
+                                placeholder="longitude"
+                                v-model="formData.longitude"
+                            />
                         </div>
                         <div class="field">
                             <label class="label">Date:</label>
@@ -203,8 +237,6 @@ const imageSubmitted = async () => {
         </div>
     </main>
 </template>
-
-
 
 <style scoped>
 .wrapper {
@@ -228,15 +260,15 @@ const imageSubmitted = async () => {
 
 .container-two {
     display: flex;
-    justify-content: center; 
-    margin: 3% auto; 
-    max-width: 1000px; 
+    justify-content: center;
+    margin: 3% auto;
+    max-width: 1000px;
 }
 
 .content-with-sidebar {
     display: flex;
     width: 100%;
-    align-items: center; 
+    align-items: center;
 }
 
 .image-container {
@@ -258,39 +290,30 @@ const imageSubmitted = async () => {
     background-color: #13161c;
 }
 
-.overlayMenu{
+.overlayMenu {
     display: flex;
-    width: 600px;
-    justify-content: center;
-    height: auto;
+    width: 100%; 
+    justify-content: space-between;
     align-items: center;
     margin: 10px auto;
     margin-bottom: 40px;
-
 }
 
-.overlayMenuLeft{
-    float: left;
-    width: 50%;
-}
-.overlayMenuRight{
-    float: right;
-    width: 50%;
+.overlayMenuLeft, .overlayMenuRight {
+    margin: 0 10px;
 }
 
 .file-input {
-    width: 10%; 
-    height: 10%; 
-    opacity: 0; 
+    width: 10%;
+    height: 10%;
+    opacity: 0;
     position: absolute;
     cursor: pointer;
 }
 
-.file-label{
-width: fit-content;
+.file-label {
+    width: fit-content;
 }
-
-
 
 h1 {
     font-size: 1.5rem;
@@ -301,31 +324,32 @@ img {
     height: auto;
 }
 
-::placeholder, .file-cta, label, input {
+::placeholder,
+.file-cta,
+label,
+input {
     color: #d8dee9;
 }
 
-input, .file-cta {
+input,
+.file-cta {
     background: #13161c;
     border-color: #5e81ac;
 }
 
-.file-cta:hover, input:hover {
+.file-cta:hover,
+input:hover {
     border-color: #b48ead;
 }
 
-.button {
-    background: #13161c;
-    border-color: #5e81ac;
-    border-color: #5e81ac;
-}
+
 
 .button:hover {
     background: #b48ead;
     border-color: #b48ead;
 }
 
-.selectText{
-    color: black;
+.selectText {
+    color: rgb(255, 255, 255);
 }
 </style>
