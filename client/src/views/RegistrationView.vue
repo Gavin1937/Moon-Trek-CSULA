@@ -149,7 +149,7 @@ const registrate = async () => {
             <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <form>
                 <label>Choose another registration algorithm:</label>
-                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
+                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="textColor">
                     <option value="SURF">SURF</option>
                     <option value="SIFT">SIFT</option>
                     <option value="AKAZE">AKAZE</option>
@@ -165,9 +165,9 @@ const registrate = async () => {
                 <canvas id="user-img"></canvas>
                 <canvas id="output-img"></canvas>
             </div>
-            <button @click="redirectToModel">View model</button>
-            <button @click="redirectToUpload">Upload another image</button>
-            <button>Try infinite zoom on your image</button>
+            <button @click="redirectToModel" class="textColor">View model</button>
+            <button @click="redirectToUpload" class="textColor">Upload another image</button>
+            <button class="textColor">Try infinite zoom on your image</button>
         </div>
     </main>
 </template>
@@ -176,5 +176,10 @@ const registrate = async () => {
 main {
     min-height: 100vh;
     padding: 1rem;
+    background: #13161c;
+}
+
+.textColor {
+    color: black;
 }
 </style>
