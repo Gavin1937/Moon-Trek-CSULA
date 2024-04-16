@@ -102,10 +102,11 @@ const setLayerImage = (layerName) => {
 
 .sidebarLayers{
     background: #13161c;
+    color: white;
 }
 
 .button1{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 

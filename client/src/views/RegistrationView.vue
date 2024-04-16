@@ -180,6 +180,6 @@ main {
 }
 
 .textColor {
-    color: black;
+    color: rgb(0, 0, 0);
 }
 </style>
