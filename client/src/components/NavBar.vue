@@ -36,60 +36,27 @@ function closeNav() {
 <!-- Sidebar div-->
 
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-       <!-- <div class="navbar-brand">
-            <a
-                role="button"
-                class="navbar-burger"
-                :class="active ? 'is-active' : ''"
-                @click="active = !active"
-                data-target="nav"
-                aria-label="menu"
-                aria-expanded="false"
-            >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-    -->
-
-
-
-        <div id="nav" class="navbar-menu" :class="active ? 'is-active' : ''">
-                    <div onclick="/" class="logoBox"></div>
-                    
-            <div class="navbar-start">
-                <router-link to="/" class="nav-link" v-bind:class="{ 'color-nav': $route.path == '/' }"> Home </router-link>
-                <router-link to="upload" class="nav-link" v-bind:class="{ 'color-nav': $route.path == '/upload' }"> Upload </router-link>
-                <router-link to="registration" class="nav-link" v-bind:class="{ 'color-nav': $route.path == '/registration' }"> Registration </router-link>
-                <router-link to="model" class="nav-link" v-bind:class="{ 'color-nav': $route.path == '/model' }"> Model </router-link>
-                <div class="filler"> </div>
-                <div id="main">
-                    <button class="burgerbox extraLinks openbtn" onclick="openNav()" v-bind:class="{ 'color-nav': $route.path == '/about' }">
-                        <i style="font-size:24px" class="fa">&#xf0c9;</i>
-                     </button>
-                </div>
-
-
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div id="nav" class="navbar-menu" :class="active ? 'is-active' : ''">
+        <!-- Router Link as a clickable logo area -->
+        <router-link to="/" class="logoBox" aria-label="Home"></router-link>
+        
+        <!-- Navigation Links -->
+        <div class="navbar-start">
+            <router-link to="/" class="nav-link" :class="{ 'color-nav': $route.path === '/' }">Home</router-link>
+            <router-link to="/upload" class="nav-link" :class="{ 'color-nav': $route.path === '/upload' }">Upload</router-link>
+            <router-link to="/registration" class="nav-link" :class="{ 'color-nav': $route.path === '/registration' }">Registration</router-link>
+            <router-link to="/model" class="nav-link" :class="{ 'color-nav': $route.path === '/model' }">Model</router-link>
+            <div class="filler"></div>
+            <div id="main">
+                <button class="burgerbox extraLinks openbtn" @click="openNav" :class="{ 'color-nav': $route.path === '/about' }">
+                    <i class="fa fa-bars" style="font-size:24px"></i>
+                </button>
             </div>
         </div>
+    </div>
+</nav>
 
-        <!--
-        <div class="burger"> Burger box
-            <a
-                role="button"
-                class="navbar-burger"
-                data-target="nav"
-                aria-label="menu"
-                aria-expanded="false"
-            >
-
-            </a>
-        </div>
-        -->
-    </nav>
 </template>
 
 <style scoped>
