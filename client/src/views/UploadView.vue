@@ -136,168 +136,172 @@ const imageSubmitted = async () => {
 
 <template>
     <main>
-        <SideBar />
-        <div class="columns is-centered">
-            <div class="column has-text-centered">
-                <h1>Upload Your Moon Image</h1>
-            </div>
-        </div>
-        <form>
-            <label>Choose registration algorithm:</label>
-            <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
-                <option value="SURF">SURF</option>
-                <option value="SIFT">SIFT</option>
-                <option value="AKAZE">AKAZE</option>
-                <option value="BRISK">BRISK</option>
-                <option value="ORB">ORB</option>
-            </select>
-            <!-- <label>Overlay transparency:</label>
-            <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
-            <label>Filter px</label>
-            <input type="number" v-model="data.filterPx" /> -->
-        </form>
-        <form @submit.prevent="imageSubmitted">
-            <div class="field file has-addons has-addons-centered">
-                <label class="file-label">
-                    <div class="control">
-                        <input
-                            class="file-input"
-                            type="file"
-                            id="moonImage"
-                            @change="imageSelected"
-                        />
-                        <span class="file-cta">
-                            <span class="file-icon">
-                                <i class="fas fa-upload"></i>
-                            </span>
-                            <span class="file-label">
-                                {{ formData.name }}
-                            </span>
-                        </span>
+        <div class="main-container">
+            <div class="container">
+                <SideBar />
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1>Upload Your Moon Image</h1>
+                  
+                        <form @submit.prevent="imageSubmitted" class="file-upload-form">
+                            <label class="file-label">
+                                <input
+                                    class="file-input"
+                                    type="file"
+                                    id="moonImage"
+                                    @change="imageSelected"
+                                />
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        {{ formData.name || 'Choose a file' }}
+                                    </span>
+                                </span>
+                            </label>
+                            <input class="button" type="submit" value="Upload" />
+                        </form>
                     </div>
-                </label>
-                <div class="control">
-                    <input class="button" type="submit" value="Upload" />
                 </div>
+                <form>
+                    <label>Choose registration algorithm:</label>
+                    <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
+                        <option value="SURF">SURF</option>
+                        <option value="SIFT">SIFT</option>
+                        <option value="AKAZE">AKAZE</option>
+                        <option value="BRISK">BRISK</option>
+                        <option value="ORB">ORB</option>
+                    </select>
+                </form>
             </div>
-            <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
-            <div v-if="!formData.hasExif" class="columns is-centered">
-                <div class="column is-3-tablet is-2-desktop is-2-fullhd">
-                    <div class="field">
-                        <label class="label">Latitude:</label>
-                        <div class="control">
-                            <input
-                                class="input"
-                                type="number"
-                                placeholder="latitude"
-                                v-model="formData.latitude"
-                            />
+            <div class="container-two" v-if="formData.previewImage.src">
+                <div class="content-with-sidebar">
+                    <div class="image-container">
+                        <img :src="formData.previewImage.src" />
+                    </div>
+                    <div class="info-container">
+                        <div class="field">
+                            <label class="label">Latitude:</label>
+                            <input class="input" type="number" placeholder="latitude" v-model="formData.latitude" />
                         </div>
-                    </div>
-                </div>
-                <div class="column is-3-tablet is-2-desktop is-2-fullhd">
-                    <div class="field">
-                        <label class="label">Longitude:</label>
-                        <div class="control">
-                            <input
-                                class="input"
-                                type="number"
-                                placeholder="longitude"
-                                v-model="formData.longitude"
-                            />
+                        <div class="field">
+                            <label class="label">Longitude:</label>
+                            <input class="input" type="number" placeholder="longitude" v-model="formData.longitude" />
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div v-if="!formData.hasExif" class="columns is-centered">
-                <div class="column is-3-tablet is-2-desktop is-2-fullhd">
-                    <div class="field">
-                        <label class="label">Date:</label>
-                        <div class="control">
+                        <div class="field">
+                            <label class="label">Date:</label>
                             <input class="input" type="date" v-model="formData.date" />
                         </div>
-                    </div>
-                </div>
-                <div class="column is-3-tablet is-2-desktop is-2-fullhd">
-                    <div class="field">
-                        <label class="label">Time:</label>
-                        <div class="control">
+                        <div class="field">
+                            <label class="label">Time:</label>
                             <input class="input" type="time" v-model="formData.time" />
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-
-        <div class="columns is-centered">
-            <div class="column has-text-centered">
-                <img :src="formData.previewImage.src" />
-            </div>
         </div>
     </main>
 </template>
 
+
+
 <style scoped>
-main {
-    min-height: 100vh;
-    padding: 1rem;
+.wrapper {
+    display: flex;
+    justify-content: center;
 }
+
+.main-container {
+    font-family: monospace;
+    padding: 30px;
+    margin-top: 20px;
+    background: #13161c;
+    width: 100%;
+}
+
+.container {
+    padding: 3%;
+    color: white;
+    border-radius: 25px;
+}
+
+.container-two {
+    display: flex;
+    justify-content: center; 
+    margin: 3% auto; 
+    max-width: 1000px; 
+}
+
+.content-with-sidebar {
+    display: flex;
+    width: 100%;
+    align-items: center; 
+}
+
+.image-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.info-container {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.file-upload {
+    margin-top: 20px;
+}
+
+.file-input {
+    width: 10%; /* Adjust based on your actual needs */
+    height: 10%; /* Adjust the height to fit the design */
+    opacity: 0; /* Hides the actual input but keeps it functional */
+    position: absolute;
+    cursor: pointer;
+}
+
+.file-label{
+width: fit-content;
+}
+
+
 
 h1 {
     font-size: 1.5rem;
 }
 
 img {
-    margin: 1rem;
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
-::placeholder,
-file-cta,
-label,
-input {
+::placeholder, .file-cta, label, input {
     color: #d8dee9;
 }
 
-.file-cta {
-    border-radius: 0.5rem 0rem 0rem 0.5rem;
-}
-
-input {
-    border-radius: 0.5rem;
-}
-
-.file-cta,
-.file-cta:hover,
-input,
-input:hover {
+input, .file-cta {
     background: #13161c;
-}
-
-.file-cta,
-input {
     border-color: #5e81ac;
 }
 
-.file-cta:hover,
-input:hover {
+.file-cta:hover, input:hover {
     border-color: #b48ead;
 }
 
-.button,
-.button:hover {
-    border-radius: 0rem 0.5rem 0.5rem 0rem;
-}
-
 .button {
-    background: #5e81ac;
+    background: #13161c;
     border-color: #5e81ac;
-    color: #13161c;
+    border-color: #5e81ac;
 }
 
 .button:hover {
     background: #b48ead;
     border-color: #b48ead;
 }
+
 </style>
