@@ -15,5 +15,6 @@ import ModelGenerator from '../components/ModelGenerator.vue'
 main {
     min-height: 100vh;
     padding: 1rem;
+    background: #13161c;
 }
 </style>

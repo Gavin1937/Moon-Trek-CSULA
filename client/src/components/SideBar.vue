@@ -12,7 +12,7 @@ const setLayerImage = (layerName) => {
 }
 </script>
 <template>
-    <div>
+    <div class="sidebarLayers">
         <button
             class="btn btn-primary"
             type="button"
@@ -24,7 +24,7 @@ const setLayerImage = (layerName) => {
         </button>
 
         <div
-            class="offcanvas offcanvas-start"
+            class="offcanvas offcanvas-start sidebarLayers"
             data-bs-scroll="true"
             data-bs-backdrop="false"
             tabindex="-1"
@@ -35,16 +35,16 @@ const setLayerImage = (layerName) => {
                 <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Layers</h5>
                 <button
                     type="button"
-                    class="btn-close"
+                    class="btn-close button1"
                     data-bs-dismiss="offcanvas"
                     aria-label="Close"
                 ></button>
             </div>
-            <div class="offcanvas-body bg-secondary">
+            <div class="offcanvas-body bg-secondary sidebarLayers">
                 <div class="list-group">
                     <div v-for="(layer, index) in jsonLayers.layers" :key="index">
                         <button
-                            class="w-100 m-1 p-1"
+                            class="w-100 m-1 p-1 sidebarLayers"
                             type="button"
                             data-bs-toggle="collapse"
                             :data-bs-target="`#${index}`"
@@ -63,7 +63,7 @@ const setLayerImage = (layerName) => {
                             </div>
                         </button>
                         <div class="collapse" :id="index">
-                            <div class="card card-body">
+                            <div class="card card-body sidebarLayers">
                                 <img :src="layer.imageURL" :alt="layer.title" />
                                 <p class="bg-white text-black mx-auto p-2 m-1 h-5 overflow-auto">
                                     {{ layer.description }}
@@ -83,7 +83,7 @@ const setLayerImage = (layerName) => {
                                 </button>
                                 <button
                                     v-else
-                                    class="rounded text-white p-2 m-2"
+                                    class="rounded text-white p-2 m-2 sidebarLayers"
                                     @click="setLayerImage(layer.fileName)"
                                 >
                                     Add layer to image
@@ -96,3 +96,17 @@ const setLayerImage = (layerName) => {
         </div>
     </div>
 </template>
+
+<style scoped>
+
+
+.sidebarLayers{
+    background: #13161c;
+}
+
+.button1{
+    background-color: white;
+}
+
+
+</style>

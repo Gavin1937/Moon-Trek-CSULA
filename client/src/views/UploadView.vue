@@ -136,26 +136,35 @@ const imageSubmitted = async () => {
 
 <template>
     <main>
-        <SideBar />
+        <div class="overlayMenu">
+            <div class="overlayMenuLeft"> <SideBar />
+            </div>
+
+            <div class="overlayMenuRight">
+                    <form>
+                        <label>Choose registration algorithm:</label>
+                        <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="selectText">
+                            <option value="SURF">SURF</option>
+                            <option value="SIFT">SIFT</option>
+                            <option value="AKAZE">AKAZE</option>
+                            <option value="BRISK">BRISK</option>
+                            <option value="ORB">ORB</option>
+                        </select>
+                        <!-- <label>Overlay transparency:</label>
+                        <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
+                        <label>Filter px</label>
+                        <input type="number" v-model="data.filterPx" /> -->
+                    </form>
+                </div>
+
+        </div>
+
         <div class="columns is-centered">
             <div class="column has-text-centered">
                 <h1>Upload Your Moon Image</h1>
             </div>
         </div>
-        <form>
-            <label>Choose registration algorithm:</label>
-            <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm">
-                <option value="SURF">SURF</option>
-                <option value="SIFT">SIFT</option>
-                <option value="AKAZE">AKAZE</option>
-                <option value="BRISK">BRISK</option>
-                <option value="ORB">ORB</option>
-            </select>
-            <!-- <label>Overlay transparency:</label>
-            <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
-            <label>Filter px</label>
-            <input type="number" v-model="data.filterPx" /> -->
-        </form>
+      
         <form @submit.prevent="imageSubmitted">
             <div class="field file has-addons has-addons-centered">
                 <label class="file-label">
@@ -241,6 +250,27 @@ const imageSubmitted = async () => {
 main {
     min-height: 100vh;
     padding: 1rem;
+    background-color: #13161c;
+}
+
+.overlayMenu{
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    margin: 10px auto;
+    margin-bottom: 40px;
+
+}
+
+.overlayMenuLeft{
+    float: left;
+    width: 50%;
+}
+.overlayMenuRight{
+    float: right;
+    width: 50%;
 }
 
 h1 {
@@ -299,5 +329,9 @@ input:hover {
 .button:hover {
     background: #b48ead;
     border-color: #b48ead;
+}
+
+.selectText{
+    color: black;
 }
 </style>

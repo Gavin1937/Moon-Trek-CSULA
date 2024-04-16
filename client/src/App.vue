@@ -14,7 +14,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 * {
     font-family: Nunito;
     color: #d8dee9;
-    background: #13161c;
+    /* background: #13161c; */
 }
 
 a {
