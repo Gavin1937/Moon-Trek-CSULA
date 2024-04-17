@@ -10,6 +10,7 @@ export const data = reactive({
         modelImgFile: null,
         layerImgFile: []
     },
+    layerAttributes: [],
     layerFilenames: [],
     registrationAlgortihm: ''
 })
