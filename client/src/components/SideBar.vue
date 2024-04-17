@@ -3,19 +3,40 @@ import jsonLayers from '../assets/overlays.json'
 import { data } from '../data.js'
 import { ref } from 'vue'
 
-const selectedLayer = ref('')
+const layerTransparency = ref(1.0)
 const emit = defineEmits(['selectedLayer'])
 const addLayer = (layerName) => {
-    //only append layer name if not already in list
+    //only append layer name if not already in list or if list is empty
     if (!data.layerFilenames.includes(layerName)) data.layerFilenames.push(layerName)
-
-    selectedLayer.value = layerName
+    const element = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (!element || data.layerAttributes.length === 0) {
+        data.layerAttributes.push({
+            fileName: layerName,
+            layerTransparency: 1.0,
+            layerImgFile: null
+        })
+    }
+    //selectedLayer.value = layerName
     emit('selectedLayer')
 }
 
+const setLayerTransparency = (layerName, transparency) => {
+    const floatTransparency = Number(transparency)
+    const overlay = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (overlay) {
+        overlay.layerTransparency = floatTransparency
+    }
+}
+
 const removeLayer = (layerName) => {
-    const indexToRemove = data.layerFilenames.indexOf(layerName)
-    data.layerFilenames.splice(indexToRemove, 1)
+    const idxToRemoveInLayerFileNames = data.layerFilenames.indexOf(layerName)
+    const idxToRemoveInLayerAttributes = data.layerAttributes.findIndex(
+        (layer) => layer.fileName === layerName
+    )
+    if (idxToRemoveInLayerFileNames > -1 && idxToRemoveInLayerAttributes > -1) {
+        data.layerFilenames.splice(idxToRemoveInLayerFileNames, 1)
+        data.layerAttributes.splice(idxToRemoveInLayerAttributes, 1)
+    }
 }
 </script>
 <template>
@@ -81,13 +102,30 @@ const removeLayer = (layerName) => {
                                     :href="layer.metadataURL"
                                     >View metadata on another tab</a
                                 >
-                                <button
-                                    v-if="data.layerFilenames.includes(layer.fileName)"
-                                    class="rounded border-0 bg-danger text-white p-2 m-2"
-                                    @click="removeLayer(layer.fileName)"
-                                >
-                                    Remove layer from image
-                                </button>
+                                <div v-if="data.layerFilenames.includes(layer.fileName)">
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="1"
+                                        step=".01"
+                                        v-model="layerTransparency"
+                                    />
+                                    <p class="text-white">{{ layerTransparency }}</p>
+                                    <button
+                                        @click="
+                                            setLayerTransparency(layer.fileName, layerTransparency)
+                                        "
+                                    >
+                                        Set layer transparency
+                                    </button>
+                                    <button
+                                        class="rounded border-0 bg-danger text-white p-2 m-2"
+                                        @click="removeLayer(layer.fileName)"
+                                    >
+                                        Remove layer from image
+                                    </button>
+                                </div>
+
                                 <button
                                     v-else
                                     class="rounded text-white p-2 m-2 sidebarLayers"
@@ -97,6 +135,15 @@ const removeLayer = (layerName) => {
                                 </button>
                             </div>
                         </div>
+                        <!-- <SideBarAccordion
+                            :index="layer.index"
+                            :title="layer.title"
+                            :image-u-r-l="layer.imageURL"
+                            :description="layer.description"
+                            :metadata-u-r-l="layer.metadataURL"
+                            @selected-layer="addLayer(layer.title)"
+                            @transparency-set="setLayerTransparency(layer.title, )"
+                        /> -->
                     </div>
                 </div>
             </div>
