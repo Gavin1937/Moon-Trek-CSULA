@@ -353,7 +353,7 @@ onMounted(async () => {
         renderer.render(scene, camera)
         // Take a snapshot (layer) and save
         let layerImg = renderer.domElement.toDataURL()
-        data.images.layerImgFile = await toFile(layerImg, 'layerImg', 'image/png')
+        data.images.layerImgFile.push(await toFile(layerImg, 'layerImg', 'image/png'))
 
         //emit/signal to registration view that model img and layer img has been set
         //so registration view can call registration function

@@ -1,3 +1,4 @@
 {
-    "python_server": "http://localhost:5000"
+    "python_server": "http://localhost:5000",
+    "backend_server": "http://localhost:8888"
 }

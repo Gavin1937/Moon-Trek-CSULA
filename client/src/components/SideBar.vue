@@ -4,11 +4,18 @@ import { data } from '../data.js'
 import { ref } from 'vue'
 
 const selectedLayer = ref('')
-const emit = defineEmits(['layerSet'])
-const setLayerImage = (layerName) => {
-    data.layerFileName = layerName
+const emit = defineEmits(['selectedLayer'])
+const addLayer = (layerName) => {
+    //only append layer name if not already in list
+    if (!data.layerFilenames.includes(layerName)) data.layerFilenames.push(layerName)
+
     selectedLayer.value = layerName
-    emit('layerSet')
+    emit('selectedLayer')
+}
+
+const removeLayer = (layerName) => {
+    const indexToRemove = data.layerFilenames.indexOf(layerName)
+    data.layerFilenames.splice(indexToRemove, 1)
 }
 </script>
 <template>
@@ -71,20 +78,21 @@ const setLayerImage = (layerName) => {
 
                                 <a
                                     class="m-2 p-2 text-white text-decoration-none text-center rounded metaDataLink"
-                                    :href="layer.metadataURL" target="_blank"
+                                    :href="layer.metadataURL"
+                                    target="_blank"
                                     >View metadata on another tab</a
                                 >
                                 <button
-                                    v-if="layer.fileName === selectedLayer"
+                                    v-if="data.layerFilenames.includes(layer.fileName)"
                                     class="rounded border-0 bg-danger text-white p-2 m-2"
-                                    @click="setLayerImage('')"
+                                    @click="removeLayer(layer.fileName)"
                                 >
                                     Remove layer from image
                                 </button>
                                 <button
                                     v-else
-                                    class="rounded text-white p-2 m-2 sidebarButtons bg-primary"
-                                    @click="setLayerImage(layer.fileName)" 
+                                    class="rounded text-white p-2 m-2 sidebarLayers"
+                                    @click="addLayer(layer.fileName)"
                                 >
                                     Add layer to image
                                 </button>
@@ -98,29 +106,38 @@ const setLayerImage = (layerName) => {
 </template>
 
 <style scoped>
-
-
-.sidebarLayers{
+.sidebarLayers {
     background: #13161c;
     color: white;
 }
 
-.metaDataLink{
+.metaDataLink {
     background: #13161c;
     border: 1px solid grey;
 }
 
-.sidebarButtons{
+.sidebarButtons {
     background: #13161c;
 }
 
-.sidebarButtons:hover{
+.sidebarButtons:hover {
     background: #0b5ed7 !important;
 }
 
-.button1{
-    background-color: rgb(255, 255, 255);
+.metaDataLink {
+    background: #13161c;
+    border: 1px solid grey;
 }
 
+.sidebarButtons {
+    background: #13161c;
+}
 
+.sidebarButtons:hover {
+    background: #0b5ed7 !important;
+}
+
+.button1 {
+    background-color: rgb(255, 255, 255);
+}
 </style>

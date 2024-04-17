@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import SideBar from '../components/SideBar.vue'
+import config from '../config/config.json'
 
 const router = useRouter()
 const formData = reactive({
@@ -23,6 +24,10 @@ const errorHandler = reactive({
     message: ''
 })
 
+const resetError = () => {
+    errorHandler.hasError = false
+    errorHandler.message = ''
+}
 
 // This is called whenever a new image is selected
 const imageSelected = async () => {
@@ -36,11 +41,11 @@ const imageSelected = async () => {
         formData.name = file.name
         // Update the preview to the selected image
 
-        document.getElementById("SelectMoon").style.color="green";
-        (document.getElementsByClassName("HiddenBox")[0]).style.display="flex";
-        (document.getElementsByClassName("HiddenBox")[1]).style.display="flex";
-        (document.getElementsByClassName("HiddenBox")[2]).style.display="flex";
-        console.log(document.getElementsByClassName("HiddenBox")[0].style.display)
+        document.getElementById('SelectMoon').style.color = 'green'
+        document.getElementsByClassName('HiddenBox')[0].style.display = 'flex'
+        document.getElementsByClassName('HiddenBox')[1].style.display = 'flex'
+        document.getElementsByClassName('HiddenBox')[2].style.display = 'flex'
+        console.log(document.getElementsByClassName('HiddenBox')[0].style.display)
 
         formData.previewImage.src = URL.createObjectURL(
             // document.getElementById('moonImage').files[0]
@@ -87,13 +92,15 @@ const imageSelected = async () => {
 }
 
 const inputIsValid = () => {
-    if (data.layerFileName === '' || data.registrationAlgortihm === '') {
+    if (data.layerFilenames.length === 0 || data.registrationAlgortihm === '') {
         errorHandler.hasError = true
-        if (data.layerFileName === '')
-            errorHandler.message = 'Please select a layer to place on your image'
+        if (data.layerFilenames.length === 0)
+            errorHandler.message = 'Please select at least one layer to place on your image'
         else if (data.registrationAlgortihm === '')
             errorHandler.message = 'Please select a registration algorithm'
-        else errorHandler.message = 'Please select layer and registration algorithm first'
+        else
+            errorHandler.message =
+                'Please select at least one layer and registration algorithm first'
         return false
     }
     return true
@@ -102,6 +109,7 @@ const inputIsValid = () => {
 // This is called whenever an image is submitted
 const imageSubmitted = async () => {
     //check first that overlay and registration algorithm has been chosen
+
     if (!inputIsValid()) return
     let local
     data.newUpload = true
@@ -145,86 +153,36 @@ const imageSubmitted = async () => {
     <main>
         <div class="main-container">
             <div class="container">
-
-                
-
-                <div class="columns is-centered">
-                    <div class="column has-text-centered ">
-                        <h1 id="SelectMoon">Select Your Moon Image: </h1>
-                                <form @submit.prevent="imageSubmitted" class="file-upload-form">
-                                    <label class="file-label">
-                                        <input
-                                            class="file-input"
-                                            type="file"
-                                            id="moonImage"
-                                            @change="imageSelected"
-                                        />
-                                        <span class="file-cta">
-                                            <span class="file-icon">
-                                                <i class="fas fa-upload"></i>
-                                            </span>
-                                            <span class="file-label">
-                                                {{ formData.name || 'Choose a file' }}
-                                            </span>
-                                        </span>
-                                    </label>
-                                    
-                                </form>
-                        
-
-                        
+                <div class="overlayMenu">
+                    <div class="overlaymenuLeft">
+                        <SideBar />
+                    </div>
+                    <div class="overlayMenuRight">
+                        <form>
+                            <label>Choose registration algorithm:</label>
+                            <select
+                                v-model="data.registrationAlgortihm"
+                                :selected="data.registrationAlgortihm"
+                            >
+                                <option value="SURF">SURF</option>
+                                <option value="SIFT">SIFT</option>
+                                <option value="AKAZE">AKAZE</option>
+                                <option value="BRISK">BRISK</option>
+                                <option value="ORB">ORB</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
-                <hr> 
-                
-                <div class="columns is-centered Col2 HiddenBox">
-                    <div class="column has-text-centered">
-                        <h1>Choose an Overlay and Registration Algorithm:</h1>
-                        
-                                    <div class="overlayMenu">
-                                <div class="overlaymenuLeft">
-                                    <SideBar />
-                                </div>
-                                <div class="overlayMenuRight">
-                                    <form>
-                                <label>Choose registration algorithm:</label>
-                                <select
-                                    v-model="data.registrationAlgortihm"
-                                    :selected="data.registrationAlgortihm"
-                                >
-                                    <option value="SURF">SURF</option>
-                                    <option value="SIFT">SIFT</option>
-                                    <option value="AKAZE">AKAZE</option>
-                                    <option value="BRISK">BRISK</option>
-                                    <option value="ORB">ORB</option>
-                                </select>
-                            </form>
-                                </div>
-                            </div>
-                </div>
-                    </div>
                 <!-- <SideBar /> -->
-
 
                 <div class="columns is-centered HiddenBox">
                     <div class="column has-text-centered">
                         <h1>Upload Your Moon Image</h1>
-                        
                     </div>
                 </div>
-                <!-- <form>
-                    <label>Choose registration algorithm:</label>
-                    <select
-                        v-model="data.registrationAlgortihm"
-                        :selected="data.registrationAlgortihm"
-                    >
-                        <option value="SURF">SURF</option>
-                        <option value="SIFT">SIFT</option>
-                        <option value="AKAZE">AKAZE</option>
-                        <option value="BRISK">BRISK</option>
-                        <option value="ORB">ORB</option>
-                    </select>
-                </form> -->
+            </div>
+            <div v-if="errorHandler.hasError">
+                <h3>{{ errorHandler.message }}</h3>
             </div>
             <div class="container-two" v-if="formData.previewImage.src">
                 <div class="content-with-sidebar">
@@ -260,15 +218,11 @@ const imageSubmitted = async () => {
                         </div>
                     </div>
                 </div>
-                
             </div>
-            
-            <form @submit.prevent="imageSubmitted" class="UploadBox">
-                            
-                            <input class="button HiddenBox" type="submit" value="Upload" />
-            </form>
-            
 
+            <form @submit.prevent="imageSubmitted" class="UploadBox">
+                <input class="button HiddenBox" type="submit" value="Upload" />
+            </form>
         </div>
     </main>
 </template>
@@ -279,13 +233,13 @@ const imageSubmitted = async () => {
     justify-content: center;
 }
 
-.HiddenBox{
+.HiddenBox {
     display: none;
     height: auto;
     width: 100%;
 }
 
-.Col2{
+.Col2 {
     margin-top: 30px;
 }
 
@@ -335,27 +289,27 @@ const imageSubmitted = async () => {
     margin-top: 40px;
     background-color: #13161c;
 }
-.file-upload-form{
+.file-upload-form {
     margin-top: 20px;
 }
-.UploadBox{
+.UploadBox {
     margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
-
 }
 
 .overlayMenu {
     display: flex;
-    width: 32rem; 
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 20px auto;
     margin-bottom: 60px;
 }
 
-.overlayMenuLeft, .overlayMenuRight {
+.overlayMenuLeft,
+.overlayMenuRight {
     margin: 0 10px;
 }
 
@@ -399,17 +353,12 @@ input:hover {
     border-color: #b48ead;
 }
 
-
-.button{
-    color: white;
-    width: 100px;
-}
 .button:hover {
-    background: rgb(255, 0, 0,0.5);
+    background: rgb(255, 0, 0, 0.5);
     border-color: transparent;
     cursor: pointer;
     color: white;
-    transition: .3s all ease-in;
+    transition: 0.3s all ease-in;
 }
 
 .selectText {
