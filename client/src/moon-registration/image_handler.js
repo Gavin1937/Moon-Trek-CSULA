@@ -1,10 +1,15 @@
 export { ImageHandler };
 
 import { instance } from './wasm_loader.js';
+import { get_cpp_exception } from './internal.js';
 
 
 /**
  * A simple class that handles image loading & reading between JS & C++
+ * 
+ * About color format:
+ *   - All the images load into this handler class will have color format BGRA for OpenCV under the hood
+ *   - When we export image into JavaScript via get_... or to_... function, image will have color format RGBA for ease of use
  */
 class ImageHandler {
   constructor() {
@@ -39,7 +44,7 @@ class ImageHandler {
           
           resolve(true);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
@@ -84,7 +89,7 @@ class ImageHandler {
             
             self.image_ptr = await instance._mrwasm_create_image_ptr(self.buffer_ptr, self.img_data_length, self.img_width, self.img_height);
           } catch (error) {
-            reject(error);
+            reject(await get_cpp_exception(error));
           }
           
           resolve(true);
@@ -161,7 +166,7 @@ class ImageHandler {
           
           resolve(true);
         } catch(error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
@@ -177,13 +182,16 @@ class ImageHandler {
     return new Promise((resolve, reject) => {
       instance.ready.then(async function() {
         try {
-          resolve(new Uint8Array(
+          let ptr = await instance._mrwasm_get_rgba_image_ptr(self.image_ptr);
+          let ret = new Uint8Array(
             instance.HEAP8.buffer,
-            self.buffer_ptr,
+            ptr,
             self.img_data_length
-          ));
+          );
+          await instance._mrwasm_destroy_image(ptr, 0);
+          resolve(ret);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
@@ -199,13 +207,16 @@ class ImageHandler {
     return new Promise((resolve, reject) => {
       instance.ready.then(async function() {
         try {
-          resolve(new Uint8ClampedArray(
+          let ptr = await instance._mrwasm_get_rgba_image_ptr(self.image_ptr);
+          let ret = new Uint8ClampedArray(
             instance.HEAP8.buffer,
-            self.buffer_ptr,
+            ptr,
             self.img_data_length
-          ));
+          );
+          await instance._mrwasm_destroy_image(ptr, 0);
+          resolve(ret);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
@@ -228,7 +239,34 @@ class ImageHandler {
             self.img_height
           ));
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
+        }
+      });
+    });
+  }
+  
+  /**
+   * Convert ImageHandler to Blob object
+   * 
+   * @returns {Promise<Blob>} Blob object
+   */
+  async to_Blob() {
+    let self = this;
+    return new Promise((resolve, reject) => {
+      instance.ready.then(async function() {
+        try {
+          let canvas = document.createElement('Canvas');
+          canvas.width = self.img_width;
+          canvas.height = self.img_height;
+          let ctx = canvas.getContext('2d', {
+            'colorSpace': 'srgb'
+          });
+          ctx.putImageData(await self.to_ImageData(), 0, 0);
+          canvas.toBlob((blob_data) => {
+            resolve(blob_data);
+          })
+        } catch (error) {
+          reject(await get_cpp_exception(error));
         }
       });
     });

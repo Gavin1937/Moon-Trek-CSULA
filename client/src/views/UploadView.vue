@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import SideBar from '../components/SideBar.vue'
-import config from '../config/config.json'
+//import config from '../config/config.json'
 
 const router = useRouter()
 const formData = reactive({
