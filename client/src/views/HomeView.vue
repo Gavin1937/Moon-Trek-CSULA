@@ -90,13 +90,30 @@ import BasicMoon from '../components/BasicMoon.vue'
         -->
         </div>
 
-        <div class="AdditionContent">
-            More info...
-
-        </div>
+      
 
 
         </div>
+
+        <footer class="AdditionContent">
+            <div class="footerContainer">
+                <div class="footerLeft">
+
+                </div>
+
+                <div class="footerCenter">
+                    <p class="footerText"> California State University, Los Angeles <br> MoonTrek AR <br> Group 19 <br></p>
+
+                </div>
+
+                <div class="footerRight">
+
+                </div>
+
+
+            </div>
+
+        </footer>
     </main>
 </template>
 
@@ -203,11 +220,58 @@ main {
 }
 
 .AdditionContent{
-    margin-top: 600px;
+    margin-top: 0px;
     widows: 100%;
     height: auto;
     text-align: center;
     
+}
+
+.footerContainer{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    background-color: ;
+    border-top: 1px solid rgb(128,128,128,0.3);
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.footerLeft{
+    float: left;
+    background-color: ;
+    background-image: url('/logoCSULA.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    width: 10%;
+}
+
+.footerCenter{
+    float: center;
+    height: auto;
+    padding-top: 30px;
+    text-align: left;
+    width: 20%;
+    margin-left: 0%;
+}
+.footerText{
+    font-size: 1.1rem;
+    line-height: 22px;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.footerRight{
+    float: right;
+    background-color: ;
+    background-image: url('/logoJPL.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    width: 10%;
+    margin-left: 0%;
 }
 
 /* FONTS AND TITLES */

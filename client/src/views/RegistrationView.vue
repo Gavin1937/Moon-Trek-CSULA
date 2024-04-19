@@ -178,9 +178,7 @@ main {
     padding: 1rem;
     background: #13161c;
 }
-.ChooseAnother{
-    color: rgb(0, 0, 0);
-}
+
 .textColor {
     color: rgb(0, 0, 0);
     height: 50px;
@@ -196,9 +194,7 @@ main {
     transition: 0.2s all ease-in;
     
 }
-.ModelButton{
-    
-}
+
 .UploadButton,.ZoomButton{
     margin-left: 20px;
 }
