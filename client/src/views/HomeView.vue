@@ -128,18 +128,27 @@ main {
     height: 75px;
     margin-top: -15px;
     overflow: hidden;
-    transition: all 300ms ease;
-    background-color: rgb(216,57,51,0.3);
+
+
+    background: red; /* default color */
+    /* background-color: rgb(216,57,51,0.3); */
+    background: linear-gradient(to left, rgb(216,57,51,0.3) 50%, rgba(91, 4, 1, 0.3)) right;
+    background-size: 400%;
+    transition: .5s ease-out;
+    
 }
 
-.getStarted:after {
-  width: 300%;
-  height: 300%;
-  left: -300%;
-  transform: rotate(45deg);
-  background-color: #f21170;
-  transition: all 300ms ease;
+.getStarted:hover{
+    background-position: left;
 }
+
+.getStartedText{
+    font-family: 'Gill Sans';
+    height: 40%;
+    font-size: 1.8rem;
+}
+
+/*
 .getStarted:hover .getStartedText {
   color: #fff;
   z-index: 10;
@@ -152,7 +161,16 @@ main {
 .getStarted:hover {
   border: 2px solid #f21170;
   cursor: pointer;
+  background-position: left bottom;
 }
+
+*/
+
+
+.getStartedDescription{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 
 .infoBox{
@@ -203,14 +221,7 @@ h1 {
     font-size: 4.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.getStartedDescription{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.getStartedText{
-    font-family: 'Gill Sans';
-    height: 40%;
-    font-size: 1.8rem;
-}
+
 
 h2 {
     font-size: 1.75rem;

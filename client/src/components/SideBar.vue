@@ -70,8 +70,8 @@ const setLayerImage = (layerName) => {
                                 </p>
 
                                 <a
-                                    class="m-2 p-2 bg-primary text-white text-decoration-none text-center rounded"
-                                    :href="layer.metadataURL"
+                                    class="m-2 p-2 text-white text-decoration-none text-center rounded metaDataLink"
+                                    :href="layer.metadataURL" target="_blank"
                                     >View metadata on another tab</a
                                 >
                                 <button
@@ -83,8 +83,8 @@ const setLayerImage = (layerName) => {
                                 </button>
                                 <button
                                     v-else
-                                    class="rounded text-white p-2 m-2 sidebarLayers"
-                                    @click="setLayerImage(layer.fileName)"
+                                    class="rounded text-white p-2 m-2 sidebarButtons bg-primary"
+                                    @click="setLayerImage(layer.fileName)" 
                                 >
                                     Add layer to image
                                 </button>
@@ -103,6 +103,19 @@ const setLayerImage = (layerName) => {
 .sidebarLayers{
     background: #13161c;
     color: white;
+}
+
+.metaDataLink{
+    background: #13161c;
+    border: 1px solid grey;
+}
+
+.sidebarButtons{
+    background: #13161c;
+}
+
+.sidebarButtons:hover{
+    background: #0b5ed7 !important;
 }
 
 .button1{
