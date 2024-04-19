@@ -73,7 +73,7 @@ const moonLayer = new THREE.Mesh(
     new THREE.SphereGeometry(1.737, 30, 30),
     new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(
-            `http://localhost:8888/static/assets/textures/${data.layerFileName}.png`
+            `http://localhost:8888/static/assets/textures/${data.layerFilenames[0]}.png`
         )
     })
 )
@@ -345,6 +345,8 @@ onMounted(async () => {
         scene.add(moonLayer)
         moonLayer.add(ambientLight)
 
+        console.log('moon layer map', moonLayer.material.map)
+
         // Adjust zoom a little more
         camera.zoom = 86.75
         camera.updateProjectionMatrix()
@@ -353,9 +355,34 @@ onMounted(async () => {
         renderer.render(scene, camera)
         // Take a snapshot (layer) and save
         let layerImg = renderer.domElement.toDataURL()
-        data.images.layerImgFile.push(await toFile(layerImg, 'layerImg', 'image/png'))
+        //data.images.layerImgFile.push(await toFile(layerImg, 'layerImg', 'image/png'))
+        data.layerAttributes[0].layerImgFile = await toFile(
+            layerImg,
+            data.layerAttributes[0].fileName,
+            'image/png'
+        )
 
-        //emit/signal to registration view that model img and layer img has been set
+        //if more than one layer selected, place on model, take snapshot, and set file image in global data
+        for (let i = 1; i < data.layerAttributes.length; i++) {
+            console.log(data.layerAttributes[i])
+            //apply new layer
+            moonLayer.material.map = new THREE.TextureLoader().load(
+                `http://localhost:8888/static/assets/textures/${data.layerFilenames[i]}.png`
+            )
+            moonLayer.material.needsUpdate = true
+
+            //take snapshot of new layer
+            renderer.render(scene, camera)
+            layerImg = renderer.domElement.toDataURL()
+
+            data.layerAttributes[i].layerImgFile = await toFile(
+                layerImg,
+                data.layerAttributes[0].fileName,
+                'image/png'
+            )
+        }
+
+        //emit/signal to registration view that model img and layer imgs has been set
         //so registration view can call registration function
         emit('modelAndLayerSet')
 

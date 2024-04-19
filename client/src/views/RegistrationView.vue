@@ -3,11 +3,10 @@ import ModelGenerator from '../components/ModelGenerator.vue'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import { useRouter } from 'vue-router'
-import { performRegistration } from '../util/registrationFunctions.js'
+import { drawNLayers } from '../util/registrationFunctions.js'
 import SideBar from '../components/SideBar.vue'
 const router = useRouter()
 const imgData = reactive({
-    user: null,
     output: null
 })
 
@@ -17,13 +16,13 @@ const errorHandler = reactive({
 })
 
 // Returns the URL to the given processed image type
-const getUrl = (type) => {
-    if (type === 'resized') {
-        return `http://localhost:8888/static/processed/${type}-${data.relativeImageName}`
-    } else {
-        return `http://localhost:8888/static/processed/${type}-${algorithm.value}-${data.relativeImageName}`
-    }
-}
+// const getUrl = (type) => {
+//     if (type === 'resized') {
+//         return `http://localhost:8888/static/processed/${type}-${data.relativeImageName}`
+//     } else {
+//         return `http://localhost:8888/static/processed/${type}-${algorithm.value}-${data.relativeImageName}`
+//     }
+// }
 
 const redirectToModel = () => {
     router.push('/model')
@@ -33,18 +32,22 @@ const redirectToUpload = () => {
     router.push('/upload')
 }
 
-const displayOnImgsCanvas = () => {
-    const userImgCanvas = document.getElementById('user-img')
-    userImgCanvas.width = imgData.user.width
-    userImgCanvas.height = imgData.user.height
-    const userImgCtx = userImgCanvas.getContext('2d', {
-        colorSpace: 'srgb'
-    })
-    userImgCtx.putImageData(imgData.user.data, 0, 0)
+const redirectToInfiniteZoom = () => {
+    router.push('/zoom')
+}
+
+const displayImgOnCanvas = () => {
+    // const userImgCanvas = document.getElementById('user-img')
+    // userImgCanvas.width = imgData.user.width
+    // userImgCanvas.height = imgData.user.height
+    // const userImgCtx = userImgCanvas.getContext('2d', {
+    //     colorSpace: 'srgb'
+    // })
+    // userImgCtx.putImageData(imgData.user.data, 0, 0)
 
     const outputImgCanvas = document.getElementById('output-img')
-    outputImgCanvas.width = imgData.output.width
-    outputImgCanvas.height = imgData.output.height
+    outputImgCanvas.width = imgData.output.img_width
+    outputImgCanvas.height = imgData.output.img_height
     const outputImgCtx = outputImgCanvas.getContext('2d', {
         colorSpace: 'srgb'
     })
@@ -52,28 +55,48 @@ const displayOnImgsCanvas = () => {
     errorHandler.hasError = false
 }
 
+// const registrate = async () => {
+//     try {
+//         const response = await performRegistration(
+//             data.registrationAlgortihm,
+//             data.images.userImgFile,
+//             data.images.modelImgFile,
+//             data.images.layerImgFile,
+//             data.transparency,
+//             data.filterPx
+//         )
+
+//         console.log(response)
+//         // [inputImgData, outputImgData]
+//         // console.log('input data', inputImgData)
+//         // console.log('output data', outputImgData)
+
+//         imgData.user = response.userImg
+//         console.log(response.userImg)
+//         imgData.output = response.outputImg
+//         console.log(response.outputImg)
+//         errorHandler.hasError = false
+//         displayOnImgsCanvas()
+//     } catch (error) {
+//         console.log(error)
+//         errorHandler.hasError = true
+//         errorHandler.message =
+//             "Can't perform registration on your image. Try other algorithms or upload another image"
+//     }
+// }
+
 const registrate = async () => {
     try {
-        const response = await performRegistration(
+        const outputImgData = await drawNLayers(
+            data.layerAttributes.length,
             data.registrationAlgortihm,
+            data.layerAttributes,
             data.images.userImgFile,
-            data.images.modelImgFile,
-            data.images.layerImgFile,
-            data.transparency,
-            data.filterPx
+            data.images.modelImgFile
         )
 
-        console.log(response)
-        // [inputImgData, outputImgData]
-        // console.log('input data', inputImgData)
-        // console.log('output data', outputImgData)
-
-        imgData.user = response.userImg
-        console.log(response.userImg)
-        imgData.output = response.outputImg
-        console.log(response.outputImg)
-        errorHandler.hasError = false
-        displayOnImgsCanvas()
+        imgData.output = outputImgData
+        displayImgOnCanvas()
     } catch (error) {
         console.log(error)
         errorHandler.hasError = true
@@ -149,7 +172,11 @@ const registrate = async () => {
             <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <form>
                 <label>Choose another registration algorithm:</label>
-                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="textColor">
+                <select
+                    v-model="data.registrationAlgortihm"
+                    :selected="data.registrationAlgortihm"
+                    class="textColor"
+                >
                     <option value="SURF">SURF</option>
                     <option value="SIFT">SIFT</option>
                     <option value="AKAZE">AKAZE</option>
@@ -167,7 +194,9 @@ const registrate = async () => {
             </div>
             <button @click="redirectToModel" class="textColor">View model</button>
             <button @click="redirectToUpload" class="textColor">Upload another image</button>
-            <button class="textColor">Try infinite zoom on your image</button>
+            <button @click="redirectToInfiniteZoom" class="textColor">
+                Try infinite zoom on your image
+            </button>
         </div>
     </main>
 </template>
