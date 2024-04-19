@@ -23,6 +23,7 @@ const errorHandler = reactive({
     message: ''
 })
 
+
 // This is called whenever a new image is selected
 const imageSelected = async () => {
     try {
@@ -34,6 +35,12 @@ const imageSelected = async () => {
         // Update the input text to the selected image's name
         formData.name = file.name
         // Update the preview to the selected image
+
+        document.getElementById("SelectMoon").style.color="green";
+        (document.getElementsByClassName("HiddenBox")[0]).style.display="flex";
+        (document.getElementsByClassName("HiddenBox")[1]).style.display="flex";
+        (document.getElementsByClassName("HiddenBox")[2]).style.display="flex";
+        console.log(document.getElementsByClassName("HiddenBox")[0].style.display)
 
         formData.previewImage.src = URL.createObjectURL(
             // document.getElementById('moonImage').files[0]
@@ -139,50 +146,70 @@ const imageSubmitted = async () => {
         <div class="main-container">
             <div class="container">
 
-                <div class="overlayMenu">
-                    <div class="overlaymenuLeft">
-                        <SideBar />
-                    </div>
-                    <div class="overlayMenuRight">
-                        <form>
-                    <label>Choose registration algorithm:</label>
-                    <select
-                        v-model="data.registrationAlgortihm"
-                        :selected="data.registrationAlgortihm"
-                    >
-                        <option value="SURF">SURF</option>
-                        <option value="SIFT">SIFT</option>
-                        <option value="AKAZE">AKAZE</option>
-                        <option value="BRISK">BRISK</option>
-                        <option value="ORB">ORB</option>
-                    </select>
-                </form>
+                
+
+                <div class="columns is-centered">
+                    <div class="column has-text-centered ">
+                        <h1 id="SelectMoon">Select Your Moon Image: </h1>
+                                <form @submit.prevent="imageSubmitted" class="file-upload-form">
+                                    <label class="file-label">
+                                        <input
+                                            class="file-input"
+                                            type="file"
+                                            id="moonImage"
+                                            @change="imageSelected"
+                                        />
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label">
+                                                {{ formData.name || 'Choose a file' }}
+                                            </span>
+                                        </span>
+                                    </label>
+                                    
+                                </form>
+                        
+
+                        
                     </div>
                 </div>
+                <hr> 
+                
+                <div class="columns is-centered Col2 HiddenBox">
+                    <div class="column has-text-centered">
+                        <h1>Choose an Overlay and Registration Algorithm:</h1>
+                        
+                                    <div class="overlayMenu">
+                                <div class="overlaymenuLeft">
+                                    <SideBar />
+                                </div>
+                                <div class="overlayMenuRight">
+                                    <form>
+                                <label>Choose registration algorithm:</label>
+                                <select
+                                    v-model="data.registrationAlgortihm"
+                                    :selected="data.registrationAlgortihm"
+                                >
+                                    <option value="SURF">SURF</option>
+                                    <option value="SIFT">SIFT</option>
+                                    <option value="AKAZE">AKAZE</option>
+                                    <option value="BRISK">BRISK</option>
+                                    <option value="ORB">ORB</option>
+                                </select>
+                            </form>
+                                </div>
+                            </div>
+                </div>
+                    </div>
                 <!-- <SideBar /> -->
-                <div class="columns is-centered">
+
+
+                <div class="columns is-centered HiddenBox">
                     <div class="column has-text-centered">
                         <h1>Upload Your Moon Image</h1>
-
-                        <form @submit.prevent="imageSubmitted" class="file-upload-form">
-                            <label class="file-label">
-                                <input
-                                    class="file-input"
-                                    type="file"
-                                    id="moonImage"
-                                    @change="imageSelected"
-                                />
-                                <span class="file-cta">
-                                    <span class="file-icon">
-                                        <i class="fas fa-upload"></i>
-                                    </span>
-                                    <span class="file-label">
-                                        {{ formData.name || 'Choose a file' }}
-                                    </span>
-                                </span>
-                            </label>
-                            <input class="button" type="submit" value="Upload" />
-                        </form>
+                        
                     </div>
                 </div>
                 <!-- <form>
@@ -233,7 +260,15 @@ const imageSubmitted = async () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
+            
+            <form @submit.prevent="imageSubmitted" class="UploadBox">
+                            
+                            <input class="button HiddenBox" type="submit" value="Upload" />
+            </form>
+            
+
         </div>
     </main>
 </template>
@@ -244,24 +279,35 @@ const imageSubmitted = async () => {
     justify-content: center;
 }
 
+.HiddenBox{
+    display: none;
+    height: auto;
+    width: 100%;
+}
+
+.Col2{
+    margin-top: 30px;
+}
+
 .main-container {
     font-family: monospace;
     padding: 30px;
     margin-top: 20px;
     background: #13161c;
     width: 100%;
+    height: 100vh;
 }
 
 .container {
-    padding: 3%;
     color: white;
     border-radius: 25px;
+    width: 65rem;
 }
 
 .container-two {
     display: flex;
     justify-content: center;
-    margin: 3% auto;
+    margin: 20px auto;
     max-width: 1000px;
 }
 
@@ -286,17 +332,27 @@ const imageSubmitted = async () => {
 }
 
 .file-upload {
-    margin-top: 20px;
+    margin-top: 40px;
     background-color: #13161c;
+}
+.file-upload-form{
+    margin-top: 20px;
+}
+.UploadBox{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 
 .overlayMenu {
     display: flex;
-    width: 100%; 
+    width: 32rem; 
     justify-content: space-between;
     align-items: center;
-    margin: 10px auto;
-    margin-bottom: 40px;
+    margin: 20px auto;
+    margin-bottom: 60px;
 }
 
 .overlayMenuLeft, .overlayMenuRight {
@@ -313,10 +369,11 @@ const imageSubmitted = async () => {
 
 .file-label {
     width: fit-content;
+    display: inline-flex;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 img {
@@ -343,13 +400,22 @@ input:hover {
 }
 
 
-
+.button{
+    color: white;
+    width: 100px;
+}
 .button:hover {
-    background: #b48ead;
-    border-color: #b48ead;
+    background: rgb(255, 0, 0,0.5);
+    border-color: transparent;
+    cursor: pointer;
+    color: white;
+    transition: .3s all ease-in;
 }
 
 .selectText {
     color: rgb(255, 255, 255);
+}
+* {
+    font-family: Nunito;
 }
 </style>

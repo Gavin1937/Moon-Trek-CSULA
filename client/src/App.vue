@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.js'
 </template>
 
 <style >
- body, .button1, h6  {
+ body, h6  {
     font-family: Nunito;
     color: #d8dee9;
     background: #13161c;

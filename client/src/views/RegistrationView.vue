@@ -149,7 +149,7 @@ const registrate = async () => {
             <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <form>
                 <label>Choose another registration algorithm:</label>
-                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="textColor">
+                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="ChooseAnother">
                     <option value="SURF">SURF</option>
                     <option value="SIFT">SIFT</option>
                     <option value="AKAZE">AKAZE</option>
@@ -165,9 +165,9 @@ const registrate = async () => {
                 <canvas id="user-img"></canvas>
                 <canvas id="output-img"></canvas>
             </div>
-            <button @click="redirectToModel" class="textColor">View model</button>
-            <button @click="redirectToUpload" class="textColor">Upload another image</button>
-            <button class="textColor">Try infinite zoom on your image</button>
+            <button @click="redirectToModel" class="textColor ModelButton">View model</button>
+            <button @click="redirectToUpload" class="textColor UploadButton">Upload another image</button>
+            <button class="textColor ZoomButton">Try infinite zoom on your image</button>
         </div>
     </main>
 </template>
@@ -178,8 +178,28 @@ main {
     padding: 1rem;
     background: #13161c;
 }
-
+.ChooseAnother{
+    color: rgb(0, 0, 0);
+}
 .textColor {
     color: rgb(0, 0, 0);
+    height: 50px;
+    border: 1px solid black;
+    background-color: #c7c7c7;
+    
+}
+
+.textColor:hover {
+    color: red;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: 0.2s all ease-in;
+    
+}
+.ModelButton{
+    
+}
+.UploadButton,.ZoomButton{
+    margin-left: 20px;
 }
 </style>

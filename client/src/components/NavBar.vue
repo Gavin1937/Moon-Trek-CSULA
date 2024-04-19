@@ -158,13 +158,13 @@ function closeNav() {
 
 .nav-link:hover {
     cursor: pointer;
-    color: grey;
+    color: #8e8e8e;
 }
 
 .color-nav {
     color: white;
     border-bottom: 2px solid red;
-    transition:  1s ease;
+    transition:  0.5s ease;
 }
 
 .filler{
