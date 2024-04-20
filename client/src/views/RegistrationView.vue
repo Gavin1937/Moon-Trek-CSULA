@@ -46,12 +46,12 @@ const displayImgOnCanvas = () => {
     // userImgCtx.putImageData(imgData.user.data, 0, 0)
 
     const outputImgCanvas = document.getElementById('output-img')
-    outputImgCanvas.width = imgData.output.img_width
-    outputImgCanvas.height = imgData.output.img_height
+    outputImgCanvas.width = imgData.output.width
+    outputImgCanvas.height = imgData.output.height
     const outputImgCtx = outputImgCanvas.getContext('2d', {
         colorSpace: 'srgb'
     })
-    outputImgCtx.putImageData(imgData.output.data, 0, 0)
+    outputImgCtx.putImageData(imgData.output, 0, 0)
     errorHandler.hasError = false
 }
 
@@ -96,6 +96,8 @@ const registrate = async () => {
         )
 
         imgData.output = outputImgData
+        console.log('outputImgData', outputImgData)
+        console.log('imgData.output', imgData.output)
         displayImgOnCanvas()
     } catch (error) {
         console.log(error)
