@@ -180,6 +180,22 @@ main {
 }
 .ChooseAnother{
     color: rgb(0, 0, 0);
+    height: 50px;
+    border: 1px solid black;
+    background-color: #c7c7c7;
+    
+}
+
+.textColor:hover {
+    color: red;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: 0.2s all ease-in;
+    
+}
+
+.UploadButton,.ZoomButton{
+    margin-left: 20px;
 }
 .textColor {
     color: rgb(0, 0, 0);
