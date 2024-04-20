@@ -267,6 +267,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
             )
             inputImgHandler = outputImgHandler
             console.log('inputImgHandler after layer at i', i, inputImgHandler)
+            console.log('outputImgHandler inside for loop', outputImgHandler)
         }
 
         //outputImgHandler = inputImgHandler
@@ -277,6 +278,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         await modelImgHandler.destroy_image()
         await layerImgHandler.destroy_image()
         await outputImgHandler.destroy_image()
+        console.log(outputImgData)
         return outputImgData
     } catch (error) {
         console.log('error', error)
