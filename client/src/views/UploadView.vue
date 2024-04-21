@@ -221,6 +221,7 @@ const imageSubmitted = async () => {
                             <input
                                 class="input"
                                 type="number"
+                                step="0.01"
                                 placeholder="latitude"
                                 v-model="formData.latitude"
                             />
@@ -230,6 +231,7 @@ const imageSubmitted = async () => {
                             <input
                                 class="input"
                                 type="number"
+                                step="0.01"
                                 placeholder="longitude"
                                 v-model="formData.longitude"
                             />
