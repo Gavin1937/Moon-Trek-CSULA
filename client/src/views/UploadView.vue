@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import SideBar from '../components/SideBar.vue'
-//import config from '../config/config.json'
 
 const router = useRouter()
 const formData = reactive({
@@ -28,37 +27,6 @@ const resetError = () => {
     errorHandler.hasError = false
     errorHandler.message = ''
 }
-
-// const fetchLayersFile = async () => {
-//     //we only place one layer on Moon model to include points of interest in the layer image, the rest we
-//     //use the layer images directly for registration. If more than one layer selected, first layer
-//     //is the one we place on Moon model to get points of interest, the rest we fetch the images from
-//     //backend
-//     if (data.layerFilenames.length > 1) {
-//         try {
-//             let response
-//             let layerBlob
-//             let layerFile
-//             for (let i = 1; i < data.layerFilenames.length; i++) {
-//                 console.log('layer file name at i', i, data.layerFilenames[i])
-//                 response = await axios.get(
-//                     `${config.backend_server}/static/assets/textures/${data.layerFilenames[i]}.png`,
-//                     {
-//                         responseType: 'arraybuffer'
-//                     }
-//                 )
-//                 layerBlob = new Blob([response.data], { type: 'image/png' })
-//                 layerFile = new File([layerBlob], `${data.layerFilenames[i]}`, {
-//                     type: 'image/png'
-//                 })
-//                 console.log('layerfile i', data.layerFilenames[i], layerFile)
-//                 data.images.layerImgFile.push(layerFile)
-//             }
-//         } catch (error) {
-//             console.log('error fetching layer files from backend', error)
-//         }
-//     }
-// }
 
 // This is called whenever a new image is selected
 const imageSelected = async () => {
@@ -224,19 +192,6 @@ const imageSubmitted = async () => {
                         </form>
                     </div>
                 </div>
-                <!-- <form>
-                    <label>Choose registration algorithm:</label>
-                    <select
-                        v-model="data.registrationAlgortihm"
-                        :selected="data.registrationAlgortihm"
-                    >
-                        <option value="SURF">SURF</option>
-                        <option value="SIFT">SIFT</option>
-                        <option value="AKAZE">AKAZE</option>
-                        <option value="BRISK">BRISK</option>
-                        <option value="ORB">ORB</option>
-                    </select>
-                </form> -->
             </div>
             <div v-if="errorHandler.hasError">
                 <h3>{{ errorHandler.message }}</h3>
