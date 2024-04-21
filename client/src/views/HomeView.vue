@@ -127,7 +127,7 @@ main {
     background-color: black;
 }
 .background{
-    background-image: url('../public/longbackground.png');
+    background-image: url('/longBackground.png');
     background-repeat: no-repeat;
     background-position: center 170px;
     height: 1600px;
