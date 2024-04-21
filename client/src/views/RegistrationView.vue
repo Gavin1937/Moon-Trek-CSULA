@@ -15,6 +15,15 @@ const errorHandler = reactive({
     message: ''
 })
 
+// Returns the URL to the given processed image type
+// const getUrl = (type) => {
+//     if (type === 'resized') {
+//         return `http://localhost:8888/static/processed/${type}-${data.relativeImageName}`
+//     } else {
+//         return `http://localhost:8888/static/processed/${type}-${algorithm.value}-${data.relativeImageName}`
+//     }
+// }
+
 const redirectToModel = () => {
     router.push('/model')
 }
@@ -27,7 +36,15 @@ const redirectToInfiniteZoom = () => {
     router.push('/zoom')
 }
 
-const displayImgOnCanvas = async () => {
+const displayImgOnCanvas = () => {
+    // const userImgCanvas = document.getElementById('user-img')
+    // userImgCanvas.width = imgData.user.width
+    // userImgCanvas.height = imgData.user.height
+    // const userImgCtx = userImgCanvas.getContext('2d', {
+    //     colorSpace: 'srgb'
+    // })
+    // userImgCtx.putImageData(imgData.user.data, 0, 0)
+
     const outputImgCanvas = document.getElementById('output-img')
     outputImgCanvas.width = imgData.output.width
     outputImgCanvas.height = imgData.output.height
@@ -37,6 +54,36 @@ const displayImgOnCanvas = async () => {
     outputImgCtx.putImageData(imgData.output, 0, 0)
     errorHandler.hasError = false
 }
+
+// const registrate = async () => {
+//     try {
+//         const response = await performRegistration(
+//             data.registrationAlgortihm,
+//             data.images.userImgFile,
+//             data.images.modelImgFile,
+//             data.images.layerImgFile,
+//             data.transparency,
+//             data.filterPx
+//         )
+
+//         console.log(response)
+//         // [inputImgData, outputImgData]
+//         // console.log('input data', inputImgData)
+//         // console.log('output data', outputImgData)
+
+//         imgData.user = response.userImg
+//         console.log(response.userImg)
+//         imgData.output = response.outputImg
+//         console.log(response.outputImg)
+//         errorHandler.hasError = false
+//         displayOnImgsCanvas()
+//     } catch (error) {
+//         console.log(error)
+//         errorHandler.hasError = true
+//         errorHandler.message =
+//             "Can't perform registration on your image. Try other algorithms or upload another image"
+//     }
+// }
 
 const registrate = async () => {
     try {
@@ -49,9 +96,9 @@ const registrate = async () => {
         )
 
         imgData.output = outputImgData
-        // console.log('outputImgData', outputImgData)
-        // console.log('imgData.output', imgData.output)
-        await displayImgOnCanvas()
+        console.log('outputImgData', outputImgData)
+        console.log('imgData.output', imgData.output)
+        displayImgOnCanvas()
     } catch (error) {
         console.log(error)
         errorHandler.hasError = true
@@ -64,8 +111,64 @@ const registrate = async () => {
 <template>
     <main>
         <SideBar />
-
+        <!-- data.newUpload is only set to true when the user uploads a new image -->
+        <!-- and is set to false when ModelGenerator in "registrate" mode finishes -->
         <ModelGenerator mode="registrate" @model-and-layer-set="registrate" />
+        <!-- <div v-else-if="data.relativeImageName !== ''">
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-5">
+                    <div class="select">
+                        <select v-model="algorithm">
+                            <option value="SURF">SURF</option>
+                            <option value="SIFT">SIFT</option>
+                            <option value="ORB">ORB</option>
+                            <option value="AKAZE">AKAZE</option>
+                            <option value="BRISK">BRISK</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-5">
+                    <img :src="data.images.user.src" />
+                </div>
+                <div class="column has-text-centered is-5">
+                    <img :src="getUrl('resized')" />
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-5">
+                    <img :src="data.images.model.src" />
+                </div>
+                <div class="column has-text-centered is-5">
+                    <img :src="data.images.layer.src" />
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-10">
+                    <img :src="getUrl('registration')" />
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-5">
+                    <img :src="getUrl('transformed')" />
+                </div>
+                <div class="column has-text-centered is-5">
+                    <img :src="getUrl('layered')" />
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column has-text-centered is-3">
+                    <img :src="getUrl('green')" />
+                </div>
+                <div class="column has-text-centered is-3">
+                    <img :src="getUrl('red')" />
+                </div>
+                <div class="column has-text-centered is-3">
+                    <img :src="getUrl('stacked')" />
+                </div>
+            </div>
+        </div> -->
 
         <div>
             <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
@@ -82,6 +185,10 @@ const registrate = async () => {
                     <option value="BRISK">BRISK</option>
                     <option value="ORB">ORB</option>
                 </select>
+                <!-- <label>Overlay transparency:</label>
+                <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
+                <label>Filter px</label>
+                <input type="number" v-model="data.filterPx" /> -->
             </form>
             <div>
                 <canvas id="user-img"></canvas>

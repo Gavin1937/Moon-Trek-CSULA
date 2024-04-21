@@ -41,10 +41,6 @@ class Circle {
       });
     });
   }
-  
-  toString() {
-    return `(x=${this.x}, y=${this.y}, radius=${this.radius})`;
-  }
 };
 
 /**
@@ -79,10 +75,6 @@ class Square {
         }
       });
     });
-  }
-  
-  toString() {
-    return `(x=${this.x}, y=${this.y}, width=${this.width})`;
   }
 };
 
@@ -120,10 +112,6 @@ class Rectangle {
         }
       });
     });
-  }
-  
-  toString() {
-    return `(top_left_x=${this.top_left_x}, top_left_y=${this.top_left_y}, bottom_right_x=${this.bottom_right_x}, bottom_right_y=${this.bottom_right_y})`;
   }
 };
 

@@ -345,6 +345,8 @@ onMounted(async () => {
         scene.add(moonLayer)
         moonLayer.add(ambientLight)
 
+        console.log('moon layer map', moonLayer.material.map)
+
         // Adjust zoom a little more
         camera.zoom = 86.75
         camera.updateProjectionMatrix()
@@ -362,31 +364,50 @@ onMounted(async () => {
 
         //if more than one layer selected, place on model, take snapshot, and set file image in global data
         for (let i = 1; i < data.layerAttributes.length; i++) {
-            const textureLoader = new THREE.TextureLoader()
-            textureLoader.load(
-                `http://localhost:8888/static/assets/textures/${data.layerFilenames[i]}.png`,
-                //function to run when texture has been loaded -wait for new texture
-                //to be loaded then update shaders, render new scene, and take snapshot
-                async function (texture) {
-                    moonLayer.material.map = texture
-                    moonLayer.material.map.needsUpdate = true
+            console.log(data.layerAttributes[i])
+            //apply new layer
+            moonLayer.material.map = new THREE.TextureLoader().load(
+                `http://localhost:8888/static/assets/textures/${data.layerFilenames[i]}.png`
+            )
+            moonLayer.material.needsUpdate = true
 
-                    renderer.render(scene, camera)
-                    let layerFile = renderer.domElement.toDataURL()
-                    //console.log('layerImg in Moon generator', layerImg)
+            //take snapshot of new layer
+            renderer.render(scene, camera)
+            layerImg = renderer.domElement.toDataURL()
 
-                    data.layerAttributes[i].layerImgFile = await toFile(
-                        layerFile,
-                        data.layerAttributes[i].fileName,
-                        'image/png'
-                    )
-                }
+            data.layerAttributes[i].layerImgFile = await toFile(
+                layerImg,
+                data.layerAttributes[0].fileName,
+                'image/png'
             )
         }
 
         //emit/signal to registration view that model img and layer imgs has been set
         //so registration view can call registration function
         emit('modelAndLayerSet')
+
+        // Append user, model, and layer images to Form Data object
+        // const formData = new FormData()
+        // formData.append('images', await toFile(data.images.user.src, 'userImage', 'image/png'))
+        // formData.append('images', await toFile(data.images.model.src, 'modelImage', 'image/png'))
+        // formData.append('images', await toFile(data.images.layer.src, 'layerImage', 'image/png'))
+
+        //call perform registration function that uses WASM library and retrieves homography matrix from
+        //python backend in case of memory error
+
+        // const outputImg = performRegistration(
+        //     props.algo,
+        //     data.images.user,
+        //     data.images.model,
+        //     data.images.layer
+        // )
+
+        // Send all to registration endpoint
+        // const response = await axios.post('http://localhost:8888/registration/performAll', formData)
+        // const { status, relativeImageName } = response.data
+
+        // console.log(status, relativeImageName)
+        // data.relativeImageName = relativeImageName
 
         // Hide loading animation gif
         processing.value = false
