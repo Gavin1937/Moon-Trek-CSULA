@@ -209,19 +209,6 @@ const imageSubmitted = async () => {
                         <h1>Upload Your Moon Image</h1>
                     </div>
                 </div>
-                <!-- <form>
-                    <label>Choose registration algorithm:</label>
-                    <select
-                        v-model="data.registrationAlgortihm"
-                        :selected="data.registrationAlgortihm"
-                    >
-                        <option value="SURF">SURF</option>
-                        <option value="SIFT">SIFT</option>
-                        <option value="AKAZE">AKAZE</option>
-                        <option value="BRISK">BRISK</option>
-                        <option value="ORB">ORB</option>
-                    </select>
-                </form> -->
             </div>
             <div class="container-two" v-if="formData.previewImage.src">
                 <div class="content-with-sidebar">

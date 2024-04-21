@@ -10,8 +10,8 @@ import {
 } from '../moon-registration/index.js'
 
 const convertToAlgo = (word) => {
+    word = word.toUpperCase()
     if (word === 'SIFT') return RegistrationAlgorithms.SIFT
-    //else if (word === 'SURF') return RegistrationAlgorithms.SURF
     else if (word === 'AKAZE') return RegistrationAlgorithms.AKAZE
     else if (word === 'BRISK') return RegistrationAlgorithms.BRISK
     else if (word === 'ORB') return RegistrationAlgorithms.ORB
@@ -82,6 +82,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
 
 const getHomographyMatrix = async (algoString, userImgFile, modelImgFile) => {
     //get homography matrix from WASM library unless registration algorithm is SURF or WASM fails
+    algoString = algoString.toUpperCase()
     const userImgHandler = new ImageHandler()
     const modelImgHandler = new ImageHandler()
     try {
