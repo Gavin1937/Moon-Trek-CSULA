@@ -12,6 +12,20 @@ import BasicMoon from '../components/BasicMoon.vue'
                 <h2 class="lunarTitle">- Elevate your lunar exploration -</h2>
             </div>
         </div>
+            <div class="infoBox">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-11">
+                        <h1>Moon Trek Telescope</h1>
+                        <h2 class="lunarTitle">- Elevate your lunar exploration -</h2>
+                    </div>
+                </div>
+            <div class="infoBox">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-11">
+                        <h1>Moon Trek Telescope</h1>
+                        <h2 class="lunarTitle">- Elevate your lunar exploration -</h2>
+                    </div>
+                </div>
 
        <div class="MoonBox">
 
@@ -225,53 +239,6 @@ main {
     height: auto;
     text-align: center;
     
-}
-
-.footerContainer{
-    width: 100%;
-    height: 150px;
-    display: flex;
-    background-color: ;
-    border-top: 1px solid rgb(128,128,128,0.3);
-    padding-top: 20px;
-    justify-content: center;
-}
-
-.footerLeft{
-    float: left;
-    background-color: ;
-    background-image: url('/logoCSULA.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: auto;
-    width: 10%;
-}
-
-.footerCenter{
-    float: center;
-    height: auto;
-    padding-top: 30px;
-    text-align: left;
-    width: 20%;
-    margin-left: 0%;
-}
-.footerText{
-    font-size: 1.1rem;
-    line-height: 22px;
-    color: grey;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.footerRight{
-    float: right;
-    background-color: ;
-    background-image: url('/logoJPL.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: auto;
-    width: 10%;
-    margin-left: 0%;
 }
 
 /* FONTS AND TITLES */

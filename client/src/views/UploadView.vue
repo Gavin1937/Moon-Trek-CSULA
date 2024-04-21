@@ -29,6 +29,11 @@ const resetError = () => {
     errorHandler.message = ''
 }
 
+const resetError = () => {
+    errorHandler.hasError = false
+    errorHandler.message = ''
+}
+
 // This is called whenever a new image is selected
 const imageSelected = async () => {
     try {
@@ -155,7 +160,7 @@ const imageSubmitted = async () => {
             <div class="container">
                 <div class="overlayMenu">
                     <div class="overlaymenuLeft">
-                        <SideBar />
+                        <SideBar @selected-layer="resetError" />
                     </div>
                     <div class="overlayMenuRight">
                         <form>
