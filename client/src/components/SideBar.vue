@@ -3,12 +3,41 @@ import jsonLayers from '../assets/overlays.json'
 import { data } from '../data.js'
 import { ref } from 'vue'
 
-const selectedLayer = ref('')
-const emit = defineEmits(['layerSet'])
-const setLayerImage = (layerName) => {
-    data.layerFileName = layerName
-    selectedLayer.value = layerName
-    emit('layerSet')
+const layerTransparency = ref(1.0)
+const emit = defineEmits(['selectedLayer'])
+
+const addLayer = (layerName) => {
+    //only append layer name if not already in list or if list is empty
+    if (!data.layerFilenames.includes(layerName)) data.layerFilenames.push(layerName)
+    const element = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (!element || data.layerAttributes.length === 0) {
+        data.layerAttributes.push({
+            fileName: layerName,
+            layerTransparency: 1.0,
+            layerImgFile: null
+        })
+    }
+    //emit to upload page to remove error message to select an overlay first
+    emit('selectedLayer')
+}
+
+const setLayerTransparency = (layerName, transparency) => {
+    const floatTransparency = Number(transparency)
+    const overlay = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (overlay) {
+        overlay.layerTransparency = floatTransparency
+    }
+}
+
+const removeLayer = (layerName) => {
+    const idxToRemoveInLayerFileNames = data.layerFilenames.indexOf(layerName)
+    const idxToRemoveInLayerAttributes = data.layerAttributes.findIndex(
+        (layer) => layer.fileName === layerName
+    )
+    if (idxToRemoveInLayerFileNames > -1 && idxToRemoveInLayerAttributes > -1) {
+        data.layerFilenames.splice(idxToRemoveInLayerFileNames, 1)
+        data.layerAttributes.splice(idxToRemoveInLayerAttributes, 1)
+    }
 }
 </script>
 <template>
@@ -71,20 +100,38 @@ const setLayerImage = (layerName) => {
 
                                 <a
                                     class="m-2 p-2 text-white text-decoration-none text-center rounded metaDataLink"
-                                    :href="layer.metadataURL" target="_blank"
+                                    :href="layer.metadataURL"
+                                    target="_blank"
                                     >View metadata on another tab</a
                                 >
-                                <button
-                                    v-if="layer.fileName === selectedLayer"
-                                    class="rounded border-0 bg-danger text-white p-2 m-2"
-                                    @click="setLayerImage('')"
-                                >
-                                    Remove layer from image
-                                </button>
+                                <div v-if="data.layerFilenames.includes(layer.fileName)">
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="1"
+                                        step=".01"
+                                        v-model="layerTransparency"
+                                    />
+                                    <p class="text-white">{{ layerTransparency }}</p>
+                                    <button
+                                        @click="
+                                            setLayerTransparency(layer.fileName, layerTransparency)
+                                        "
+                                    >
+                                        Set layer transparency
+                                    </button>
+                                    <button
+                                        class="rounded border-0 bg-danger text-white p-2 m-2"
+                                        @click="removeLayer(layer.fileName)"
+                                    >
+                                        Remove layer from image
+                                    </button>
+                                </div>
+
                                 <button
                                     v-else
-                                    class="rounded text-white p-2 m-2 sidebarButtons bg-primary"
-                                    @click="setLayerImage(layer.fileName)" 
+                                    class="rounded text-white p-2 m-2 sidebarLayers"
+                                    @click="addLayer(layer.fileName)"
                                 >
                                     Add layer to image
                                 </button>
@@ -98,29 +145,25 @@ const setLayerImage = (layerName) => {
 </template>
 
 <style scoped>
-
-
-.sidebarLayers{
+.sidebarLayers {
     background: #13161c;
     color: white;
 }
 
-.metaDataLink{
+.metaDataLink {
     background: #13161c;
     border: 1px solid grey;
 }
 
-.sidebarButtons{
+.sidebarButtons {
     background: #13161c;
 }
 
-.sidebarButtons:hover{
+.sidebarButtons:hover {
     background: #0b5ed7 !important;
 }
 
-.button1{
+.button1 {
     background-color: rgb(255, 255, 255);
 }
-
-
 </style>

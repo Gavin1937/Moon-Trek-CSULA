@@ -5,6 +5,7 @@ export {
 };
 
 import { instance } from './wasm_loader.js';
+import { get_cpp_exception } from './internal.js';
 
 
 /**
@@ -35,10 +36,14 @@ class Circle {
           
           resolve(true);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
+  }
+  
+  toString() {
+    return `(x=${this.x}, y=${this.y}, radius=${this.radius})`;
   }
 };
 
@@ -70,10 +75,14 @@ class Square {
           
           resolve(true);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
+  }
+  
+  toString() {
+    return `(x=${this.x}, y=${this.y}, width=${this.width})`;
   }
 };
 
@@ -107,10 +116,14 @@ class Rectangle {
           
           resolve(true);
         } catch (error) {
-          reject(error);
+          reject(await get_cpp_exception(error));
         }
       });
     });
+  }
+  
+  toString() {
+    return `(top_left_x=${this.top_left_x}, top_left_y=${this.top_left_y}, bottom_right_x=${this.bottom_right_x}, bottom_right_y=${this.bottom_right_y})`;
   }
 };
 
@@ -131,8 +144,8 @@ async function circle_to_square(circle) {
         let ret = new Square();
         await ret.load_from_ptr(result_ptr);
         resolve(ret);
-      } catch(err) {
-        reject(err);
+      } catch(error) {
+        reject(await get_cpp_exception(error));
       }
     });
   });
@@ -155,8 +168,8 @@ async function circle_to_rectangle(circle) {
         let ret = new Rectangle();
         await ret.load_from_ptr(result_ptr);
         resolve(ret);
-      } catch(err) {
-        reject(err);
+      } catch(error) {
+        reject(await get_cpp_exception(error));
       }
     });
   });
