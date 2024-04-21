@@ -3,6 +3,7 @@ import { ref } from 'vue'
 let active = ref(false)
 
 const btnEllist = document.querySelectorAll('.nav-link')
+const btnEllist = document.querySelectorAll('.nav-link')
 
 btnEllist.forEach((btnEl) => {
     btnEl.addEventListener('click', () => {

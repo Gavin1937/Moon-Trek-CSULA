@@ -37,6 +37,40 @@ const removeLayer = (layerName) => {
         data.layerFilenames.splice(idxToRemoveInLayerFileNames, 1)
         data.layerAttributes.splice(idxToRemoveInLayerAttributes, 1)
     }
+const layerTransparency = ref(1.0)
+const emit = defineEmits(['selectedLayer'])
+const addLayer = (layerName) => {
+    //only append layer name if not already in list or if list is empty
+    if (!data.layerFilenames.includes(layerName)) data.layerFilenames.push(layerName)
+    const element = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (!element || data.layerAttributes.length === 0) {
+        data.layerAttributes.push({
+            fileName: layerName,
+            layerTransparency: 1.0,
+            layerImgFile: null
+        })
+    }
+    //emit to upload page to remove error message to select an overlay first
+    emit('selectedLayer')
+}
+
+const setLayerTransparency = (layerName, transparency) => {
+    const floatTransparency = Number(transparency)
+    const overlay = data.layerAttributes.find((layer) => layer.fileName === layerName)
+    if (overlay) {
+        overlay.layerTransparency = floatTransparency
+    }
+}
+
+const removeLayer = (layerName) => {
+    const idxToRemoveInLayerFileNames = data.layerFilenames.indexOf(layerName)
+    const idxToRemoveInLayerAttributes = data.layerAttributes.findIndex(
+        (layer) => layer.fileName === layerName
+    )
+    if (idxToRemoveInLayerFileNames > -1 && idxToRemoveInLayerAttributes > -1) {
+        data.layerFilenames.splice(idxToRemoveInLayerFileNames, 1)
+        data.layerAttributes.splice(idxToRemoveInLayerAttributes, 1)
+    }
 }
 </script>
 <template>
@@ -147,32 +181,6 @@ const removeLayer = (layerName) => {
 .sidebarLayers {
     background: #13161c;
     color: white;
-}
-
-.metaDataLink {
-    background: #13161c;
-    border: 1px solid grey;
-}
-
-.sidebarButtons {
-    background: #13161c;
-}
-
-.sidebarButtons:hover {
-    background: #0b5ed7 !important;
-}
-
-.metaDataLink {
-    background: #13161c;
-    border: 1px solid grey;
-}
-
-.sidebarButtons {
-    background: #13161c;
-}
-
-.sidebarButtons:hover {
-    background: #0b5ed7 !important;
 }
 
 .button1 {
