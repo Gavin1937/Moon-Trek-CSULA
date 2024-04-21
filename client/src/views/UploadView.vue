@@ -162,7 +162,8 @@ const imageSubmitted = async () => {
                                 />
                                 <span class="file-cta">
                                     <span class="file-icon">
-                                        <i class="fas fa-upload"></i>
+                                        <!-- although "fa" is deprecated from fontawesome 5, it still work here-->
+                                        <i class="fa fa-upload"></i>
                                     </span>
                                     <span class="file-label">
                                         {{ formData.name || 'Choose a file' }}
