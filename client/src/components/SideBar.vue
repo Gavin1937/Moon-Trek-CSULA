@@ -16,7 +16,7 @@ const addLayer = (layerName) => {
             layerImgFile: null
         })
     }
-    //selectedLayer.value = layerName
+    //emit to upload page to remove error message to select an overlay first
     emit('selectedLayer')
 }
 
@@ -136,15 +136,6 @@ const removeLayer = (layerName) => {
                                 </button>
                             </div>
                         </div>
-                        <!-- <SideBarAccordion
-                            :index="layer.index"
-                            :title="layer.title"
-                            :image-u-r-l="layer.imageURL"
-                            :description="layer.description"
-                            :metadata-u-r-l="layer.metadataURL"
-                            @selected-layer="addLayer(layer.title)"
-                            @transparency-set="setLayerTransparency(layer.title, )"
-                        /> -->
                     </div>
                 </div>
             </div>
