@@ -3,7 +3,7 @@ import ModelGenerator from '../components/ModelGenerator.vue'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import { useRouter } from 'vue-router'
-import { performRegistration } from '../util/registrationFunctions.js'
+import { drawNLayers } from '../util/registrationFunctions.js'
 import SideBar from '../components/SideBar.vue'
 const router = useRouter()
 const imgData = reactive({
@@ -16,15 +16,6 @@ const errorHandler = reactive({
     message: ''
 })
 
-// Returns the URL to the given processed image type
-const getUrl = (type) => {
-    if (type === 'resized') {
-        return `http://localhost:8888/static/processed/${type}-${data.relativeImageName}`
-    } else {
-        return `http://localhost:8888/static/processed/${type}-${algorithm.value}-${data.relativeImageName}`
-    }
-}
-
 const redirectToModel = () => {
     router.push('/model')
 }
@@ -33,47 +24,35 @@ const redirectToUpload = () => {
     router.push('/upload')
 }
 
-const displayOnImgsCanvas = () => {
-    const userImgCanvas = document.getElementById('user-img')
-    userImgCanvas.width = imgData.user.width
-    userImgCanvas.height = imgData.user.height
-    const userImgCtx = userImgCanvas.getContext('2d', {
-        colorSpace: 'srgb'
-    })
-    userImgCtx.putImageData(imgData.user.data, 0, 0)
+const redirectToInfiniteZoom = () => {
+    router.push('/zoom')
+}
 
+const displayImgOnCanvas = async () => {
     const outputImgCanvas = document.getElementById('output-img')
     outputImgCanvas.width = imgData.output.width
     outputImgCanvas.height = imgData.output.height
     const outputImgCtx = outputImgCanvas.getContext('2d', {
         colorSpace: 'srgb'
     })
-    outputImgCtx.putImageData(imgData.output.data, 0, 0)
+    outputImgCtx.putImageData(imgData.output, 0, 0)
     errorHandler.hasError = false
 }
 
 const registrate = async () => {
     try {
-        const response = await performRegistration(
+        const outputImgData = await drawNLayers(
+            data.layerAttributes.length,
             data.registrationAlgortihm,
+            data.layerAttributes,
             data.images.userImgFile,
-            data.images.modelImgFile,
-            data.images.layerImgFile,
-            data.transparency,
-            data.filterPx
+            data.images.modelImgFile
         )
 
-        console.log(response)
-        // [inputImgData, outputImgData]
-        // console.log('input data', inputImgData)
-        // console.log('output data', outputImgData)
-
-        imgData.user = response.userImg
-        console.log(response.userImg)
-        imgData.output = response.outputImg
-        console.log(response.outputImg)
-        errorHandler.hasError = false
-        displayOnImgsCanvas()
+        imgData.output = outputImgData
+        // console.log('outputImgData', outputImgData)
+        // console.log('imgData.output', imgData.output)
+        await displayImgOnCanvas()
     } catch (error) {
         console.log(error)
         errorHandler.hasError = true
@@ -86,88 +65,36 @@ const registrate = async () => {
 <template>
     <main>
         <SideBar />
-        <!-- data.newUpload is only set to true when the user uploads a new image -->
-        <!-- and is set to false when ModelGenerator in "registrate" mode finishes -->
+
         <ModelGenerator mode="registrate" @model-and-layer-set="registrate" />
-        <!-- <div v-else-if="data.relativeImageName !== ''">
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-5">
-                    <div class="select">
-                        <select v-model="algorithm">
-                            <option value="SURF">SURF</option>
-                            <option value="SIFT">SIFT</option>
-                            <option value="ORB">ORB</option>
-                            <option value="AKAZE">AKAZE</option>
-                            <option value="BRISK">BRISK</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-5">
-                    <img :src="data.images.user.src" />
-                </div>
-                <div class="column has-text-centered is-5">
-                    <img :src="getUrl('resized')" />
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-5">
-                    <img :src="data.images.model.src" />
-                </div>
-                <div class="column has-text-centered is-5">
-                    <img :src="data.images.layer.src" />
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-10">
-                    <img :src="getUrl('registration')" />
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-5">
-                    <img :src="getUrl('transformed')" />
-                </div>
-                <div class="column has-text-centered is-5">
-                    <img :src="getUrl('layered')" />
-                </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column has-text-centered is-3">
-                    <img :src="getUrl('green')" />
-                </div>
-                <div class="column has-text-centered is-3">
-                    <img :src="getUrl('red')" />
-                </div>
-                <div class="column has-text-centered is-3">
-                    <img :src="getUrl('stacked')" />
-                </div>
-            </div>
-        </div> -->
 
         <div>
             <p v-if="errorHandler.hasError">{{ errorHandler.message }}</p>
             <form>
                 <label>Choose another registration algorithm:</label>
-                <select v-model="data.registrationAlgortihm" :selected="data.registrationAlgortihm" class="textColor">
+                <select
+                    v-model="data.registrationAlgortihm"
+                    :selected="data.registrationAlgortihm"
+                    class="ChooseAnother"
+                >
                     <option value="SURF">SURF</option>
                     <option value="SIFT">SIFT</option>
                     <option value="AKAZE">AKAZE</option>
                     <option value="BRISK">BRISK</option>
                     <option value="ORB">ORB</option>
                 </select>
-                <!-- <label>Overlay transparency:</label>
-                <input type="number" min="0" max="1" step="0.01" v-model="data.transparency" />
-                <label>Filter px</label>
-                <input type="number" v-model="data.filterPx" /> -->
             </form>
             <div>
                 <canvas id="user-img"></canvas>
                 <canvas id="output-img"></canvas>
             </div>
-            <button @click="redirectToModel" class="textColor">View model</button>
-            <button @click="redirectToUpload" class="textColor">Upload another image</button>
-            <button class="textColor">Try infinite zoom on your image</button>
+            <button @click="redirectToModel" class="textColor ModelButton">View model</button>
+            <button @click="redirectToUpload" class="textColor UploadButton">
+                Upload another image
+            </button>
+            <button @click="redirectToInfiniteZoom" class="textColor ZoomButton">
+                Try infinite zoom on your image
+            </button>
         </div>
     </main>
 </template>
@@ -178,8 +105,41 @@ main {
     padding: 1rem;
     background: #13161c;
 }
+.ChooseAnother {
+    color: rgb(0, 0, 0);
+    height: 50px;
+    border: 1px solid black;
+    background-color: #c7c7c7;
+}
 
+.textColor:hover {
+    color: red;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: 0.2s all ease-in;
+}
+
+.UploadButton,
+.ZoomButton {
+    margin-left: 20px;
+}
 .textColor {
     color: rgb(0, 0, 0);
+    height: 50px;
+    border: 1px solid black;
+    background-color: #c7c7c7;
+}
+
+.textColor:hover {
+    color: red;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: 0.2s all ease-in;
+}
+.ModelButton {
+}
+.UploadButton,
+.ZoomButton {
+    margin-left: 20px;
 }
 </style>

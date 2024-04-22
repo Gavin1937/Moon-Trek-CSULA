@@ -7,9 +7,9 @@ export const data = reactive({
     relativeImageName: '',
     images: {
         userImgFile: null,
-        modelImgFile: null,
-        layerImgFile: null
+        modelImgFile: null
     },
-    layerFileName: '',
+    layerFilenames: [],
+    layerAttributes: [],
     registrationAlgortihm: ''
 })

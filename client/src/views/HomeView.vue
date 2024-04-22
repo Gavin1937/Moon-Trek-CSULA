@@ -90,13 +90,30 @@ import BasicMoon from '../components/BasicMoon.vue'
         -->
         </div>
 
-        <div class="AdditionContent">
-            More info...
-
-        </div>
+      
 
 
         </div>
+
+        <footer class="AdditionContent">
+            <div class="footerContainer">
+                <div class="footerLeft">
+
+                </div>
+
+                <div class="footerCenter">
+                    <p class="footerText"> California State University, Los Angeles <br> MoonTrek AR <br> Group 19 <br></p>
+
+                </div>
+
+                <div class="footerRight">
+
+                </div>
+
+
+            </div>
+
+        </footer>
     </main>
 </template>
 
@@ -110,7 +127,7 @@ main {
     background-color: black;
 }
 .background{
-    background-image: url('../public/longbackground.png');
+    background-image: url('/longBackground.png');
     background-repeat: no-repeat;
     background-position: center 170px;
     height: 1600px;
@@ -128,18 +145,27 @@ main {
     height: 75px;
     margin-top: -15px;
     overflow: hidden;
-    transition: all 300ms ease;
-    background-color: rgb(216,57,51,0.3);
+
+
+    background: red; /* default color */
+    /* background-color: rgb(216,57,51,0.3); */
+    background: linear-gradient(to left, rgb(216,57,51,0.3) 50%, rgba(91, 4, 1, 0.3)) right;
+    background-size: 400%;
+    transition: .5s ease-out;
+    
 }
 
-.getStarted:after {
-  width: 300%;
-  height: 300%;
-  left: -300%;
-  transform: rotate(45deg);
-  background-color: #f21170;
-  transition: all 300ms ease;
+.getStarted:hover{
+    background-position: left;
 }
+
+.getStartedText{
+    font-family: 'Gill Sans';
+    height: 40%;
+    font-size: 1.8rem;
+}
+
+/*
 .getStarted:hover .getStartedText {
   color: #fff;
   z-index: 10;
@@ -152,7 +178,16 @@ main {
 .getStarted:hover {
   border: 2px solid #f21170;
   cursor: pointer;
+  background-position: left bottom;
 }
+
+*/
+
+
+.getStartedDescription{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 
 .infoBox{
@@ -185,11 +220,58 @@ main {
 }
 
 .AdditionContent{
-    margin-top: 600px;
+    margin-top: 0px;
     widows: 100%;
     height: auto;
     text-align: center;
     
+}
+
+.footerContainer{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    background-color: ;
+    border-top: 1px solid rgb(128,128,128,0.3);
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.footerLeft{
+    float: left;
+    background-color: ;
+    background-image: url('/logoCSULA.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    width: 10%;
+}
+
+.footerCenter{
+    float: center;
+    height: auto;
+    padding-top: 30px;
+    text-align: left;
+    width: 20%;
+    margin-left: 0%;
+}
+.footerText{
+    font-size: 1.1rem;
+    line-height: 22px;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.footerRight{
+    float: right;
+    background-color: ;
+    background-image: url('/logoJPL.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: auto;
+    width: 10%;
+    margin-left: 0%;
 }
 
 /* FONTS AND TITLES */
@@ -203,14 +285,7 @@ h1 {
     font-size: 4.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.getStartedDescription{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.getStartedText{
-    font-family: 'Gill Sans';
-    height: 40%;
-    font-size: 1.8rem;
-}
+
 
 h2 {
     font-size: 1.75rem;
