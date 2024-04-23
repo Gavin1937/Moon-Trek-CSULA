@@ -118,17 +118,16 @@ function showMenu() {
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width:  20%;
     position: fixed;
     z-index: 1;
     top: 0;
-    right: 0px;
-    background-color: rgba(17, 17, 17, 1); /* #111 in*/
+    right: 0;
+    background-color: #111;
     overflow-x: hidden;
     overflow-y: auto;
-    transition:  0.5s;
+    transition: width 0.5s;
+    width: 0; /* close when refreshed */
     padding-top: 60px;
-    opacity: 0.95;
 }
 
 .back-button {
