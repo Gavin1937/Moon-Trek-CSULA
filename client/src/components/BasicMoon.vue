@@ -54,8 +54,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-#moon-canvas {
-    z-index: 7;
+.moon-canvas {
+    z-index: 1;
     margin: -1.15rem 1rem;
 }
 </style>

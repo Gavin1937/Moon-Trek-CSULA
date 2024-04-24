@@ -157,6 +157,7 @@ const removeLayer = (layerName) => {
 
 .sidebarButtons {
     background: #13161c;
+    color: white;
 }
 
 .sidebarButtons:hover {
