@@ -175,7 +175,7 @@ const imageSubmitted = async () => {
                 </div>
                 <hr />
                 <div v-if="errorHandler.hasError">
-                    <h3>{{ errorHandler.message }}</h3>
+                    <h3 class="errorMessage">{{ errorHandler.message }}</h3>
                 </div>
                 <div class="columns is-centered Col2 HiddenBox">
                     <div class="column has-text-centered">
@@ -357,6 +357,11 @@ const imageSubmitted = async () => {
 
 h1 {
     font-size: 1.7rem;
+}
+.errorMessage{
+    color: red;
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 img {
