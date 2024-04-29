@@ -145,6 +145,7 @@ main {
     height: 75px;
     margin-top: -15px;
     overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
     background: red; /* default color */
@@ -277,13 +278,13 @@ main {
 /* FONTS AND TITLES */
 .lunarTitle{
     opacity: 50%;
-    font-family: 'Gill Sans';
+    font-family: 'Gill Sans MT';
 
 }
 
 h1 {
     font-size: 4.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  'Gill Sans MT';
 }
 
 
@@ -299,12 +300,12 @@ a {
 }
 .MoonTrekDescription{
     font-size: 1.45rem;
-    font-family: 'Gill Sans';
+    font-family: 'Gill Sans MT';
 
 }
 .MoonTrekDescriptionTitle{
     font-size: 1.85rem;
-    font-family: 'Gill Sans';
+    font-family: 'Gill Sans MT';
 
 }
 
