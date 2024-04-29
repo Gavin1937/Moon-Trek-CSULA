@@ -107,7 +107,7 @@ main {
 }
 .ChooseAnother {
     color: rgb(0, 0, 0);
-    height: 50px;
+    height: auto;
     border: 1px solid black;
     background-color: #c7c7c7;
 }
@@ -124,15 +124,19 @@ main {
     margin-left: 20px;
 }
 .textColor {
-    color: rgb(0, 0, 0);
+    color: rgb(193, 192, 192);
     height: 50px;
-    border: 1px solid black;
-    background-color: #c7c7c7;
+    /* border: 1px solid black; */
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    border-left: 0;
+    border-right: 0;
+    background-color: #13161c;
 }
 
 .textColor:hover {
     color: red;
-    border: 1px solid transparent;
+    border: 0;
     background-color: transparent;
     transition: 0.2s all ease-in;
 }

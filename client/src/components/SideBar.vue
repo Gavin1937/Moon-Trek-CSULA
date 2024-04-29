@@ -113,7 +113,7 @@ const removeLayer = (layerName) => {
                                         v-model="layerTransparency"
                                     />
                                     <p class="text-white">{{ layerTransparency }}</p>
-                                    <button
+                                    <button class="buttonTransparency rounded border-0 text-white p-2"
                                         @click="
                                             setLayerTransparency(layer.fileName, layerTransparency)
                                         "
@@ -121,7 +121,7 @@ const removeLayer = (layerName) => {
                                         Set layer transparency
                                     </button>
                                     <button
-                                        class="rounded border-0 bg-danger text-white p-2 m-2"
+                                        class="removeLayer rounded border-0 bg-danger text-white p-2 m-2"
                                         @click="removeLayer(layer.fileName)"
                                     >
                                         Remove layer from image
@@ -130,7 +130,7 @@ const removeLayer = (layerName) => {
 
                                 <button
                                     v-else
-                                    class="rounded text-white p-2 m-2 sidebarLayers"
+                                    class="rounded text-white p-2 m-2 bg-primary sidebarButtons sidebarLayers"
                                     @click="addLayer(layer.fileName)"
                                 >
                                     Add layer to image
@@ -145,6 +145,20 @@ const removeLayer = (layerName) => {
 </template>
 
 <style scoped>
+
+.buttonTransparency{
+    width: 94%;
+    background-color: black;
+}
+.buttonTransparency:hover{
+       text-decoration: underline;
+       cursor: pointer;
+}
+
+.removeLayer{
+    width: 94%;
+}
+
 .sidebarLayers {
     background: #13161c;
     color: white;
