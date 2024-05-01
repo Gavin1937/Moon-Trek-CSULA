@@ -9,7 +9,12 @@ export const data = reactive({
         userImgFile: null,
         modelImgFile: null
     },
+    outputImg: null,
     layerFilenames: [],
     layerAttributes: [],
-    registrationAlgortihm: ''
+    registrationAlgortihm: '',
+    moonCircle: null,
+    librations: null,
+    earthToMoon: null,
+    earthToSun: null
 })

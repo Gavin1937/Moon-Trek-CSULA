@@ -17,12 +17,24 @@ const convertToAlgo = (word) => {
     else if (word === 'ORB') return RegistrationAlgorithms.ORB
 }
 
-const checkImage = async (imgHandler) => {
-    let a = document.createElement('a')
-    let blob = await imgHandler.to_Blob()
-    a.href = URL.createObjectURL(blob)
-    a.target = '_blank'
-    a.click()
+// const checkImage = async (imgHandler) => {
+//     let a = document.createElement('a')
+//     let blob = await imgHandler.to_Blob()
+//     a.href = URL.createObjectURL(blob)
+//     a.target = '_blank'
+//     a.click()
+// }
+
+export const getMoonCircle = async (userImgFile) => {
+    const imgHandler = new ImageHandler()
+    try {
+        await imgHandler.load_from_fileobject(userImgFile)
+        return await detect_moon(imgHandler)
+    } catch (error) {
+        console.log('error getting Moon circle', error)
+    } finally {
+        await imgHandler.destroy_image()
+    }
 }
 
 export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, modelImgFile) => {
@@ -38,7 +50,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         //get cropped image of user image first
         const moon_circle = await detect_moon(inputImgHandler)
         //set default padding of circle in cropped image to 200px
-
+        console.log('moon circle', moon_circle)
         const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, 200)
         inputImgHandler = croppedImgData[0]
         //get croppedImgFile for homography matrix
@@ -67,8 +79,9 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         // console.log('outputimgHandler', outputImgHandler)
         // console.log('inputimgHandler', inputImgHandler)
         const outputImgData = await outputImgHandler.to_ImageData()
-
-        console.log(outputImgData)
+        // const circle = await detect_moon(outputImgHandler)
+        // console.log('circle from output image', circle)
+        // console.log(outputImgData)
         return outputImgData
     } catch (error) {
         console.log('error', error)

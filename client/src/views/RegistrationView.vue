@@ -3,7 +3,7 @@ import ModelGenerator from '../components/ModelGenerator.vue'
 import { reactive } from 'vue'
 import { data } from '../data.js'
 import { useRouter } from 'vue-router'
-import { drawNLayers } from '../util/registrationFunctions.js'
+import { drawNLayers, getMoonCircle } from '../util/registrationFunctions.js'
 import SideBar from '../components/SideBar.vue'
 const router = useRouter()
 const imgData = reactive({
@@ -36,11 +36,20 @@ const displayImgOnCanvas = async () => {
         colorSpace: 'srgb'
     })
     outputImgCtx.putImageData(imgData.output, 0, 0)
+    data.outputImg = {
+        src: outputImgCanvas.toDataURL(),
+        width: outputImgCanvas.width,
+        height: outputImgCanvas.height
+    }
     errorHandler.hasError = false
 }
 
 const registrate = async () => {
     try {
+        //set Moon center for cesium model
+        const moonLocation = await getMoonCircle(data.images.userImgFile)
+        console.log('moon location', moonLocation)
+        data.moonCircle = moonLocation
         const outputImgData = await drawNLayers(
             data.layerAttributes.length,
             data.registrationAlgortihm,
@@ -107,7 +116,7 @@ main {
 }
 .ChooseAnother {
     color: rgb(0, 0, 0);
-    height: auto;
+    height: 50px;
     border: 1px solid black;
     background-color: #c7c7c7;
 }
@@ -124,19 +133,15 @@ main {
     margin-left: 20px;
 }
 .textColor {
-    color: rgb(193, 192, 192);
+    color: rgb(0, 0, 0);
     height: 50px;
-    /* border: 1px solid black; */
-    border-top: 1px solid red;
-    border-bottom: 1px solid red;
-    border-left: 0;
-    border-right: 0;
-    background-color: #13161c;
+    border: 1px solid black;
+    background-color: #c7c7c7;
 }
 
 .textColor:hover {
     color: red;
-    border: 0;
+    border: 1px solid transparent;
     background-color: transparent;
     transition: 0.2s all ease-in;
 }

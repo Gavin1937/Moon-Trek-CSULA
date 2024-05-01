@@ -26,7 +26,7 @@ const router = createRouter({
         {
             path: '/zoom',
             name: 'zoom',
-            component: () => import('../views/InfiniteZoomView.vue')
+            component: () => import('../views/InfiniteZoomViewNew.vue')
         }
     ]
 })

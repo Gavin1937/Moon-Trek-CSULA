@@ -53,8 +53,6 @@ const imageSelected = async () => {
 
         formData.imageFile = file
 
-        // data.images.user = document.getElementById('moonImage').files[0]
-
         // Check if the meta data we want is present
         if (tags.GPSLongitude && tags.GPSLatitude && tags.DateTimeOriginal) {
             // If so, keep formData.hasExif true
@@ -358,7 +356,7 @@ const imageSubmitted = async () => {
 h1 {
     font-size: 1.7rem;
 }
-.errorMessage{
+.errorMessage {
     color: red;
     font-size: 1.7rem;
     text-align: center;
