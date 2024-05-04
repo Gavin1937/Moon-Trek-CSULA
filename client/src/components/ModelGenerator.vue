@@ -388,30 +388,8 @@ onMounted(async () => {
         //emit/signal to registration view that model img and layer img has been set
         //so registration view can call registration function
         emit('modelAndLayerSet')
-
-        // Append user, model, and layer images to Form Data object
-        // const formData = new FormData()
-        // formData.append('images', await toFile(data.images.user.src, 'userImage', 'image/png'))
-        // formData.append('images', await toFile(data.images.model.src, 'modelImage', 'image/png'))
-        // formData.append('images', await toFile(data.images.layer.src, 'layerImage', 'image/png'))
-
-        //call perform registration function that uses WASM library and retrieves homography matrix from
-        //python backend in case of memory error
-
-        // const outputImg = performRegistration(
-        //     props.algo,
-        //     data.images.user,
-        //     data.images.model,
-        //     data.images.layer
-        // )
-
-        // Send all to registration endpoint
-        // const response = await axios.post('http://localhost:8888/registration/performAll', formData)
-        // const { status, relativeImageName } = response.data
-
-        // console.log(status, relativeImageName)
-        // data.relativeImageName = relativeImageName
-
+        
+        
         // Hide loading animation gif
         processing.value = false
         data.newUpload = false

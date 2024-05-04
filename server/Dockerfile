@@ -9,11 +9,7 @@ WORKDIR /src/
 COPY . .
 
 # setup conda & build
-SHELL ["/bin/bash", "--login", "-c"]
-RUN conda env create -f environment.yml && \
-    conda init bash && \
-    conda activate MoonTrek && \
-    npm install
+RUN npm install
 
 
 # dev deploy

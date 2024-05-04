@@ -19,9 +19,6 @@ app.use('/positions', require('./endpoint/positions'));
 // Endpoint for converting local time to UTC
 app.use('/timezone', require('./endpoint/timezone'));
 
-// Endpoint for performing registration
-app.use('/registration', require('./endpoint/registration'));
-
 // Start our server up
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
