@@ -11,5 +11,10 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
-    }
+    },
+    // setting the base path to be `http://host:port/`
+    base: './',
+    build: {
+        target: "ES2022"
+    },
 })
