@@ -38,6 +38,8 @@ To deploy this server with Docker:
 docker build -t moontrek-python-server .
 ```
 
+> You can enable OpenCV non-free registration algorithm SURF by adding docker build flag: `--build-arg "MR_ENABLE_OPENCV_NONFREE=OFF"`. [Learn more about the flag in this doc](https://github.com/Gavin1937/MoonRegistration/blob/main/BUILDING.md#about-opencv-versions--modules)
+
 2. Run docker container with:
 
 ```sh
