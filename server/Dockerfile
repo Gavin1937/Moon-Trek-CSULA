@@ -1,8 +1,4 @@
-FROM continuumio/miniconda3
-
-# setup enviroments
-RUN apt update -y && \
-    apt install -y tzdata nodejs npm
+FROM node:alpine3.17
 
 # setup working dir & copy source code
 WORKDIR /src/

@@ -2,7 +2,6 @@
 ARG MR_VERSION="1.0.0"
 
 
-
 # build environment
 FROM gavin1937/emsdk-cv-wasm:4.9.0 AS build
 
@@ -54,4 +53,4 @@ COPY . .
 
 RUN cd /app && pip3 install -r requirements.txt
 
-CMD ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]

@@ -6,17 +6,33 @@ services:
       context: server/
     image: moontrek-server
     container_name: moontrek-server
-    # restart: unless-stopped
+    restart: unless-stopped
     volumes:
       - "./server/api/jpl:/src/api/jpl/config"
     ports:
       - "8888:8888"
   
+  moontrek-python-server:
+    build:
+      context: python-server/
+      args:
+        MR_ENABLE_OPENCV_NONFREE: ${MR_ENABLE_OPENCV_NONFREE}
+    image: moontrek-python-server
+    container_name: moontrek-python-server
+    restart: unless-stopped
+    volumes:
+      - "./python-server/config:/app/config"
+      - "./python-server:/app/data"
+    ports:
+      - "5000:5000"
+  
   moontrek-client:
     build:
       context: client/
+      args:
+        MR_ENABLE_OPENCV_NONFREE: ${MR_ENABLE_OPENCV_NONFREE}
     image: moontrek-client
     container_name: moontrek-client
-    # restart: unless-stopped
+    restart: unless-stopped
     ports:
       - "5173:5173"
