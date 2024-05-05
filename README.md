@@ -1,93 +1,52 @@
 # Moon Trek CSULA
 
-## Install:
+## Configuration
 
-1. Download [NodeJs](https://nodejs.org/en/download/) and [Anaconda](https://www.anaconda.com/). Make sure to add conda to your path when installing on Windows (it will ask)
+You need to configure individual app before launch/deploy this project.
 
-2. Set up MoonTrek anaconda environment. In your terminal, run the following commands:
-
-    ```
-    conda create --name MoonTrek
-    conda activate MoonTrek
-    conda install python=3.7.9 django=3.1.7 numpy=1.20.1 opencv pillow=8.1.2 pytz=2021.1 sqlparse=0.4.1
-    python -m pip install opencv-contrib-python==3.4.2.17
-    ```
-
-3. Clone this repository
-
-4. Install dependencies. In a terminal, navigate to the base directory and run these commands:
-
-    ```
-    cd client
-    npm install
-    cd ../server
-    npm install
-    ```
-
-5. Create a file called 'config.json' with the same contents of 'sample.config.json' in the server/api/jpl directory. Assuming you're still in the server directory from last step, run the following command:
-
-    ```
-    cp api/jpl/sample.config.json api/jpl/config.json
-    ```
-
-    Note: The IP and port are available only to developers for security purposes
-
-6. To run, we need two terminal instances. In one cd to the client directory and run:
-    ```
-    npm run dev
-    ```
-    In the other one, cd to the server directory and run:
-    ```
-    npm run dev
-    ```
+1. [Configure client](client/README.md#configuration)
+   * **You can skip this step when deploy with Docker or Docker Compose**
+2. [Configure python-server](python-server/README.md#configuration)
+3. [Configure server](server/README.md#configuration)
 
 
-## Run with Docker
+## Deploy entire project with Docker Compose (Recommend)
 
-1. Configure `config.json` for the server as [follow the step #5 of above instruction](#install)
-
-2. Install [Docker](https://docs.docker.com/engine/install/) & [Docker-Compose](https://docs.docker.com/compose/install/)
-
-3. To run the whole Moon Trek App, you can use Docker-Compose with following commands
-
-build all images, **every time you change something you need to rebuild modified image**
-
-```sh
-docker-compose build
+1. You need to create a `.env` file to configure Docker Compose
+   * You can use `.env.template` as your foundation, here is an example:
+```
+BACKEND_SERVER="http://localhost:8888"
+PYTHON_SERVER="http://localhost:5000"
+MR_ENABLE_OPENCV_NONFREE="ON"
 ```
 
-and then, deploy Moon Trek Application
+* `BACKEND_SERVER`: backend server url, do not add trailing slash /
+* `PYTHON_SERVER`: python-server url, do not add trailing slash /
+* `MR_ENABLE_OPENCV_NONFREE`: whether to enable MoonRegistration OpenCV non-free registration algorithm (SURF) in the project. [Learn more about the flag in this doc](https://github.com/Gavin1937/MoonRegistration/blob/main/BUILDING.md#about-opencv-versions--modules)
+
+2. Build Docker images
 
 ```sh
-docker-compose up -d
+docker-compose -f docker-compose.yml build
 ```
 
-4. To run Moon Trek `server` or `client` use following commands
+> **Note: every time you change something you need to rebuild modified app**
 
-### server
+> If you don't want to deploy the project with `python-server`, you can modify `docker-compose.yml` file, and comment out `moontrek-python-server` section before building.
 
-Inside server folder, run
+3. Now, you can launch the project with:
 
 ```sh
-docker build -t moontrek-server .
+docker-compose -f docker-compose.yml up -d
 ```
 
-and then run
+3. You can stop the project with:
 
 ```sh
-docker run -it --rm -p 8888:8888 -v "$(pwd)/api/jpl:/src/api/jpl/config" --name moontrek-server moontrek-server
+docker-compose -f docker-compose.yml down
 ```
 
-### client
+## Deploy app individually
 
-Inside client folder, run
+* Follow the documentation in each app
 
-```sh
-docker build -t moontrek-client .
-```
-
-and then run
-
-```sh
-docker run -it --rm -p 5173:5173 --name moontrek-client moontrek-client
-```
