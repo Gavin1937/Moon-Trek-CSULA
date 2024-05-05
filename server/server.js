@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Endpoint for static content such as images, fonts, textures
-app.use('/api/static', express.static('static'));
+app.use('/api/static/assets', express.static('static/assets'));
 
 // Endpoint for getting all positions of celestial bodies
 app.use('/api/positions', require('./endpoint/positions'));
