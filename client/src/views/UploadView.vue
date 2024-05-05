@@ -1,4 +1,5 @@
 <script setup>
+import config from '../config/config.json'
 import axios from 'axios'
 import ExifReader from 'exifreader'
 import { useRouter } from 'vue-router'
@@ -119,7 +120,7 @@ const imageSubmitted = async () => {
     }
 
     // Convert the local time stamp to UTC
-    const convert = await axios.get('http://localhost:8888/timezone/toUtc', {
+    const convert = await axios.get(`${config.backend_server}/timezone/toUtc`, {
         params: {
             latitude: formData.latitude,
             longitude: formData.longitude,
