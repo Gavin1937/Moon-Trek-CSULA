@@ -120,7 +120,7 @@ const imageSubmitted = async () => {
     }
 
     // Convert the local time stamp to UTC
-    const convert = await axios.get(`${config.backend_server}/timezone/toUtc`, {
+    const convert = await axios.get(`${config.backend_server}/api/timezone/toUtc`, {
         params: {
             latitude: formData.latitude,
             longitude: formData.longitude,

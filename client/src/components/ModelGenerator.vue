@@ -56,7 +56,7 @@ const earth = new THREE.Mesh(
     new THREE.SphereGeometry(6.371, 30, 30),
     new THREE.MeshPhongMaterial({
         map: new THREE.TextureLoader().load(
-            `${config.backend_server}/static/assets/textures/earth.jpg`
+            `${config.backend_server}/api/static/assets/textures/earth.jpg`
         ),
         shininess: 0
     })
@@ -65,7 +65,7 @@ const moon = new THREE.Mesh(
     new THREE.SphereGeometry(1.737, 30, 30),
     new THREE.MeshPhongMaterial({
         map: new THREE.TextureLoader().load(
-            `${config.backend_server}/static/assets/textures/moon-2k.jpg`
+            `${config.backend_server}/api/static/assets/textures/moon-2k.jpg`
         ),
         shininess: 0
     })
@@ -74,7 +74,7 @@ const moonLayer = new THREE.Mesh(
     new THREE.SphereGeometry(1.737, 30, 30),
     new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(
-            `${config.backend_server}/static/assets/textures/${data.layerFilenames[0]}.png`
+            `${config.backend_server}/api/static/assets/textures/${data.layerFilenames[0]}.png`
         )
     })
 )
@@ -123,7 +123,7 @@ const formattedDate = () => {
 
 // Updates positions
 const getPositions = async () => {
-    const positionSearch = await axios.get(`${config.backend_server}/positions`, {
+    const positionSearch = await axios.get(`${config.backend_server}/api/positions`, {
         params: {
             latitude: data.latitude,
             longitude: data.longitude,
@@ -366,7 +366,7 @@ onMounted(async () => {
         for (let i = 1; i < data.layerAttributes.length; i++) {
             const textureLoader = new THREE.TextureLoader()
             textureLoader.load(
-                `${config.backend_server}/static/assets/textures/${data.layerFilenames[i]}.png`,
+                `${config.backend_server}/api/static/assets/textures/${data.layerFilenames[i]}.png`,
                 //function to run when texture has been loaded -wait for new texture
                 //to be loaded then update shaders, render new scene, and take snapshot
                 async function (texture) {

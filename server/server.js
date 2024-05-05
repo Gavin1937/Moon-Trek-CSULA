@@ -11,13 +11,13 @@ app.use(cors());
 app.use(express.json());
 
 // Endpoint for static content such as images, fonts, textures
-app.use('/static', express.static('static'));
+app.use('/api/static', express.static('static'));
 
 // Endpoint for getting all positions of celestial bodies
-app.use('/positions', require('./endpoint/positions'));
+app.use('/api/positions', require('./endpoint/positions'));
 
 // Endpoint for converting local time to UTC
-app.use('/timezone', require('./endpoint/timezone'));
+app.use('/api/timezone', require('./endpoint/timezone'));
 
 // Start our server up
 app.listen(port, () => {

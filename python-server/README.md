@@ -79,9 +79,9 @@ gunicorn --bind 0.0.0.0:5000 app:app
 
 # Endpoints
 
-All the endpoints in this server starts with `/api/registrar/`
+All the endpoints in this server starts with `/pyapi/registrar/`
 
-### POST `/api/registrar/<algorithm>`
+### POST `/pyapi/registrar/<algorithm>`
 
 Run a specified registration algorithm with input images.
 

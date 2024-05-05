@@ -108,7 +108,7 @@ const retrieveHomographyMatrixFromAPI = async (algoString, userImgFile, modelImg
         formData.append('user-file', userImgFile)
         formData.append('model-file', modelImgFile)
         const response = await axios.post(
-            `${config.python_server}/api/registrar/${algoString}`,
+            `${config.python_server}/pyapi/registrar/${algoString}`,
             formData
         )
 

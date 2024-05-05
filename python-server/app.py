@@ -62,7 +62,7 @@ def translate_algorithm(algorithm:str) -> mrr.RegistrationAlgorithms:
 def is_good_file(name:str) -> bool:
     return (name in request.files and request.files[name].filename != '')
 
-@app.route('/api/registrar/<algorithm>', methods=['POST'])
+@app.route('/pyapi/registrar/<algorithm>', methods=['POST'])
 def registration(algorithm:str):
     logger.info(f'{algorithm = }')
     algorithm = translate_algorithm(algorithm)
