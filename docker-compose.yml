@@ -30,6 +30,8 @@ services:
     build:
       context: client/
       args:
+        BACKEND_SERVER: ${BACKEND_SERVER}
+        PYTHON_SERVER: ${PYTHON_SERVER}
         MR_ENABLE_OPENCV_NONFREE: ${MR_ENABLE_OPENCV_NONFREE}
     image: moontrek-client
     container_name: moontrek-client

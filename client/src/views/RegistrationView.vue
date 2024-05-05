@@ -1,4 +1,5 @@
 <script setup>
+import config from '../config/config.json'
 import ModelGenerator from '../components/ModelGenerator.vue'
 import { reactive } from 'vue'
 import { data } from '../data.js'
@@ -77,7 +78,7 @@ const registrate = async () => {
                     :selected="data.registrationAlgortihm"
                     class="ChooseAnother"
                 >
-                    <option value="SURF">SURF</option>
+                    <option v-if="config.MR_ENABLE_OPENCV_NONFREE" value="SURF">SURF</option>
                     <option value="SIFT">SIFT</option>
                     <option value="AKAZE">AKAZE</option>
                     <option value="BRISK">BRISK</option>

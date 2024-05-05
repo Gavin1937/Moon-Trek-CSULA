@@ -193,7 +193,7 @@ const imageSubmitted = async () => {
                                         v-model="data.registrationAlgortihm"
                                         :selected="data.registrationAlgortihm"
                                     >
-                                        <option value="SURF">SURF</option>
+                                        <option v-if="config.MR_ENABLE_OPENCV_NONFREE" value="SURF">SURF</option>
                                         <option value="SIFT">SIFT</option>
                                         <option value="AKAZE">AKAZE</option>
                                         <option value="BRISK">BRISK</option>
