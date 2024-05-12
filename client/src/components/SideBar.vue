@@ -1,5 +1,14 @@
 <script setup>
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// TODO: move this overlay metadata to the server,
+// TODO: so it can be dynamically update. We can
+// TODO: easily update our overlays without rebuilding
+// TODO: the client
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import jsonLayers from '../assets/overlays.json'
+
 import { data } from '../data.js'
 import { ref } from 'vue'
 
