@@ -1,0 +1,5 @@
+{
+    "backend_server": "http://localhost:8888",
+    "python_server": "http://localhost:5000",
+    "MR_ENABLE_OPENCV_NONFREE": true
+}

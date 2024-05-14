@@ -1,19 +1,11 @@
-FROM continuumio/miniconda3
-
-# setup enviroments
-RUN apt update -y && \
-    apt install -y tzdata nodejs npm
+FROM node:alpine3.17
 
 # setup working dir & copy source code
 WORKDIR /src/
 COPY . .
 
 # setup conda & build
-SHELL ["/bin/bash", "--login", "-c"]
-RUN conda env create -f environment.yml && \
-    conda init bash && \
-    conda activate MoonTrek && \
-    npm install
+RUN npm install
 
 
 # dev deploy

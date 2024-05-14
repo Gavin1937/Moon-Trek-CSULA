@@ -7,6 +7,7 @@ from flask import Flask, request, Response
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+import MoonRegistration as mr
 import MoonRegistration.MoonRegistrate as mrr
 
 
@@ -53,7 +54,7 @@ def translate_algorithm(algorithm:str) -> mrr.RegistrationAlgorithms:
         return mrr.RegistrationAlgorithms.AKAZE
     elif algorithm == 'BRISK':
         return mrr.RegistrationAlgorithms.BRISK
-    elif algorithm == 'SURF':
+    elif mr.MR_HAVE_OPENCV_NONFREE and algorithm == 'SURF':
         return mrr.RegistrationAlgorithms.SURF_NONFREE
     else:
         return mrr.RegistrationAlgorithms.INVALID_ALGORITHM
@@ -61,7 +62,7 @@ def translate_algorithm(algorithm:str) -> mrr.RegistrationAlgorithms:
 def is_good_file(name:str) -> bool:
     return (name in request.files and request.files[name].filename != '')
 
-@app.route('/api/registrar/<algorithm>', methods=['POST'])
+@app.route('/pyapi/registrar/<algorithm>', methods=['POST'])
 def registration(algorithm:str):
     logger.info(f'{algorithm = }')
     algorithm = translate_algorithm(algorithm)

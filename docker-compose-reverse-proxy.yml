@@ -9,8 +9,6 @@ services:
     restart: unless-stopped
     volumes:
       - "./server/api/jpl:/src/api/jpl/config"
-    ports:
-      - "8888:8888"
   
   moontrek-python-server:
     build:
@@ -23,18 +21,27 @@ services:
     volumes:
       - "./python-server/config:/app/config"
       - "./python-server:/app/data"
-    ports:
-      - "5000:5000"
   
   moontrek-client:
     build:
       context: client/
       args:
-        BACKEND_SERVER: ${BACKEND_SERVER}
-        PYTHON_SERVER: ${PYTHON_SERVER}
+        BACKEND_SERVER: ""
+        PYTHON_SERVER: ""
         MR_ENABLE_OPENCV_NONFREE: ${MR_ENABLE_OPENCV_NONFREE}
     image: moontrek-client
     container_name: moontrek-client
     restart: unless-stopped
+  
+  moontrek-nginx:
+    image: nginx:alpine
+    container_name: moontrek-nginx
+    restart: unless-stopped
     ports:
-      - "5173:5173"
+      - ${APP_PORT}:80
+    depends_on:
+      - moontrek-server
+      - moontrek-python-server
+      - moontrek-client
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
