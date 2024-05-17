@@ -11,9 +11,9 @@ const formData = reactive({
     name: 'Select Image',
     imageFile: null,
     hasExif: true,
-    longitude: 0,
-    latitude: 0,
-    date: '',
+    longitude: 34,
+    latitude: -77,
+    date: '2015-08-01',
     time: '',
     previewImage: new Image()
 })
@@ -80,10 +80,10 @@ const imageSelected = async () => {
         } else {
             // If no meta data, reset all values and display the form
             formData.hasExif = false
-            formData.longitude = 0
-            formData.latitude = 0
-            formData.date = ''
-            formData.time = ''
+            formData.longitude = 34
+            formData.latitude = -77
+            formData.date = '2015-08-01'
+            formData.time = '01:30'
         }
     } catch (error) {
         console.log(error)
@@ -126,6 +126,8 @@ const imageSubmitted = async () => {
             timeStamp: local
         }
     })
+
+    
 
     console.log(`\nCoordinates: ${formData.latitude}, ${formData.longitude}`)
     console.log(`Local Date: ${local}`)

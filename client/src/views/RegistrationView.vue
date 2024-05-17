@@ -36,6 +36,13 @@ const displayImgOnCanvas = async () => {
         colorSpace: 'srgb'
     })
     outputImgCtx.putImageData(imgData.output, 0, 0)
+
+    data.outputImg = {
+        src: outputImgCanvas.toDataURL(),
+        width: outputImgCanvas.width,
+        height: outputImgCanvas.height
+    }
+
     errorHandler.hasError = false
 }
 

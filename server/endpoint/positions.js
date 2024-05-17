@@ -26,9 +26,11 @@ router.get('/', async (req, res) => {
                     nearest: await jpl.latToRect('moon', 'moon', nearestPoint.longitude, nearestPoint.latitude, timeStamp),
                     copernicus: await jpl.latToRect('moon', 'moon', -20.08, 9.62, timeStamp),
                     tycho: await jpl.latToRect('moon', 'moon', -11.22, -43.3, timeStamp),
-                    crisium: await jpl.latToRect('moon', 'moon', 59.1, 17, timeStamp)
+                    crisium: await jpl.latToRect('moon', 'moon', 59.1, 17, timeStamp),
                 }
-            }
+            },
+            nearestTObserver:nearestPoint,
+            moonToSun: await jpl.planetVector('moon', 'sun', timeStamp),
         });
     } catch(error) {
         res.status(500).json({
