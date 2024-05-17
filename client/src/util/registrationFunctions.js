@@ -8,7 +8,7 @@ import {
     cut_image_from_circle,
     compute_registration
 } from '../moon-registration/index.js'
-
+import { data } from '../data.js'
 const convertToAlgo = (word) => {
     word = word.toUpperCase()
     if (word === 'SIFT') return RegistrationAlgorithms.SIFT
@@ -17,13 +17,13 @@ const convertToAlgo = (word) => {
     else if (word === 'ORB') return RegistrationAlgorithms.ORB
 }
 
-const checkImage = async (imgHandler) => {
-    let a = document.createElement('a')
-    let blob = await imgHandler.to_Blob()
-    a.href = URL.createObjectURL(blob)
-    a.target = '_blank'
-    a.click()
-}
+// const checkImage = async (imgHandler) => {
+//     let a = document.createElement('a')
+//     let blob = await imgHandler.to_Blob()
+//     a.href = URL.createObjectURL(blob)
+//     a.target = '_blank'
+//     a.click()
+// }
 
 export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, modelImgFile) => {
     let inputImgHandler = new ImageHandler()
@@ -37,8 +37,21 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
 
         //get cropped image of user image first
         const moon_circle = await detect_moon(inputImgHandler)
-        //set default padding of circle in cropped image to 200px
+        data.moon_circle = moon_circle;
+        const {latitude, longitude, timeStamp} = data;
 
+        const resp = await axios.get('http://localhost:8888/positions/', {
+            params: {
+                latitude: latitude,
+                longitude: longitude,
+                timeStamp: timeStamp
+            }
+        });
+        data.positions = resp.data;
+
+        //set default padding of circle in cropped image to 200px
+        data.circleDetectVals = moon_circle;
+        console.log(data.circleDetectVals);
         const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, 200)
         inputImgHandler = croppedImgData[0]
         //get croppedImgFile for homography matrix

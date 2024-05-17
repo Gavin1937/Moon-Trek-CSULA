@@ -11,5 +11,9 @@ export const data = reactive({
     },
     layerFilenames: [],
     layerAttributes: [],
-    registrationAlgortihm: ''
+    registrationAlgortihm: '',
+    circleDetectVals: null,
+    moon_circle:null,
+    positions: null,
+    outputImg: null
 })
