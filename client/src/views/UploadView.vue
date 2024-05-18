@@ -45,7 +45,6 @@ const imageSelected = async () => {
         document.getElementsByClassName('HiddenBox')[0].style.display = 'flex'
         document.getElementsByClassName('HiddenBox')[1].style.display = 'flex'
         document.getElementsByClassName('HiddenBox')[2].style.display = 'flex'
-        console.log(document.getElementsByClassName('HiddenBox')[0].style.display)
 
         formData.previewImage.src = URL.createObjectURL(
             // document.getElementById('moonImage').files[0]
@@ -85,7 +84,7 @@ const imageSelected = async () => {
             formData.time = ''
         }
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 

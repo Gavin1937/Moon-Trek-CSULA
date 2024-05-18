@@ -386,7 +386,6 @@ onMounted(async () => {
 
                     renderer.render(scene, camera)
                     let layerFile = renderer.domElement.toDataURL()
-                    //console.log('layerImg in Moon generator', layerImg)
 
                     data.layerAttributes[i].layerImgFile = await toFile(
                         layerFile,

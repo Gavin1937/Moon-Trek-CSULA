@@ -49,7 +49,7 @@ const registrate = async () => {
     try {
         //set Moon center for cesium model
         const moonLocation = await getMoonCircle(data.images.userImgFile)
-        console.log('moon location', moonLocation)
+        console.log(`moon location: {x:${moonLocation.x}, y:${moonLocation.y}, radius:${moonLocation.radius}}`)
         data.moonCircle = moonLocation
         const outputImgData = await drawNLayers(
             data.layerAttributes.length,
@@ -62,7 +62,7 @@ const registrate = async () => {
         imgData.output = outputImgData
         await displayImgOnCanvas()
     } catch (error) {
-        console.log(error)
+        console.error(error)
         errorHandler.hasError = true
         errorHandler.message =
             "Can't perform registration on your image. Try other algorithms or upload another image"

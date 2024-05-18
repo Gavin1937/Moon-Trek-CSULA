@@ -24,7 +24,7 @@ export const getMoonCircle = async (userImgFile) => {
         await imgHandler.load_from_fileobject(userImgFile)
         return await detect_moon(imgHandler)
     } catch (error) {
-        console.log('error getting Moon circle', error)
+        console.error('error getting Moon circle', error)
     } finally {
         await imgHandler.destroy_image()
     }
@@ -83,7 +83,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         const outputImgData = await outputImgHandler.to_ImageData()
         return outputImgData
     } catch (error) {
-        console.log('error', error)
+        console.error('error', error)
     } finally {
         await inputImgHandler.destroy_image()
         await modelImgHandler.destroy_image()
@@ -125,8 +125,8 @@ const retrieveHomographyMatrixFromAPI = async (algoString, userImgFile, modelImg
 
         if (response.data.ok) {
             return response.data.payload.homography_matrix
-        } else console.log(response.error)
+        } else console.error(response.error)
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
