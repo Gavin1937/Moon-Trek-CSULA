@@ -12,7 +12,7 @@ export const data = reactive({
     outputImg: null,
     layerFilenames: [],
     layerAttributes: [],
-    registrationAlgortihm: '',
+    registrationAlgortihm: 'SIFT', // default registration algorithm
     circleDetectVals: null,
     moon_circle:null, // TODO: cleanup these two variables
     moonCircle: null, // TODO: cleanup these two variables
