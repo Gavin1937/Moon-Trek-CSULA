@@ -9,6 +9,7 @@ import { ZonedDateTime, ZoneId } from '@js-joda/core'
 import '@js-joda/timezone'
 import EarthMoonAnimation from '../assets/EarthMoonAnimation.json'
 import { Vue3Lottie } from 'vue3-lottie'
+
 // Mode will be used to decide if we want our model to create images and perform registration
 // or if we want it to render to the page for the user to interact with
 const props = defineProps(['mode'])
@@ -132,6 +133,16 @@ const getPositions = async () => {
     })
 
     modelData.positions = positionSearch.data
+
+    //setting variables for Cesium model
+    data.earthToSun = positionSearch.data.sun
+    const moonVector = {
+        x: positionSearch.data.moon.x,
+        y: positionSearch.data.moon.y,
+        z: positionSearch.data.moon.z
+    }
+    data.earthToMoon = moonVector
+    data.librations = positionSearch.data.moon.libration
 }
 
 // Sets positions for all threejs objects

@@ -8,11 +8,11 @@
             "metadataURL": "https://trek.nasa.gov/moonbeta/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_MetricCam_Gray_Global_1024ppd"
         },
         {
-            "title": "Apollo 15 Pan Cam DEM, Aristarchus Plateau 1, ColorHillshade",
-            "fileName": "Apollo15_PanCam_ClrShade_28N307E_3mp",
-            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_25N311E_5mp/thumbnail/Apollo15_PanCam_ClrShade_25N311E_5mp-200.png",
-            "description": "This is a colorized shaded-relief of the digital elevation model (DEM) for the Aristarchus Plateau Area 1. Resolution of the original Apollo 15 Panametric images was 1.5m/pixel which allows an output DEM resolution of 5m/pixel using a softcopy photogrammetry system. It is register to ULCN 2005 control network. The DEM was registered horizontally and vertically to LRO's Lunar Orbiter Laser Altimeter (LOLA) data. Elevation values are in meters and referred to a radius of 1737400m.",
-            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_PanCam_ClrShade_25N311E_5mp"
+            "title": "Apollo 15 Pan Cam Image Mosaic, Aristarchus Plateau 2",
+            "fileName": "Apollo15_PanCam_Mosaic_28N307E_1mp",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_Mosaic_28N307E_1mp/thumbnail/Apollo15_PanCam_Mosaic_28N307E_1mp-120.png",
+            "description": "This is a visible image mosaic for the Aristarchus Plateau Area 2. Resolution of the original Apollo 15 Panametric images was 1.5m/pixel. It is register to ULCN 2005 control network. The Mosaic was then registered horizontally and vertically to LRO's Lunar Orbiter Laser Altimeter (LOLA) data.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_PanCam_Mosaic_28N307E_1mp"
         },
         {
             "title": "LRO Narrow Angle Camera, HillShade Apollo 17",
@@ -22,11 +22,11 @@
             "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=NAC_DTM_APOLLO17_SHADE"
         },
         {
-            "title": "Apollo 15 Pan Cam DEM, Tsiolkovskiy Crater, ColorHillshade",
-            "fileName": "Apollo15_PanCam_ClrShade_19S129E_5mp",
-            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_19S129E_5mp/thumbnail/Apollo15_PanCam_ClrShade_19S129E_5mp-200.png",
-            "description": "This is a colorized shaded-relief of the digital elevation model (DEM) for Tsiolkovskiy Crater. Resolution of the original Apollo 15 Panametric images was 1.5m/pixel which allows an output DEM resolution of 5m/pixel using a softcopy photogrammetry system. It is register to ULCN 2005 control network. The DEM was registered horizontally and vertically to LRO's Lunar Orbiter Laser Altimeter (LOLA) data. Elevation values are in meters and referred to a radius of 1737400m.",
-            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=Apollo15_PanCam_ClrShade_19S129E_5mp"
+            "title": "LRO LOLA and Kaguya TC Hillshade 512ppd, Global",
+            "fileName": "LRO_LOLA_Shade_Global_256ppd_v06",
+            "imageURL": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_LOLAKaguya_Hillshade_60N60S_512ppd/thumbnail/LRO_LOLAKaguya_Hillshade_60N60S_512ppd-200.png",
+            "description": "This is a shaded-relief representation of the Lunar surface generated from the LOLA and Kaguya merged DEM product. The LOLA and Kaguya Teams have created an improved lunar digital elevation model (DEM) covering latitudes within ±60°, at a horizontal resolution of 512 pixels per degree (∼59 m at the equator) and a typical vertical accuracy ∼3 to 4 m. This DEM is constructed from ∼4.5×109 geodetically-accurate topographic heights from the Lunar Orbiter Laser Altimeter (LOLA) onboard the Lunar Reconnaissance Orbiter, to which we co-registered 43,200 stereo-derived DEMs (each 1×1 degree) from the SELENE Terrain Camera (TC) (∼1010 pixels total). After co-registration, approximately 90% of the TC DEMs show root-mean-square vertical residuals with the LOLA data of <5 m compared to ∼50% prior to co-registration. We use the co-registered TC data to estimate and correct orbital and pointing geolocation errors from the LOLA altimetric profiles (typically amounting to <10 m horizontally and <1 m vertically). By combining both co-registered datasets, we obtain a near-global DEM with high geodetic accuracy, and without the need for surface interpolation. We evaluate the resulting LOLA + TC merged DEM (designated as “SLDEM2015”) with particular attention to quantifying seams and crossover errors. Elevation values are in meters and map values are referred to a radius of 1737400 m.",
+            "metadataURL": "https://trek.nasa.gov/moon/TrekWS/rest/cat/metadata/fgdc/html?label=LRO_LOLAKaguya_Hillshade_60N60S_512ppd"
         },
         {
             "title": "Kaguya LGM2011 Surface Gravity, Colorized",

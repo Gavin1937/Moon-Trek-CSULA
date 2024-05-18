@@ -9,11 +9,15 @@ export const data = reactive({
         userImgFile: null,
         modelImgFile: null
     },
+    outputImg: null,
     layerFilenames: [],
     layerAttributes: [],
     registrationAlgortihm: '',
     circleDetectVals: null,
-    moon_circle:null,
+    moon_circle:null, // TODO: cleanup these two variables
+    moonCircle: null, // TODO: cleanup these two variables
     positions: null,
-    outputImg: null
+    librations: null,
+    earthToMoon: null,
+    earthToSun: null,
 })

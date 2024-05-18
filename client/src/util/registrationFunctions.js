@@ -25,6 +25,18 @@ const convertToAlgo = (word) => {
 //     a.click()
 // }
 
+export const getMoonCircle = async (userImgFile) => {
+    const imgHandler = new ImageHandler()
+    try {
+        await imgHandler.load_from_fileobject(userImgFile)
+        return await detect_moon(imgHandler)
+    } catch (error) {
+        console.log('error getting Moon circle', error)
+    } finally {
+        await imgHandler.destroy_image()
+    }
+}
+
 export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, modelImgFile) => {
     let inputImgHandler = new ImageHandler()
     const modelImgHandler = new ImageHandler()
@@ -80,8 +92,9 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         // console.log('outputimgHandler', outputImgHandler)
         // console.log('inputimgHandler', inputImgHandler)
         const outputImgData = await outputImgHandler.to_ImageData()
-
-        console.log(outputImgData)
+        // const circle = await detect_moon(outputImgHandler)
+        // console.log('circle from output image', circle)
+        // console.log(outputImgData)
         return outputImgData
     } catch (error) {
         console.log('error', error)
