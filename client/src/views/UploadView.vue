@@ -12,9 +12,9 @@ const formData = reactive({
     name: 'Select Image',
     imageFile: null,
     hasExif: true,
-    longitude: 34,
-    latitude: -77,
-    date: '2015-08-01',
+    longitude: 0,
+    latitude: 0,
+    date: '',
     time: '',
     previewImage: new Image()
 })
@@ -79,10 +79,10 @@ const imageSelected = async () => {
         } else {
             // If no meta data, reset all values and display the form
             formData.hasExif = false
-            formData.longitude = 34
-            formData.latitude = -77
-            formData.date = '2015-08-01'
-            formData.time = '01:30'
+            formData.longitude = 0
+            formData.latitude = 0
+            formData.date = ''
+            formData.time = ''
         }
     } catch (error) {
         console.log(error)
@@ -193,11 +193,11 @@ const imageSubmitted = async () => {
                                         v-model="data.registrationAlgortihm"
                                         :selected="data.registrationAlgortihm"
                                     >
-                                        <option v-if="config.MR_ENABLE_OPENCV_NONFREE" value="SURF">SURF</option>
                                         <option value="SIFT">SIFT</option>
                                         <option value="AKAZE">AKAZE</option>
                                         <option value="BRISK">BRISK</option>
                                         <option value="ORB">ORB</option>
+                                        <option v-if="config.MR_ENABLE_OPENCV_NONFREE" value="SURF">SURF</option>
                                     </select>
                                 </form>
                             </div>
