@@ -54,7 +54,8 @@
     const MAX_SCALE = 7;
     const CESIUM_MOVE_SPEED = 2;
     // ***Variables to integrate with MoonTrek in the future***
-    let moonCenter = {x:(data.outputImg.width)/2,y:(data.outputImg.width)/2}//{x:data.moon_circle.x,y:data.moon_circle.y}; // Center point from top left hand corner
+    // Center point from top left hand corner
+    let moonCenter = {x:(data.outputImg.width)/2,y:(data.outputImg.width)/2};
     const nearestPoint = data.positions.nearestTObserver; // nearestPoint from Natalie's endpoints
     const earthToMoon = {x:26711670,y:-72563638,z:354814538};
     const earthToSun = {x:14851363880,y:47113444761,z:-143579827124};
@@ -109,8 +110,12 @@ onMounted(() => {
         boundingBoxes.cesium = cesiumContainer.value.getBoundingClientRect();
         boundingBoxes.image = zoomImage.value.getBoundingClientRect();
         setFov();
-        moonCenter = {x:(data.moon_circle.x*boundingBoxes.infiniteZoom.height/data.outputImg.width+50),y:data.moon_circle.y*boundingBoxes.infiniteZoom.height/data.outputImg.height+50}//{x:data.moon_circle.x,y:data.moon_circle.y};
-        moonRadiusImage = (data.moon_circle.radius*boundingBoxes.infiniteZoom.width/data.outputImg.width-50) // Radius of the moon in the image
+        moonCenter = {
+            x:(data.detectMoonResult.x*boundingBoxes.infiniteZoom.height/data.outputImg.width+50),
+            y:(data.detectMoonResult.y*boundingBoxes.infiniteZoom.height/data.outputImg.height+50)
+        };
+        // Radius of the moon in the image
+        moonRadiusImage = (data.detectMoonResult.radius*boundingBoxes.infiniteZoom.width/data.outputImg.width-50);
     };
     updateBoundingBoxes();
     //Positions of mouse on original mouse down

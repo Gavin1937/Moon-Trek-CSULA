@@ -41,7 +41,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
 
         //get cropped image of user image first
         const moon_circle = await detect_moon(inputImgHandler)
-        data.moon_circle = moon_circle;
+        data.detectMoonResult = moon_circle;
         const {latitude, longitude, timeStamp} = data;
 
         const resp = await axios.get(`${config.backend_server}/api/positions/`, {
@@ -55,7 +55,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
 
         //set default padding of circle in cropped image to 200px
         data.circleDetectVals = moon_circle;
-        const cutImgPadding = Math.ceil(moon_circle.radius * 0.15); // use 15% of radius as padding
+        const cutImgPadding = Math.ceil(moon_circle.radius * 0.15); // use 15% of the radius as padding
         const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, cutImgPadding);
         inputImgHandler = croppedImgData[0];
         //get croppedImgFile for homography matrix

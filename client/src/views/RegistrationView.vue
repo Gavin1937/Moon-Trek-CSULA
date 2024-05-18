@@ -48,9 +48,9 @@ const displayImgOnCanvas = async () => {
 const registrate = async () => {
     try {
         //set Moon center for cesium model
-        const moonLocation = await getMoonCircle(data.images.userImgFile)
-        console.log(`moon location: {x:${moonLocation.x}, y:${moonLocation.y}, radius:${moonLocation.radius}}`)
-        data.moonCircle = moonLocation
+        const moonCircle = await getMoonCircle(data.images.userImgFile)
+        console.log(`moon location: {x:${moonCircle.x}, y:${moonCircle.y}, radius:${moonCircle.radius}}`)
+        data.moonCircle = moonCircle
         const outputImgData = await drawNLayers(
             data.layerAttributes.length,
             data.registrationAlgortihm,

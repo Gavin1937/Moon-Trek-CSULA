@@ -14,8 +14,8 @@ export const data = reactive({
     layerAttributes: [],
     registrationAlgortihm: 'SIFT', // default registration algorithm
     circleDetectVals: null,
-    moon_circle:null, // TODO: cleanup these two variables
-    moonCircle: null, // TODO: cleanup these two variables
+    detectMoonResult:null,
+    moonCircle: null,
     positions: null,
     librations: null,
     earthToMoon: null,
