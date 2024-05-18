@@ -27,8 +27,6 @@ const adjustPositions = (positions) => {
 
 const latToRect = async (origin, destination, longitude, latitude, timeStamp) => {
     try {
-        url = `http://${ config.dataServer.ip }:${ config.dataServer.port }/lat-to-rect/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
-        console.log(url)
         const response = await axios.get(
             `http://${ config.dataServer.ip }:${ config.dataServer.port }/lat-to-rect/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
         );
@@ -53,8 +51,6 @@ const planetVector = async (origin, destination, timeStamp) => {
 
 const nearestPoint = async (origin, destination, longitude, latitude, timeStamp) => {
     try {
-        url = `http://${ config.dataServer.ip }:${ config.dataServer.port }/nearest-point/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
-        console.log(url)
         const response = await axios.get(
             `http://${ config.dataServer.ip }:${ config.dataServer.port }/nearest-point/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
         );
