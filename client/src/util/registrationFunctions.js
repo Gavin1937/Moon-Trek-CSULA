@@ -64,12 +64,14 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         //set default padding of circle in cropped image to 200px
         data.circleDetectVals = moon_circle;
         console.log(data.circleDetectVals);
-        const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, 200)
-        inputImgHandler = croppedImgData[0]
+        const cutImgPadding = Math.ceil(moon_circle.radius * 0.15); // use 15% of radius as padding
+        // const cutImgPadding = 30; // maybe we should just hard-code it to a fixed value?
+        const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, cutImgPadding);
+        inputImgHandler = croppedImgData[0];
         //get croppedImgFile for homography matrix
         const croppedImgFile = new File([await inputImgHandler.to_Blob()], 'croppedImgFile', {
             type: 'image/png'
-        })
+        });
 
         const homographyMatrix = await getHomographyMatrix(algoString, croppedImgFile, modelImgFile)
         // console.log('homography matrix', homographyMatrix)
