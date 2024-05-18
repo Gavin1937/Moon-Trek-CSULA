@@ -1,0 +1,2731 @@
+[
+    {
+        "layer_id": "Apollo15_MetricCam_ClrShade_Global_1024ppd",
+        "bbox": [
+            -65.9995117,
+            -31.9995117,
+            179.9995117,
+            32.0004883
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_MetricCam_ClrShade_Global_1024ppd/thumbnail/Apollo15_MetricCam_ClrShade_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "Apollo15_MetricCam_Gray_Global_1024ppd",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_MetricCam_Gray_Global_1024ppd/thumbnail/Apollo15_MetricCam_Gray_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "Apollo15_PanCam_ClrShade_28N307E_3mp",
+        "bbox": [
+            -53.1015073,
+            26.7635801,
+            -51.5924499,
+            29.0334672
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_28N307E_3mp/thumbnail/Apollo15_PanCam_ClrShade_28N307E_3mp-120.png"
+    },
+    {
+        "layer_id": "Apollo15_PanCam_ClrShade_19S129E_5mp",
+        "bbox": [
+            127.3918913,
+            -21.0529025,
+            129.7577254,
+            -18.2873921
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_ClrShade_19S129E_5mp/thumbnail/Apollo15_PanCam_ClrShade_19S129E_5mp-120.png"
+    },
+    {
+        "layer_id": "Apollo15_PanCam_Shade_19S129E_5mp",
+        "bbox": [
+            127.3918913,
+            -21.0529025,
+            129.7577254,
+            -18.2873921
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_Shade_19S129E_5mp/thumbnail/Apollo15_PanCam_Shade_19S129E_5mp-120.png"
+    },
+    {
+        "layer_id": "Apollo15_PanCam_Mosaic_28N307E_1mp",
+        "bbox": [
+            -53.1042338,
+            26.6831152,
+            -51.5360786,
+            29.0967847
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo15_PanCam_Mosaic_28N307E_1mp/thumbnail/Apollo15_PanCam_Mosaic_28N307E_1mp-120.png"
+    },
+    {
+        "layer_id": "Apollo16_MetricCam_Conf_Global_1024ppd",
+        "bbox": [
+            -179.9995117,
+            -21.9995117,
+            179.9995117,
+            18.0004883
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo16_MetricCam_Conf_Global_1024ppd/thumbnail/Apollo16_MetricCam_Conf_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "Apollo16_MetricCam_Shade_Global_1024ppd",
+        "bbox": [
+            -179.9995117,
+            -13.9995117,
+            179.9995117,
+            18.0004883
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo16_MetricCam_Shade_Global_1024ppd/thumbnail/Apollo16_MetricCam_Shade_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "Apollo17_MetricCam_ClrShade_Global_1024ppd",
+        "bbox": [
+            -179.9995117,
+            -29.9995117,
+            179.9995117,
+            34.0004883
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo17_MetricCam_ClrShade_Global_1024ppd/thumbnail/Apollo17_MetricCam_ClrShade_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "Apollo17_MetricCam_Conf_Global_1024ppd",
+        "bbox": [
+            -179.9995117,
+            -29.9995117,
+            179.9995117,
+            34.0004883
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Apollo17_MetricCam_Conf_Global_1024ppd/thumbnail/Apollo17_MetricCam_Conf_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "ApolloZone_MetricCam_ClrShade_Global_1024ppd",
+        "bbox": [
+            -180.0,
+            -38.0,
+            180.0,
+            34.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/ApolloZone_MetricCam_ClrShade_Global_1024ppd/thumbnail/ApolloZone_MetricCam_ClrShade_Global_1024ppd-120.png"
+    },
+    {
+        "layer_id": "ApolloZone_MetricCam_Mosaic_Global_3033ppd",
+        "bbox": [
+            -180.0,
+            -31.0002943,
+            180.0,
+            32.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/ApolloZone_MetricCam_Mosaic_Global_3033ppd/thumbnail/ApolloZone_MetricCam_Mosaic_Global_3033ppd-120.png"
+    },
+    {
+        "layer_id": "Clem_UVVIS_TiO2_Clr_Global_152ppd",
+        "bbox": [
+            -180.0,
+            -90.0,
+            179.997,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Clem_UVVIS_TiO2_Clr_Global_152ppd/thumbnail/Clem_UVVIS_TiO2_Clr_Global_152ppd-120.png"
+    },
+    {
+        "layer_id": "Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd",
+        "bbox": [
+            -180.0,
+            -89.975,
+            179.975,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd/thumbnail/Kaguya_LGM2011_SurfaceGravity_Colorized_Global_mgal3m_20ppd-120.png"
+    },
+    {
+        "layer_id": "ClemLO_Mosaic_Global_512ppd_v02",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/ClemLO_Mosaic_Global_512ppd_v02/thumbnail/ClemLO_Mosaic_Global_512ppd_v02-120.png"
+    },
+    {
+        "layer_id": "LP_GRS_Th_Clr_Global_2ppd",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LP_GRS_Th_Clr_Global_2ppd/thumbnail/LP_GRS_Th_Clr_Global_2ppd-120.png"
+    },
+    {
+        "layer_id": "LRO_Diviner_ST_Avg_Clr_Global_32ppd",
+        "bbox": [
+            -180.0,
+            -60.0,
+            180.0,
+            60.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_Diviner_ST_Avg_Clr_Global_32ppd/thumbnail/LRO_Diviner_ST_Avg_Clr_Global_32ppd-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Count_Global_128ppd_v04",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_LOLA_Count_Global_128ppd_v04/thumbnail/LRO_LOLA_Count_Global_128ppd_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Shade_Global_256ppd_v06",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_LOLA_Shade_Global_256ppd_v06/thumbnail/LRO_LOLA_Shade_Global_256ppd_v06-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbndHaz_09S015E_150cmp",
+        "bbox": [
+            15.1394411,
+            -9.6599831,
+            15.7343414,
+            -8.4176913
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbndHaz_09S015E_150cmp/thumbnail/LRO_NAC_CratAbndHaz_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbndHaz_00N234E_150cmp",
+        "bbox": [
+            -125.9571666,
+            -0.4271581,
+            -125.7863097,
+            0.74486
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbndHaz_00N234E_150cmp/thumbnail/LRO_NAC_CratAbndHaz_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbndHaz_26S265E_200cmp",
+        "bbox": [
+            -95.7098542,
+            -26.8553549,
+            -95.1515676,
+            -25.502706
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbndHaz_26S265E_200cmp/thumbnail/LRO_NAC_CratAbndHaz_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbndHaz_20N010E_2mp",
+        "bbox": [
+            10.2389654,
+            19.1419584,
+            10.6054366,
+            20.3256603
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbndHaz_20N010E_2mp/thumbnail/LRO_NAC_CratAbndHaz_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_17S173E_150cmp",
+        "bbox": [
+            172.757927,
+            -17.1611221,
+            172.9328015,
+            -16.1052763
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_17S173E_150cmp/thumbnail/LRO_NAC_CratAbnd_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0878822,
+            -48.4349003,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_25N311E_2mp/thumbnail/LRO_NAC_CratAbnd_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_20S337E_400cmp",
+        "bbox": [
+            -22.8510483,
+            -21.4089176,
+            -22.1948446,
+            -20.0409587
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_20S337E_400cmp/thumbnail/LRO_NAC_CratAbnd_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_36N320E_2mp",
+        "bbox": [
+            -40.3343706,
+            35.667079,
+            -39.6414084,
+            36.7431694
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_36N320E_2mp/thumbnail/LRO_NAC_CratAbnd_36N320E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_06N120E_200cmp",
+        "bbox": [
+            119.5470305,
+            5.7397402,
+            120.0998449,
+            7.1217763
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_06N120E_200cmp/thumbnail/LRO_NAC_CratAbnd_06N120E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_10N058E_150cmp",
+        "bbox": [
+            58.6131512,
+            10.1585786,
+            59.134116,
+            11.3351792
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_10N058E_150cmp/thumbnail/LRO_NAC_CratAbnd_10N058E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_53N354E_150cmp",
+        "bbox": [
+            -5.548136,
+            52.6481237,
+            -4.9190735,
+            54.0570767
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_53N354E_150cmp/thumbnail/LRO_NAC_CratAbnd_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratAbnd_20N010E_2mp",
+        "bbox": [
+            10.2389654,
+            19.1419584,
+            10.6054366,
+            20.3256603
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratAbnd_20N010E_2mp/thumbnail/LRO_NAC_CratAbnd_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_13S358E_2mp",
+        "bbox": [
+            -2.6262314,
+            -13.1566877,
+            -1.9929171,
+            -12.0828069
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_13S358E_2mp/thumbnail/LRO_NAC_CratDenHaz_13S358E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_09S015E_150cmp",
+        "bbox": [
+            15.1392912,
+            -9.6604872,
+            15.7376498,
+            -8.4812657
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_09S015E_150cmp/thumbnail/LRO_NAC_CratDenHaz_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_20S337E_400cmp",
+        "bbox": [
+            -22.8510595,
+            -21.3532001,
+            -22.19142,
+            -20.0408646
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_20S337E_400cmp/thumbnail/LRO_NAC_CratDenHaz_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_00N234E_150cmp",
+        "bbox": [
+            -125.9587232,
+            -0.4642718,
+            -125.7820465,
+            0.51245
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_00N234E_150cmp/thumbnail/LRO_NAC_CratDenHaz_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_16S041E_150cmp",
+        "bbox": [
+            40.4649688,
+            -16.5995651,
+            41.0129836,
+            -15.4208163
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_16S041E_150cmp/thumbnail/LRO_NAC_CratDenHaz_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_60S200E_150cmp",
+        "bbox": [
+            -160.6788575,
+            -60.6382911,
+            -160.2635929,
+            -59.636165
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_60S200E_150cmp/thumbnail/LRO_NAC_CratDenHaz_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDenHaz_43S349E_150cmp",
+        "bbox": [
+            -11.6402955,
+            -43.4935718,
+            -11.0333697,
+            -42.3564579
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDenHaz_43S349E_150cmp/thumbnail/LRO_NAC_CratDenHaz_43S349E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDen_09S015E_150cmp",
+        "bbox": [
+            15.1392912,
+            -9.6604872,
+            15.7376498,
+            -8.4812657
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDen_09S015E_150cmp/thumbnail/LRO_NAC_CratDen_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDen_19S070E_150cmp",
+        "bbox": [
+            69.482841,
+            -19.3799501,
+            70.1485316,
+            -18.2228335
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDen_19S070E_150cmp/thumbnail/LRO_NAC_CratDen_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDen_00N234E_150cmp",
+        "bbox": [
+            -125.9587232,
+            -0.4642718,
+            -125.7820465,
+            0.51245
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDen_00N234E_150cmp/thumbnail/LRO_NAC_CratDen_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDen_02S167E_150cmp",
+        "bbox": [
+            166.4438208,
+            -2.7467169,
+            166.9040389,
+            -1.3862179
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDen_02S167E_150cmp/thumbnail/LRO_NAC_CratDen_02S167E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_CratDen_43S349E_150cmp",
+        "bbox": [
+            -11.6402955,
+            -43.4935718,
+            -11.0333697,
+            -42.3564579
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_CratDen_43S349E_150cmp/thumbnail/LRO_NAC_CratDen_43S349E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_3m_17S173E_150cmp",
+        "bbox": [
+            173.1571205,
+            -17.4359906,
+            173.7186004,
+            -15.9753373
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_3m_17S173E_150cmp/thumbnail/LRO_NAC_ClrRoughnessHaz_3m_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_17S173E_150cmp",
+        "bbox": [
+            173.1571205,
+            -17.4359906,
+            173.7186004,
+            -15.9753373
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_17S173E_150cmp/thumbnail/LRO_NAC_Roughness_3m_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_17S173E_150cmp",
+        "bbox": [
+            165.6919129,
+            -17.4360009,
+            166.2292112,
+            -15.9753373
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_17S173E_150cmp/thumbnail/LRO_NAC_Gray_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_13S358E_2mp",
+        "bbox": [
+            -2.5415659,
+            -26.120285,
+            -1.9527127,
+            -25.0865602
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_13S358E_2mp/thumbnail/LRO_NAC_ClrSlope_15m_13S358E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_4m_13S258E_2mp",
+        "bbox": [
+            -2.5415659,
+            -26.120285,
+            -1.9527127,
+            -25.0865602
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_4m_13S258E_2mp/thumbnail/LRO_NAC_ClrRoughnessHaz_4m_13S258E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_4m_13S358E_2mp",
+        "bbox": [
+            -2.5415659,
+            -26.120285,
+            -1.9527127,
+            -25.0865602
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_4m_13S358E_2mp/thumbnail/LRO_NAC_ClrSlopeHaz_4m_13S358E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_13S358E_200cmp",
+        "bbox": [
+            -2.6084195,
+            -13.1203075,
+            -2.0040504,
+            -12.0865602
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_13S358E_200cmp/thumbnail/LRO_NAC_ClrShade_13S358E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_13S358E_200cmp",
+        "bbox": [
+            -2.6084195,
+            -13.1203075,
+            -2.0040504,
+            -12.0865602
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_13S358E_200cmp/thumbnail/LRO_NAC_Shade_13S358E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_15m_73N350E_150cmp",
+        "bbox": [
+            -9.4368827,
+            73.3188433,
+            -8.291074,
+            73.7131748
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_15m_73N350E_150cmp/thumbnail/LRO_NAC_Roughness_15m_73N350E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_73N350E_150cmp",
+        "bbox": [
+            -9.4368827,
+            73.3188433,
+            -8.291074,
+            73.7131748
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_73N350E_150cmp/thumbnail/LRO_NAC_Slope_73N350E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_15m_26N004E_150cmp",
+        "bbox": [
+            3.0271666,
+            25.4546362,
+            3.8496142,
+            26.7641022
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_15m_26N004E_150cmp/thumbnail/LRO_NAC_ClrRoughness_15m_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_15m_26N004E_150cmp",
+        "bbox": [
+            3.0271666,
+            25.4546362,
+            3.8496142,
+            26.7641022
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_15m_26N004E_150cmp/thumbnail/LRO_NAC_Roughness_15m_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_3m_26N004E_150cmp",
+        "bbox": [
+            3.0271666,
+            25.4546362,
+            3.8496142,
+            26.7641022
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_3m_26N004E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_3m_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_26N004E_150cmp",
+        "bbox": [
+            3.0271666,
+            25.4546362,
+            3.8496142,
+            26.7641022
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_26N004E_150cmp/thumbnail/LRO_NAC_ClrShade_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_26N004E_150cmp",
+        "bbox": [
+            2.7224577,
+            25.4546213,
+            3.4621453,
+            26.7641022
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_26N004E_150cmp/thumbnail/LRO_NAC_Gray_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_09S015E_150cmp",
+        "bbox": [
+            15.140349,
+            -9.646928,
+            15.6961668,
+            -8.6195703
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_09S015E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_3m_09S015E_150cmp",
+        "bbox": [
+            15.140349,
+            -9.646928,
+            15.6961668,
+            -8.6195703
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_3m_09S015E_150cmp/thumbnail/LRO_NAC_ClrRoughness_3m_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_3m_09S015E_150cmp",
+        "bbox": [
+            15.140349,
+            -9.646928,
+            15.6961668,
+            -8.6195703
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_3m_09S015E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_3m_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_09S015E_150cmp",
+        "bbox": [
+            14.9630613,
+            -9.6469376,
+            15.5123658,
+            -8.6195703
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_09S015E_150cmp/thumbnail/LRO_NAC_ClrConf_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_09S015E_150cmp",
+        "bbox": [
+            14.9630613,
+            -9.6469376,
+            15.5123658,
+            -8.6195703
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_09S015E_150cmp/thumbnail/LRO_NAC_Gray_09S015E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_3m_37S206E_150cmp",
+        "bbox": [
+            -153.9539506,
+            -37.2487834,
+            -153.4460401,
+            -36.8352287
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_3m_37S206E_150cmp/thumbnail/LRO_NAC_ClrRoughness_3m_37S206E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_37S206E_150cmp",
+        "bbox": [
+            -153.9539506,
+            -37.2487834,
+            -153.4460401,
+            -36.8352287
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_37S206E_150cmp/thumbnail/LRO_NAC_Roughness_3m_37S206E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_37S206E_150cmp",
+        "bbox": [
+            -123.0280372,
+            -37.248796,
+            -122.6221395,
+            -36.8352286
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_37S206E_150cmp/thumbnail/LRO_NAC_ClrConf_37S206E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_37S206E_150cmp",
+        "bbox": [
+            -153.9539506,
+            -37.2487834,
+            -153.4460401,
+            -36.8352287
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_37S206E_150cmp/thumbnail/LRO_NAC_Conf_37S206E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0892205,
+            -48.4352399,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_25N311E_2mp/thumbnail/LRO_NAC_ClrSlope_15m_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_4m_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0892205,
+            -48.4352399,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_4m_25N311E_2mp/thumbnail/LRO_NAC_ClrSlopeHaz_4m_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0892205,
+            -48.4352399,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_25N311E_2mp/thumbnail/LRO_NAC_Slope_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_15m_28N307E_150cmp",
+        "bbox": [
+            -52.743986,
+            27.2168,
+            -52.1655977,
+            28.4802054
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_15m_28N307E_150cmp/thumbnail/LRO_NAC_ClrRoughness_15m_28N307E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_15m_28N307E_150cmp",
+        "bbox": [
+            -52.743986,
+            27.2168,
+            -52.1655977,
+            28.4802054
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_15m_28N307E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_15m_28N307E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_28N307E_150cmp",
+        "bbox": [
+            -46.5985621,
+            27.2168134,
+            -46.0875754,
+            28.4802054
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_28N307E_150cmp/thumbnail/LRO_NAC_ClrConf_28N307E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_28N307E_150cmp",
+        "bbox": [
+            -46.5985621,
+            27.2168134,
+            -46.0875754,
+            28.4802054
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_28N307E_150cmp/thumbnail/LRO_NAC_Gray_28N307E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_15m_19S070E_150cmp",
+        "bbox": [
+            69.5021195,
+            -19.3338089,
+            70.2347657,
+            -17.6288402
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_15m_19S070E_150cmp/thumbnail/LRO_NAC_ClrRoughnessHaz_15m_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_3m_19S070E_150cmp",
+        "bbox": [
+            69.5021195,
+            -19.3338089,
+            70.2347657,
+            -17.6288402
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_3m_19S070E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_3m_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_19S070E_150cmp",
+        "bbox": [
+            65.7556016,
+            -19.3338123,
+            66.4487412,
+            -17.6288402
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_19S070E_150cmp/thumbnail/LRO_NAC_ClrConf_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_19S070E_150cmp",
+        "bbox": [
+            69.5021195,
+            -19.3338089,
+            70.2347657,
+            -17.6288402
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_19S070E_150cmp/thumbnail/LRO_NAC_Shade_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_20S337E_400cmp",
+        "bbox": [
+            -22.7926867,
+            -21.0658297,
+            -22.2073208,
+            -20.484135
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_20S337E_400cmp/thumbnail/LRO_NAC_ClrSlope_15m_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_8m_20S337E_400cmp",
+        "bbox": [
+            -22.7926867,
+            -21.0658297,
+            -22.2073208,
+            -20.484135
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_8m_20S337E_400cmp/thumbnail/LRO_NAC_ClrRoughness_8m_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_20S337E_400cmp",
+        "bbox": [
+            -21.4181195,
+            -21.065865,
+            -20.8680484,
+            -20.484135
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_20S337E_400cmp/thumbnail/LRO_NAC_Slope_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_20S337E_400cmp",
+        "bbox": [
+            -22.7926867,
+            -21.0658297,
+            -22.2073208,
+            -20.484135
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_20S337E_400cmp/thumbnail/LRO_NAC_Shade_20S337E_400cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_61N099E_150cmp",
+        "bbox": [
+            47.89568,
+            60.4580012,
+            48.6066214,
+            61.7296316
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_61N099E_150cmp/thumbnail/LRO_NAC_ClrConf_61N099E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_61N099E_150cmp",
+        "bbox": [
+            98.7325771,
+            60.4580063,
+            100.1980529,
+            61.7296316
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_61N099E_150cmp/thumbnail/LRO_NAC_Conf_61N099E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_15m_26N178E_150cmp",
+        "bbox": [
+            177.5399094,
+            25.6717469,
+            178.0041043,
+            26.4302622
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_15m_26N178E_150cmp/thumbnail/LRO_NAC_ClrRoughnessHaz_15m_26N178E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_15m_26N178E_150cmp",
+        "bbox": [
+            177.5399094,
+            25.6717469,
+            178.0041043,
+            26.4302622
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_15m_26N178E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_15m_26N178E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_3m_26N178E_150cmp",
+        "bbox": [
+            177.5399094,
+            25.6717469,
+            178.0041043,
+            26.4302622
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_3m_26N178E_150cmp/thumbnail/LRO_NAC_ClrRoughnessHaz_3m_26N178E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_26N178E_150cmp",
+        "bbox": [
+            159.5718136,
+            25.6717378,
+            159.9890168,
+            26.4302622
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_26N178E_150cmp/thumbnail/LRO_NAC_Slope_26N178E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_02S317E_150cmp",
+        "bbox": [
+            -43.3346321,
+            -2.950065,
+            -42.9085417,
+            -1.8250045
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_02S317E_150cmp/thumbnail/LRO_NAC_Conf_02S317E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_4m_36N320E_2mp",
+        "bbox": [
+            -40.3343706,
+            35.6676621,
+            -39.6430575,
+            36.7431694
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_4m_36N320E_2mp/thumbnail/LRO_NAC_ClrRoughnessHaz_4m_36N320E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_4m_36N320E_2mp",
+        "bbox": [
+            -40.3343706,
+            35.6676621,
+            -39.6430575,
+            36.7431694
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_4m_36N320E_2mp/thumbnail/LRO_NAC_ClrRoughness_4m_36N320E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_36N320E_2mp",
+        "bbox": [
+            113.0607413,
+            35.6676209,
+            113.6203827,
+            36.7431694
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_36N320E_2mp/thumbnail/LRO_NAC_Gray_36N320E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_00N234E_150cmp",
+        "bbox": [
+            -125.9745278,
+            -0.5607312,
+            -125.1071764,
+            0.7690361
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_00N234E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_15m_00N234E_150cmp",
+        "bbox": [
+            -125.9745278,
+            -0.5607312,
+            -125.1071764,
+            0.7690361
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_15m_00N234E_150cmp/thumbnail/LRO_NAC_Roughness_15m_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_00N234E_150cmp",
+        "bbox": [
+            -125.9745278,
+            -0.5607312,
+            -125.1071764,
+            0.7690361
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_00N234E_150cmp/thumbnail/LRO_NAC_Roughness_3m_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_15m_08N332E_2mp",
+        "bbox": [
+            -28.0744706,
+            7.061733,
+            -27.4759863,
+            8.091718
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_15m_08N332E_2mp/thumbnail/LRO_NAC_ClrRoughnessHaz_15m_08N332E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_4m_08N332E_2mp",
+        "bbox": [
+            -28.0744706,
+            7.061733,
+            -27.4759863,
+            8.091718
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_4m_08N332E_2mp/thumbnail/LRO_NAC_ClrRoughness_4m_08N332E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_4m_08N332E_2mp",
+        "bbox": [
+            -28.0744706,
+            7.061733,
+            -27.4759863,
+            8.091718
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_4m_08N332E_2mp/thumbnail/LRO_NAC_ClrSlope_4m_08N332E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_08N332E_2mp",
+        "bbox": [
+            -28.0737086,
+            7.0614631,
+            -27.1065834,
+            8.746329
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_08N332E_2mp/thumbnail/LRO_NAC_ClrShade_08N332E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_08N332E_2mp",
+        "bbox": [
+            -28.0737086,
+            7.0614631,
+            -27.1065834,
+            8.746329
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_08N332E_2mp/thumbnail/LRO_NAC_Conf_08N332E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_55N077E_200cmp",
+        "bbox": [
+            76.9027489,
+            53.7777266,
+            77.3971211,
+            54.9352554
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_55N077E_200cmp/thumbnail/LRO_NAC_Slope_55N077E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_19N005E_2mp",
+        "bbox": [
+            5.2290773,
+            18.1294632,
+            5.5045732,
+            19.0862814
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_19N005E_2mp/thumbnail/LRO_NAC_Slope_19N005E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_06N120E_200cmp",
+        "bbox": [
+            119.5578735,
+            5.9841583,
+            120.1012514,
+            7.10901
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_06N120E_200cmp/thumbnail/LRO_NAC_ClrSlope_15m_06N120E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_4m_06N120E_200cmp",
+        "bbox": [
+            119.5578735,
+            5.9841583,
+            120.1012514,
+            7.10901
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_4m_06N120E_200cmp/thumbnail/LRO_NAC_ClrSlope_4m_06N120E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_06N120E_200cmp",
+        "bbox": [
+            118.9753996,
+            5.9841376,
+            119.5161009,
+            7.10901
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_06N120E_200cmp/thumbnail/LRO_NAC_Gray_06N120E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_4m_32N292E_2mp",
+        "bbox": [
+            -67.8792905,
+            31.0043253,
+            -66.854291,
+            32.3158222
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_4m_32N292E_2mp/thumbnail/LRO_NAC_ClrRoughness_4m_32N292E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_4m_32N292E_2mp",
+        "bbox": [
+            -67.8792905,
+            31.0043253,
+            -66.854291,
+            32.3158222
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_4m_32N292E_2mp/thumbnail/LRO_NAC_Roughness_4m_32N292E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_15m_10N58E_150cmp",
+        "bbox": [
+            58.639812,
+            10.6602392,
+            58.940383,
+            11.1357376
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_15m_10N58E_150cmp/thumbnail/LRO_NAC_ClrRoughness_15m_10N58E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_3m_10N58E_150cmp",
+        "bbox": [
+            58.639812,
+            10.6602392,
+            58.940383,
+            11.1357376
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_3m_10N58E_150cmp/thumbnail/LRO_NAC_ClrSlope_3m_10N58E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_10N058E_150cmp",
+        "bbox": [
+            57.7489415,
+            10.6602624,
+            58.044951,
+            11.1357376
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_10N058E_150cmp/thumbnail/LRO_NAC_Slope_10N058E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_10N058E_150cmp",
+        "bbox": [
+            57.7841421,
+            10.6602804,
+            58.0803504,
+            11.1357376
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_10N058E_150cmp/thumbnail/LRO_NAC_Gray_10N058E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_26N150E_200cmp",
+        "bbox": [
+            135.0327484,
+            25.6232861,
+            135.5170373,
+            26.8169245
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_26N150E_200cmp/thumbnail/LRO_NAC_ClrConf_26N150E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_26N150E_200cmp",
+        "bbox": [
+            150.1461771,
+            25.6232254,
+            150.6846895,
+            26.8169245
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_26N150E_200cmp/thumbnail/LRO_NAC_Conf_26N150E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_02N085E_150cmp",
+        "bbox": [
+            84.8636886,
+            1.3778288,
+            85.7542915,
+            2.8147863
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_02N085E_150cmp/thumbnail/LRO_NAC_Slope_02N085E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_07N022E_150cmp",
+        "bbox": [
+            21.6228271,
+            6.271912,
+            22.2195488,
+            7.2298986
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_07N022E_150cmp/thumbnail/LRO_NAC_ClrShade_07N022E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_07N022E_150cmp",
+        "bbox": [
+            21.6228271,
+            6.271912,
+            22.2195488,
+            7.2298986
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_07N022E_150cmp/thumbnail/LRO_NAC_Shade_07N022E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_15m_16S041E_150cmp",
+        "bbox": [
+            40.4705789,
+            -16.5957932,
+            41.2194618,
+            -15.2778055
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_15m_16S041E_150cmp/thumbnail/LRO_NAC_ClrRoughness_15m_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_16S041E_150cmp",
+        "bbox": [
+            40.4705789,
+            -16.5957932,
+            41.2194618,
+            -15.2778055
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_16S041E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_3m_16S041E_150cmp",
+        "bbox": [
+            40.4705789,
+            -16.5957932,
+            41.2194618,
+            -15.2778055
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_3m_16S041E_150cmp/thumbnail/LRO_NAC_ClrRoughness_3m_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_16S041E_150cmp",
+        "bbox": [
+            40.4705789,
+            -16.5957932,
+            41.2194618,
+            -15.2778055
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_16S041E_150cmp/thumbnail/LRO_NAC_Roughness_3m_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_16S041E_150cmp",
+        "bbox": [
+            40.4705789,
+            -16.5957932,
+            41.2194618,
+            -15.2778055
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_16S041E_150cmp/thumbnail/LRO_NAC_Shade_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_05N000E_150cmp",
+        "bbox": [
+            -0.5920086,
+            4.1054948,
+            -0.1645886,
+            5.3703911
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_05N000E_150cmp/thumbnail/LRO_NAC_Gray_05N000E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_26S265E_200cmp",
+        "bbox": [
+            -95.7877312,
+            -26.7174791,
+            -95.0620432,
+            -25.4910156
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_26S265E_200cmp/thumbnail/LRO_NAC_ClrSlope_15m_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughness_4m_26S265E_200cmp",
+        "bbox": [
+            -95.7877312,
+            -26.7174791,
+            -95.0620432,
+            -25.4910156
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughness_4m_26S265E_200cmp/thumbnail/LRO_NAC_ClrRoughness_4m_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_4m_26S265E_200cmp",
+        "bbox": [
+            -95.7877312,
+            -26.7174791,
+            -95.0620432,
+            -25.4910156
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_4m_26S265E_200cmp/thumbnail/LRO_NAC_ClrSlope_4m_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrConf_26S265E_200cmp",
+        "bbox": [
+            -86.1459203,
+            -26.7174962,
+            -85.4932662,
+            -25.4910156
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrConf_26S265E_200cmp/thumbnail/LRO_NAC_ClrConf_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_26S265E_200cmp",
+        "bbox": [
+            -95.7877312,
+            -26.7174791,
+            -95.0620432,
+            -25.4910156
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_26S265E_200cmp/thumbnail/LRO_NAC_Shade_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_53N354E_150cmp",
+        "bbox": [
+            -5.483328,
+            53.0779292,
+            -4.8128358,
+            53.5176801
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_53N354E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_15m_53N354E_150cmp",
+        "bbox": [
+            -5.483328,
+            53.0779292,
+            -4.8128358,
+            53.5176801
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_15m_53N354E_150cmp/thumbnail/LRO_NAC_Roughness_15m_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_53N354E_150cmp",
+        "bbox": [
+            -5.483328,
+            53.0779292,
+            -4.8128358,
+            53.5176801
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_53N354E_150cmp/thumbnail/LRO_NAC_Roughness_3m_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_53N354E_150cmp",
+        "bbox": [
+            -5.483328,
+            53.0779292,
+            -4.8128358,
+            53.5176801
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_53N354E_150cmp/thumbnail/LRO_NAC_Conf_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_53N354E_150cmp",
+        "bbox": [
+            -5.483328,
+            53.0779292,
+            -4.8128358,
+            53.5176801
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_53N354E_150cmp/thumbnail/LRO_NAC_Shade_53N354E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_07N301E_2mp",
+        "bbox": [
+            -58.8657122,
+            6.8588855,
+            -58.4103964,
+            7.823278
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_07N301E_2mp/thumbnail/LRO_NAC_Conf_07N301E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_07N301E_2mp",
+        "bbox": [
+            -58.8657122,
+            6.8588855,
+            -58.4103964,
+            7.823278
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_07N301E_2mp/thumbnail/LRO_NAC_Shade_07N301E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_03S286E_150cmp",
+        "bbox": [
+            -74.5352075,
+            -3.6992955,
+            -73.7101073,
+            -2.5608235
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_03S286E_150cmp/thumbnail/LRO_NAC_Shade_03S286E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_13N356E_150cmp",
+        "bbox": [
+            -3.9301294,
+            12.5162711,
+            -3.6453022,
+            13.4699413
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_13N356E_150cmp/thumbnail/LRO_NAC_Slope_13N356E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_27N318E_150cmp",
+        "bbox": [
+            -42.01247,
+            26.7586524,
+            -41.5622661,
+            27.7137664
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_27N318E_150cmp/thumbnail/LRO_NAC_ClrShade_27N318E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_27N318E_150cmp",
+        "bbox": [
+            -42.01247,
+            26.7586524,
+            -41.5622661,
+            27.7137664
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_27N318E_150cmp/thumbnail/LRO_NAC_Shade_27N318E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_15m_60S200E_150cmp",
+        "bbox": [
+            -160.6816672,
+            -60.6430685,
+            -159.4890184,
+            -59.3178763
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_15m_60S200E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_15m_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrRoughnessHaz_3m_60S200E_150cmp",
+        "bbox": [
+            -160.6816672,
+            -60.6430685,
+            -159.4890184,
+            -59.3178763
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrRoughnessHaz_3m_60S200E_150cmp/thumbnail/LRO_NAC_ClrRoughnessHaz_3m_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_3m_60S200E_150cmp",
+        "bbox": [
+            -160.6816672,
+            -60.6430685,
+            -159.4890184,
+            -59.3178763
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_3m_60S200E_150cmp/thumbnail/LRO_NAC_Roughness_3m_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_60S200E_150cmp",
+        "bbox": [
+            -160.6816672,
+            -60.6430685,
+            -159.4890184,
+            -59.3178763
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_60S200E_150cmp/thumbnail/LRO_NAC_Shade_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_51S171E_2mp",
+        "bbox": [
+            -5.9805553,
+            -51.6682955,
+            -5.4146656,
+            -50.3714127
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_51S171E_2mp/thumbnail/LRO_NAC_Gray_51S171E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_02S167E_150cmp",
+        "bbox": [
+            166.5794433,
+            -2.9191836,
+            166.9709973,
+            -1.7502106
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_02S167E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_02S167E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_3m_02S167E_150cmp",
+        "bbox": [
+            166.5794433,
+            -2.9191836,
+            166.9709973,
+            -1.7502106
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_3m_02S167E_150cmp/thumbnail/LRO_NAC_ClrSlopeHaz_3m_02S167E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_02S167E_150cmp",
+        "bbox": [
+            166.5794433,
+            -2.9191836,
+            166.9709973,
+            -1.7502106
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrShade_02S167E_150cmp/thumbnail/LRO_NAC_ClrShade_02S167E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Roughness_15m_20N010E_2mp",
+        "bbox": [
+            10.1997172,
+            19.5486798,
+            10.5707322,
+            20.5179174
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Roughness_15m_20N010E_2mp/thumbnail/LRO_NAC_Roughness_15m_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlopeHaz_4m_20N010E_2mp",
+        "bbox": [
+            10.1997172,
+            19.5486798,
+            10.5707322,
+            20.5179174
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlopeHaz_4m_20N010E_2mp/thumbnail/LRO_NAC_ClrSlopeHaz_4m_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_20N010E_2mp",
+        "bbox": [
+            10.1997172,
+            19.5486798,
+            10.5707322,
+            20.5179174
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Slope_20N010E_2mp/thumbnail/LRO_NAC_Slope_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_20N010E_2mp",
+        "bbox": [
+            10.1997172,
+            19.5486798,
+            10.5707322,
+            20.5179174
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Shade_20N010E_2mp/thumbnail/LRO_NAC_Shade_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_15m_19S129E_150cmp",
+        "bbox": [
+            128.2947893,
+            -20.1830688,
+            128.8312375,
+            -18.723368
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_15m_19S129E_150cmp/thumbnail/LRO_NAC_ClrSlope_15m_19S129E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrSlope_3m_19S129E_150cmp",
+        "bbox": [
+            128.2947893,
+            -20.1830688,
+            128.8312375,
+            -18.723368
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_ClrSlope_3m_19S129E_150cmp/thumbnail/LRO_NAC_ClrSlope_3m_19S129E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Gray_19S129E_150cmp",
+        "bbox": [
+            121.3790472,
+            -20.1830816,
+            121.8866103,
+            -18.723368
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Gray_19S129E_150cmp/thumbnail/LRO_NAC_Gray_19S129E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Conf_43S349E_150cmp",
+        "bbox": [
+            -11.64536,
+            -43.6576932,
+            -10.923577,
+            -42.3481321
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Conf_43S349E_150cmp/thumbnail/LRO_NAC_Conf_43S349E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_26N004E_50cmp",
+        "bbox": [
+            2.9307878,
+            25.4463744,
+            4.399092,
+            26.7660726
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_26N004E_50cmp/thumbnail/LRO_NAC_Mosaic_26N004E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_36N320E_50cmp",
+        "bbox": [
+            -40.3343706,
+            35.6676455,
+            -39.6430575,
+            36.7431529
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_36N320E_50cmp/thumbnail/LRO_NAC_Mosaic_36N320E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_06N120E_50cmp",
+        "bbox": [
+            119.5578735,
+            5.9841418,
+            120.1012184,
+            7.10901
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_06N120E_50cmp/thumbnail/LRO_NAC_Mosaic_06N120E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_02N085E_50cmp",
+        "bbox": [
+            84.680063,
+            1.4832565,
+            86.0005702,
+            2.8029719
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_02N085E_50cmp/thumbnail/LRO_NAC_Mosaic_02N085E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_16S041E_50cmp",
+        "bbox": [
+            40.1384279,
+            -16.5809869,
+            41.5113216,
+            -15.2612753
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_16S041E_50cmp/thumbnail/LRO_NAC_Mosaic_16S041E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_03S286E_50cmp",
+        "bbox": [
+            -74.926441,
+            -3.7141328,
+            -73.6049185,
+            -2.3944254
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_03S286E_50cmp/thumbnail/LRO_NAC_Mosaic_03S286E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Mosaic_19S129E_50cmp",
+        "bbox": [
+            127.8271176,
+            -20.023707,
+            129.2228684,
+            -18.7040018
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Mosaic_19S129E_50cmp/thumbnail/LRO_NAC_Mosaic_19S129E_50cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_17S173E_150cmp",
+        "bbox": [
+            172.7543982,
+            -17.1606813,
+            172.9293171,
+            -16.1078681
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_17S173E_150cmp/thumbnail/LRO_NAC_RockAbndHaz_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_26N004E_150cmp",
+        "bbox": [
+            3.2902583,
+            25.7531447,
+            3.6587571,
+            27.0410294
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_26N004E_150cmp/thumbnail/LRO_NAC_RockAbndHaz_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0894251,
+            -48.434115,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_25N311E_2mp/thumbnail/LRO_NAC_RockAbndHaz_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_26N178E_150cmp",
+        "bbox": [
+            177.504441,
+            25.479657,
+            178.0089487,
+            26.719493
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_26N178E_150cmp/thumbnail/LRO_NAC_RockAbndHaz_26N178E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_16S041E_150cmp",
+        "bbox": [
+            40.4668208,
+            -16.6036856,
+            41.0178599,
+            -15.417092
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_16S041E_150cmp/thumbnail/LRO_NAC_RockAbndHaz_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbndHaz_20N010E_2mp",
+        "bbox": [
+            10.2171225,
+            19.1423158,
+            10.6038475,
+            20.3256942
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbndHaz_20N010E_2mp/thumbnail/LRO_NAC_RockAbndHaz_20N010E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbnd_19S070E_150cmp",
+        "bbox": [
+            69.4792876,
+            -19.3580237,
+            70.1394479,
+            -18.2229522
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbnd_19S070E_150cmp/thumbnail/LRO_NAC_RockAbnd_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbnd_00N234E_150cmp",
+        "bbox": [
+            -125.9587083,
+            -0.4641284,
+            -125.7887268,
+            0.515765
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbnd_00N234E_150cmp/thumbnail/LRO_NAC_RockAbnd_00N234E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockAbnd_10N058E_150cmp",
+        "bbox": [
+            58.6165083,
+            10.1495662,
+            59.1473779,
+            11.335175
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockAbnd_10N058E_150cmp/thumbnail/LRO_NAC_RockAbnd_10N058E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_26N004E_150cmp",
+        "bbox": [
+            3.2902583,
+            25.7531447,
+            3.6587571,
+            27.0410294
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_26N004E_150cmp/thumbnail/LRO_NAC_RockDenHaz_26N004E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_25N311E_2mp",
+        "bbox": [
+            -49.0411832,
+            24.0894251,
+            -48.434115,
+            25.2896856
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_25N311E_2mp/thumbnail/LRO_NAC_RockDenHaz_25N311E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_19S070E_150cmp",
+        "bbox": [
+            69.4792876,
+            -19.3580237,
+            70.1394479,
+            -18.2229522
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_19S070E_150cmp/thumbnail/LRO_NAC_RockDenHaz_19S070E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_36N320E_2mp",
+        "bbox": [
+            -40.3343706,
+            35.6684004,
+            -39.6429359,
+            36.7431694
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_36N320E_2mp/thumbnail/LRO_NAC_RockDenHaz_36N320E_2mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_26S265E_200cmp",
+        "bbox": [
+            -95.706262,
+            -26.6763158,
+            -95.1480382,
+            -25.4924962
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_26S265E_200cmp/thumbnail/LRO_NAC_RockDenHaz_26S265E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_02S167E_150cmp",
+        "bbox": [
+            166.4431865,
+            -2.7439877,
+            166.9066883,
+            -1.3937866
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_02S167E_150cmp/thumbnail/LRO_NAC_RockDenHaz_02S167E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDen_28N307E_150cmp",
+        "bbox": [
+            -52.5457883,
+            27.3833778,
+            -52.16002,
+            28.4993504
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDen_28N307E_150cmp/thumbnail/LRO_NAC_RockDen_28N307E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDenHaz_17S173E_150cmp",
+        "bbox": [
+            172.7543982,
+            -17.1606813,
+            172.9293171,
+            -16.1078681
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDenHaz_17S173E_150cmp/thumbnail/LRO_NAC_RockDenHaz_17S173E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDen_06N120E_200cmp",
+        "bbox": [
+            119.5436082,
+            5.7414953,
+            120.0998878,
+            7.1352849
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDen_06N120E_200cmp/thumbnail/LRO_NAC_RockDen_06N120E_200cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDen_16S041E_150cmp",
+        "bbox": [
+            40.4668208,
+            -16.6036856,
+            41.0178599,
+            -15.417092
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDen_16S041E_150cmp/thumbnail/LRO_NAC_RockDen_16S041E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDen_60S200E_150cmp",
+        "bbox": [
+            -160.6788496,
+            -60.6426985,
+            -160.2563033,
+            -59.636145
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDen_60S200E_150cmp/thumbnail/LRO_NAC_RockDen_60S200E_150cmp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_RockDen_43S349E_150cmp",
+        "bbox": [
+            -11.6402113,
+            -43.4973198,
+            -11.0296416,
+            -42.3529378
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_RockDen_43S349E_150cmp/thumbnail/LRO_NAC_RockDen_43S349E_150cmp-120.png"
+    },
+    {
+        "layer_id": "ldam_10",
+        "bbox": [
+            -180.0,
+            -90.0,
+            180.0,
+            90.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/ldam_10/thumbnail/ldam_10-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Apollo11_Mosaic_p",
+        "bbox": [
+            23.4484977,
+            0.1464484,
+            23.5396839,
+            1.1149051
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Apollo11_Mosaic_p/thumbnail/LRO_NAC_Apollo11_Mosaic_p-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Apollo16_Mosaic_p",
+        "bbox": [
+            15.3788327,
+            -9.6060973,
+            15.5545346,
+            -8.6616783
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_NAC_Apollo16_Mosaic_p/thumbnail/LRO_NAC_Apollo16_Mosaic_p-120.png"
+    },
+    {
+        "bbox": [
+            -180.0,
+            -79.0,
+            180.0,
+            79.0
+        ],
+        "projection": "urn:ogc:def:crs:EPSG::104903",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC-GLD100_Gray_79S79N_256ppd/thumbnail/LRO_WAC-GLD100_Gray_79S79N_256ppd-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Count_SPole45_100mp_v04",
+        "bbox": [
+            -1095930.0,
+            -1095930.0,
+            1095930.0,
+            1095930.0
+        ],
+        "projection": "TBD",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_Count_SPole45_100mp_v04/thumbnail/LRO_LOLA_Count_SPole45_100mp_v04-120.png"
+    },
+    {
+        "bbox": [
+            -75300.764,
+            -59962.677,
+            -26134.019,
+            -8863.61
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/NAC_POLE_HermiteA_merged.obliqstere/thumbnail/NAC_POLE_HermiteA_merged.obliqstere-120.png"
+    },
+    {
+        "layer_id": "hermite_a_dem_mosaic_1m_v3_errormap",
+        "bbox": [
+            -60019.456,
+            -61785.514,
+            -43971.349,
+            -45207.171
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Mosaic_NPole85.5_1mp/thumbnail/LRO_NAC_Mosaic_NPole85.5_1mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_AvgMosaic_SPole855_1mp",
+        "bbox": [
+            -136526.0,
+            -136525.0,
+            136525.0,
+            136526.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_NAC_AvgMosaic_SPole855_1mp/thumbnail/LRO_NAC_AvgMosaic_SPole855_1mp-120.png"
+    },
+    {
+        "layer_id": "hermite_a_ortho_mosaic_1m_v3",
+        "bbox": [
+            152164.895,
+            -385724.126,
+            343235.813,
+            -183913.422
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.extraswaths.sp/thumbnail/schrodinger.extraswaths.sp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_86S356E_3mp",
+        "bbox": [
+            237235.731,
+            -391231.158,
+            342799.979,
+            -280948.067
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.ne.stereographicpolar/thumbnail/schrodinger.ne.stereographicpolar-120.png"
+    },
+    {
+        "bbox": [
+            173642.843,
+            -336470.969,
+            290521.125,
+            -221891.869
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.sc.stereographicpolar/thumbnail/schrodinger.sc.stereographicpolar-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_89N023E_450cmp_v02",
+        "bbox": [
+            -6005.25,
+            -64199.25,
+            32829.75,
+            -1595.25
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Slope_89N023E_450cmp_v02/thumbnail/LRO_NAC_Slope_89N023E_450cmp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_89N023E_450cmp_v02",
+        "bbox": [
+            -6005.25,
+            -64199.25,
+            32829.75,
+            -1595.25
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Shade_89N023E_450cmp_v02/thumbnail/LRO_NAC_Shade_89N023E_450cmp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_NPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Coverage_NPole875_5mp_v04/thumbnail/LRO_LOLA_Coverage_NPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_NoDataMask_SPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_NoDataMask_SPole875_5mp_v04/thumbnail/LRO_LOLA_NoDataMask_SPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrShade_NPolar875_10m",
+        "bbox": [
+            83102.41,
+            -634704.028,
+            634703.112,
+            -83103.327
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/allSchrodinger_10mV1.0.sp/thumbnail/allSchrodinger_10mV1.0.sp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrShade_SPolar875_10m",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_ClrShade_SPolar875_10m/thumbnail/LRO_LOLA_ClrShade_SPolar875_10m-120.png"
+    },
+    {
+        "bbox": [
+            -612715.277,
+            -612715.277,
+            612715.277,
+            612715.277
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_MINI-RF_ClrCPR_90N000_15m/thumbnail/LRO_MINI-RF_ClrCPR_90N000_15m-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Gray_NPole75_30mp_v04",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Gray_NPole75_30mp_v04/thumbnail/LRO_LOLA_Gray_NPole75_30mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Gray_SPole75_30mp_v04",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_Gray_SPole75_30mp_v04/thumbnail/LRO_LOLA_Gray_SPole75_30mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_SPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_Coverage_SPole875_5mp_v04/thumbnail/LRO_LOLA_Coverage_SPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_CPR_Color_NPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/CH1_MiniSAR_CPR_Color_NPole80_75mp/thumbnail/CH1_MiniSAR_CPR_Color_NPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_CPR_Color_SPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/CH1_MiniSAR_CPR_Color_SPole80_75mp/thumbnail/CH1_MiniSAR_CPR_Color_SPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_S1_Gray_NPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/CH1_MiniSAR_S1_Gray_NPole80_75mp/thumbnail/CH1_MiniSAR_S1_Gray_NPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_S1_Gray_SPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/CH1_MiniSAR_S1_Gray_SPole80_75mp/thumbnail/CH1_MiniSAR_S1_Gray_SPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_NPole45_100mp_v04",
+        "bbox": [
+            -1095930.0,
+            -1095930.0,
+            1095930.0,
+            1095930.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Coverage_NPole45_100mp_v04/thumbnail/LRO_LOLA_Coverage_NPole45_100mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_WAC_Mosaic_NPole60_100m_v02",
+        "bbox": [
+            -1095700.0,
+            -1095600.0,
+            1095600.0,
+            1095700.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_WAC_Mosaic_NPole60_100m_v02/thumbnail/LRO_WAC_Mosaic_NPole60_100m_v02-120.png"
+    },
+    {
+        "layer_id": "Clem_UVVIS_Mosaic_NPole60_118mp_v02",
+        "bbox": [
+            -931021.618,
+            -931021.618,
+            931021.618,
+            931021.618
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/Clem_UVVIS_Mosaic_NPole60_118mp_v02/thumbnail/Clem_UVVIS_Mosaic_NPole60_118mp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_MiniRF_S1_Gray_NPole70_118mp",
+        "bbox": [
+            -612744.89,
+            -612744.89,
+            612744.89,
+            612744.89
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_MiniRF_S1_Gray_NPole70_118mp/thumbnail/LRO_MiniRF_S1_Gray_NPole70_118mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrSlope_NPole75N_120m",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_ClrSlope_NPole75N_120m/thumbnail/LRO_LOLA_ClrSlope_NPole75N_120m-120.png"
+    },
+    {
+        "layer_id": "LRO_Diviner_Temp_Avg_Clr_NPole80_135mp",
+        "bbox": [
+            -304000.0,
+            -304000.0,
+            304000.0,
+            304000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_Diviner_Temp_Avg_Clr_NPole80_135mp/thumbnail/LRO_Diviner_Temp_Avg_Clr_NPole80_135mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Illumination_NPole65N_240m",
+        "bbox": [
+            -300000.0,
+            -300000.0,
+            300000.0,
+            300000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_ice_depth_new_240m.mat_paleo_27-Oct-2016/thumbnail/np_ice_depth_new_240m.mat_paleo_27-Oct-2016-120.png"
+    },
+    {
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_ch7-8_anisotherm_2000/thumbnail/np_ch7-8_anisotherm_2000-120.png"
+    },
+    {
+        "layer_id": "LRO_LAMP_Albedo_Clr_SPole80_240mp",
+        "bbox": [
+            -300120.0,
+            -300120.0,
+            300120.0,
+            300120.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LAMP_Albedo_Clr_SPole80_240mp/thumbnail/LRO_LAMP_Albedo_Clr_SPole80_240mp-120.png"
+    },
+    {
+        "layer_id": "np_cpx_mlemelin_031417",
+        "bbox": [
+            -600000.0,
+            -600000.0,
+            600000.0,
+            600000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_weh_5km_adapt.map_clr/thumbnail/np_weh_5km_adapt.map_clr-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Count_SPole45_100mp_v04",
+        "bbox": [
+            -931069.854,
+            -934818.088,
+            934337.475,
+            931069.854
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/Model1_cmi.np/thumbnail/Model1_cmi.np-120.png"
+    },
+    {
+        "bbox": [
+            -75300.764,
+            -59962.677,
+            -26134.019,
+            -8863.61
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/NAC_POLE_HermiteA_merged.obliqstere/thumbnail/NAC_POLE_HermiteA_merged.obliqstere-120.png"
+    },
+    {
+        "layer_id": "hermite_a_dem_mosaic_1m_v3_errormap",
+        "bbox": [
+            -60019.456,
+            -61785.514,
+            -43971.349,
+            -45207.171
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Mosaic_NPole85.5_1mp/thumbnail/LRO_NAC_Mosaic_NPole85.5_1mp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_AvgMosaic_SPole855_1mp",
+        "bbox": [
+            -136526.0,
+            -136525.0,
+            136525.0,
+            136526.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_NAC_AvgMosaic_SPole855_1mp/thumbnail/LRO_NAC_AvgMosaic_SPole855_1mp-120.png"
+    },
+    {
+        "layer_id": "hermite_a_ortho_mosaic_1m_v3",
+        "bbox": [
+            152164.895,
+            -385724.126,
+            343235.813,
+            -183913.422
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.extraswaths.sp/thumbnail/schrodinger.extraswaths.sp-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_ClrShade_86S356E_3mp",
+        "bbox": [
+            237235.731,
+            -391231.158,
+            342799.979,
+            -280948.067
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.ne.stereographicpolar/thumbnail/schrodinger.ne.stereographicpolar-120.png"
+    },
+    {
+        "bbox": [
+            173642.843,
+            -336470.969,
+            290521.125,
+            -221891.869
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/schrodinger.sc.stereographicpolar/thumbnail/schrodinger.sc.stereographicpolar-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Slope_89N023E_450cmp_v02",
+        "bbox": [
+            -6005.25,
+            -64199.25,
+            32829.75,
+            -1595.25
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Slope_89N023E_450cmp_v02/thumbnail/LRO_NAC_Slope_89N023E_450cmp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_NAC_Shade_89N023E_450cmp_v02",
+        "bbox": [
+            -6005.25,
+            -64199.25,
+            32829.75,
+            -1595.25
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_NAC_Shade_89N023E_450cmp_v02/thumbnail/LRO_NAC_Shade_89N023E_450cmp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_NPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Coverage_NPole875_5mp_v04/thumbnail/LRO_LOLA_Coverage_NPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_NoDataMask_SPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_NoDataMask_SPole875_5mp_v04/thumbnail/LRO_LOLA_NoDataMask_SPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrShade_NPolar875_10m",
+        "bbox": [
+            83102.41,
+            -634704.028,
+            634703.112,
+            -83103.327
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/allSchrodinger_10mV1.0.sp/thumbnail/allSchrodinger_10mV1.0.sp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrShade_SPolar875_10m",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_ClrShade_SPolar875_10m/thumbnail/LRO_LOLA_ClrShade_SPolar875_10m-120.png"
+    },
+    {
+        "bbox": [
+            -612715.277,
+            -612715.277,
+            612715.277,
+            612715.277
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_MINI-RF_ClrCPR_90N000_15m/thumbnail/LRO_MINI-RF_ClrCPR_90N000_15m-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Gray_NPole75_30mp_v04",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Gray_NPole75_30mp_v04/thumbnail/LRO_LOLA_Gray_NPole75_30mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Gray_SPole75_30mp_v04",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_Gray_SPole75_30mp_v04/thumbnail/LRO_LOLA_Gray_SPole75_30mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_SPole875_5mp_v04",
+        "bbox": [
+            -75840.0,
+            -75840.0,
+            75840.0,
+            75840.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LOLA_Coverage_SPole875_5mp_v04/thumbnail/LRO_LOLA_Coverage_SPole875_5mp_v04-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_CPR_Color_NPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/CH1_MiniSAR_CPR_Color_NPole80_75mp/thumbnail/CH1_MiniSAR_CPR_Color_NPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_CPR_Color_SPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/CH1_MiniSAR_CPR_Color_SPole80_75mp/thumbnail/CH1_MiniSAR_CPR_Color_SPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_S1_Gray_NPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/CH1_MiniSAR_S1_Gray_NPole80_75mp/thumbnail/CH1_MiniSAR_S1_Gray_NPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "CH1_MiniSAR_S1_Gray_SPole80_75mp",
+        "bbox": [
+            -304050.0,
+            -303975.0,
+            303975.0,
+            304050.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/CH1_MiniSAR_S1_Gray_SPole80_75mp/thumbnail/CH1_MiniSAR_S1_Gray_SPole80_75mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Coverage_NPole45_100mp_v04",
+        "bbox": [
+            -1095930.0,
+            -1095930.0,
+            1095930.0,
+            1095930.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_Coverage_NPole45_100mp_v04/thumbnail/LRO_LOLA_Coverage_NPole45_100mp_v04-120.png"
+    },
+    {
+        "layer_id": "LRO_WAC_Mosaic_NPole60_100m_v02",
+        "bbox": [
+            -1095700.0,
+            -1095600.0,
+            1095600.0,
+            1095700.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_WAC_Mosaic_NPole60_100m_v02/thumbnail/LRO_WAC_Mosaic_NPole60_100m_v02-120.png"
+    },
+    {
+        "layer_id": "Clem_UVVIS_Mosaic_NPole60_118mp_v02",
+        "bbox": [
+            -931021.618,
+            -931021.618,
+            931021.618,
+            931021.618
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/Clem_UVVIS_Mosaic_NPole60_118mp_v02/thumbnail/Clem_UVVIS_Mosaic_NPole60_118mp_v02-120.png"
+    },
+    {
+        "layer_id": "LRO_MiniRF_S1_Gray_NPole70_118mp",
+        "bbox": [
+            -612744.89,
+            -612744.89,
+            612744.89,
+            612744.89
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_MiniRF_S1_Gray_NPole70_118mp/thumbnail/LRO_MiniRF_S1_Gray_NPole70_118mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_ClrSlope_NPole75N_120m",
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_LOLA_ClrSlope_NPole75N_120m/thumbnail/LRO_LOLA_ClrSlope_NPole75N_120m-120.png"
+    },
+    {
+        "layer_id": "LRO_Diviner_Temp_Avg_Clr_NPole80_135mp",
+        "bbox": [
+            -304000.0,
+            -304000.0,
+            304000.0,
+            304000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/LRO_Diviner_Temp_Avg_Clr_NPole80_135mp/thumbnail/LRO_Diviner_Temp_Avg_Clr_NPole80_135mp-120.png"
+    },
+    {
+        "layer_id": "LRO_LOLA_Illumination_NPole65N_240m",
+        "bbox": [
+            -300000.0,
+            -300000.0,
+            300000.0,
+            300000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_ice_depth_new_240m.mat_paleo_27-Oct-2016/thumbnail/np_ice_depth_new_240m.mat_paleo_27-Oct-2016-120.png"
+    },
+    {
+        "bbox": [
+            -457440.0,
+            -457440.0,
+            457440.0,
+            457440.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_ch7-8_anisotherm_2000/thumbnail/np_ch7-8_anisotherm_2000-120.png"
+    },
+    {
+        "layer_id": "LRO_LAMP_Albedo_Clr_SPole80_240mp",
+        "bbox": [
+            -300120.0,
+            -300120.0,
+            300120.0,
+            300120.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30120",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/SP/LRO_LAMP_Albedo_Clr_SPole80_240mp/thumbnail/LRO_LAMP_Albedo_Clr_SPole80_240mp-120.png"
+    },
+    {
+        "layer_id": "np_cpx_mlemelin_031417",
+        "bbox": [
+            -600000.0,
+            -600000.0,
+            600000.0,
+            600000.0
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/np_weh_5km_adapt.map_clr/thumbnail/np_weh_5km_adapt.map_clr-120.png"
+    },
+    {
+        "bbox": [
+            -931069.854,
+            -934818.088,
+            934337.475,
+            931069.854
+        ],
+        "projection": "urn:ogc:def:crs:IAU2000::30118",
+        "image_url": "https://trek.nasa.gov/tiles/Moon/NP/Model1_cmi.np/thumbnail/Model1_cmi.np-120.png"
+    }
+]
