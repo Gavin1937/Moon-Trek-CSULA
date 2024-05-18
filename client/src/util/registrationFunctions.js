@@ -52,7 +52,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         data.moon_circle = moon_circle;
         const {latitude, longitude, timeStamp} = data;
 
-        const resp = await axios.get('http://localhost:8888/positions/', {
+        const resp = await axios.get(`${config.backend_server}/api/positions/`, {
             params: {
                 latitude: latitude,
                 longitude: longitude,
