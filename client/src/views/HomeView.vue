@@ -54,44 +54,7 @@ import BasicMoon from '../components/BasicMoon.vue'
                 </router-link>
             </div>
         </div>
-        <!--
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <p>
-                    Moon Trek Telescope is an application that allows you to submit your own images
-                    of the moon and receive useful information within the field of view, such as
-                    annotations, layering, etc.
-                </p>
-            </div>
         </div>
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <p>
-                    Begin by selecting your image of the moon. For best registration results
-                    consider: clear, non blurry images with at least 50% of the moon.
-                </p>
-            </div>
-        </div>
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <p>
-                    Our application will attempt image registration. If the image registers
-                    properly, we will be able to annotate your image. If registration fails, then
-                    you will have to resubmit a better image.
-                </p>
-            </div>
-        </div>
-
-        <div class="columns is-centered">
-            <div class="column has-text-centered">
-                <router-link to="upload"> Get Started </router-link>
-            </div>
-        </div>
-        -->
-        </div>
-
-      
-
 
         </div>
 
@@ -165,25 +128,6 @@ main {
     height: 40%;
     font-size: 1.8rem;
 }
-
-/*
-.getStarted:hover .getStartedText {
-  color: #fff;
-  z-index: 10;
-
-}
-.getStarted:hover::after {
-  left: -100%;
-}
-
-.getStarted:hover {
-  border: 2px solid #f21170;
-  cursor: pointer;
-  background-position: left bottom;
-}
-
-*/
-
 
 .getStartedDescription{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

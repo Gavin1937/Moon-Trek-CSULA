@@ -60,8 +60,6 @@ const registrate = async () => {
         )
 
         imgData.output = outputImgData
-        // console.log('outputImgData', outputImgData)
-        // console.log('imgData.output', imgData.output)
         await displayImgOnCanvas()
     } catch (error) {
         console.log(error)

@@ -17,13 +17,6 @@ const convertToAlgo = (word) => {
     else if (word === 'ORB') return RegistrationAlgorithms.ORB
 }
 
-// const checkImage = async (imgHandler) => {
-//     let a = document.createElement('a')
-//     let blob = await imgHandler.to_Blob()
-//     a.href = URL.createObjectURL(blob)
-//     a.target = '_blank'
-//     a.click()
-// }
 
 export const getMoonCircle = async (userImgFile) => {
     const imgHandler = new ImageHandler()
@@ -65,7 +58,6 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         data.circleDetectVals = moon_circle;
         console.log(data.circleDetectVals);
         const cutImgPadding = Math.ceil(moon_circle.radius * 0.15); // use 15% of radius as padding
-        // const cutImgPadding = 30; // maybe we should just hard-code it to a fixed value?
         const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, cutImgPadding);
         inputImgHandler = croppedImgData[0];
         //get croppedImgFile for homography matrix
@@ -74,7 +66,6 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
         });
 
         const homographyMatrix = await getHomographyMatrix(algoString, croppedImgFile, modelImgFile)
-        // console.log('homography matrix', homographyMatrix)
 
         for (let i = 0; i < N; i++) {
             await layerImgHandler.load_from_fileobject(layerAttributes[i].layerImgFile)
@@ -91,12 +82,7 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
             inputImgHandler = outputImgHandler
         }
 
-        // console.log('outputimgHandler', outputImgHandler)
-        // console.log('inputimgHandler', inputImgHandler)
         const outputImgData = await outputImgHandler.to_ImageData()
-        // const circle = await detect_moon(outputImgHandler)
-        // console.log('circle from output image', circle)
-        // console.log(outputImgData)
         return outputImgData
     } catch (error) {
         console.log('error', error)
@@ -123,7 +109,6 @@ const getHomographyMatrix = async (algoString, userImgFile, modelImgFile) => {
         } else return await retrieveHomographyMatrixFromAPI(algoString, userImgFile, modelImgFile)
     } catch (error) {
         return await retrieveHomographyMatrixFromAPI(algoString, userImgFile, modelImgFile)
-        // console.log('error from retrieving matrix from python API', error)
     } finally {
         await userImgHandler.destroy_image()
         await modelImgHandler.destroy_image()
