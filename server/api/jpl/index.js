@@ -1,14 +1,8 @@
-// dynamically load config.json from different location
-// since docker only support mounting a dir from host to container
-// I have to ignore config.json in host machine while building docker img
-// and then mount the whole api/jpl dir to container when I run it
-var config = null;
-try { // normal environment
-    config = require('./config.json');
-} catch (error) { // inside docker container
-    config = require('./config/config.json');
-}
 const axios = require('axios');
+
+
+// exporting a function that will return this module
+module.exports = (dataServerConfig, logger) => {
 
 const adjustPositions = (positions) => {
     // -------swap-------
@@ -28,54 +22,56 @@ const adjustPositions = (positions) => {
 const latToRect = async (origin, destination, longitude, latitude, timeStamp) => {
     try {
         const response = await axios.get(
-            `http://${ config.dataServer.ip }:${ config.dataServer.port }/lat-to-rect/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
+            `http://${ dataServerConfig.ip }:${ dataServerConfig.port }/lat-to-rect/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
         );
 
         return adjustPositions(response.data.positions[destination]);
     } catch (error) {
-        console.log(error);
+        logger.error(error);
     }
 };
 
 const planetVector = async (origin, destination, timeStamp) => {
     try {
         const response = await axios.get(
-            `http://${ config.dataServer.ip }:${ config.dataServer.port }/planet-vector-search/${ origin }/${ destination }/${ timeStamp }`
+            `http://${ dataServerConfig.ip }:${ dataServerConfig.port }/planet-vector-search/${ origin }/${ destination }/${ timeStamp }`
         );
 
         return adjustPositions(response.data.positions[destination]);
     } catch (error) {
-        console.log(error);
+        logger.error(error);
     }
 };
 
 const nearestPoint = async (origin, destination, longitude, latitude, timeStamp) => {
     try {
         const response = await axios.get(
-            `http://${ config.dataServer.ip }:${ config.dataServer.port }/nearest-point/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
+            `http://${ dataServerConfig.ip }:${ dataServerConfig.port }/nearest-point/${ origin }/${ destination }/${ longitude }/${ latitude }/${ timeStamp }`
         );
 
         return response.data;
     } catch (error) {
-        console.log(error);
+        logger.error(error);
     }
 };
 
 const lunarLibration = async (timeStamp) => {
     try {
         const response = await axios.get(
-            `http://${ config.dataServer.ip }:${ config.dataServer.port }/get-lunar-librations/${ timeStamp }`
+            `http://${ dataServerConfig.ip }:${ dataServerConfig.port }/get-lunar-librations/${ timeStamp }`
         );
 
         return response.data;
     } catch (error) {
-        console.log(error);
+        logger.error(error);
     }
 };
 
-module.exports = {
+return {
     latToRect,
     planetVector,
     nearestPoint,
     lunarLibration
+};
+
 };

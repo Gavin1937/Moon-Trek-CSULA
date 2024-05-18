@@ -3,6 +3,10 @@ const { find } = require('geo-tz'); // Module which gives timezone based on lat 
 const { ZonedDateTime, ZoneId } = require('@js-joda/core'); // DateTime object with timezone
 require('@js-joda/timezone');
 
+
+// exporting a function that will return this module
+module.exports = (logger) => {
+
 // Accepts a ZonedDateTime and returns a formatted string
 //      YYYY-MM-DDTHH:MM:SS
 const formatTimeStamp = (timeStampObject) => {
@@ -56,6 +60,7 @@ router.get('/toUTC', async (req, res) => {
             timeStampUTC: formatTimeStamp(timeStampUTC)
         });
     } catch (error) {
+        logger.error(error);
         res.status(500).json({
             status: 'Failed to convert',
             error
@@ -63,4 +68,6 @@ router.get('/toUTC', async (req, res) => {
     }
 });
 
-module.exports = router;
+return router;
+
+};

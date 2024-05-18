@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const jpl = require('jpl'); // Module to interact with Natalie's API
+
+
+// exporting a function that will return this module
+module.exports = (jpl, logger) => {
 
 // Returns all positions to build our model in the client
 router.get('/', async (req, res) => {
@@ -33,6 +36,7 @@ router.get('/', async (req, res) => {
             moonToSun: await jpl.planetVector('moon', 'sun', timeStamp),
         });
     } catch(error) {
+        logger.error(error);
         res.status(500).json({
             status: 'Failed to retrieve positions',
             error
@@ -40,4 +44,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+return router;
+
+};
