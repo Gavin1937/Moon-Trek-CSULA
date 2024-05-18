@@ -8,7 +8,8 @@ services:
     container_name: moontrek-server
     restart: unless-stopped
     volumes:
-      - "./server/api/jpl:/src/api/jpl/config"
+      - "./data/server/config:/src/config"
+      - "./data/server:/src/data"
     ports:
       - "8888:8888"
   
@@ -21,8 +22,8 @@ services:
     container_name: moontrek-python-server
     restart: unless-stopped
     volumes:
-      - "./python-server/config:/app/config"
-      - "./python-server:/app/data"
+      - "./data/python-server/config:/app/config"
+      - "./data/python-server:/app/data"
     ports:
       - "5000:5000"
   

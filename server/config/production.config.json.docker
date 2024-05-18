@@ -1,0 +1,8 @@
+{
+    "log_file": "/src/data/moontrek-server.log",
+    "log_level": "info",
+    "dataServer": {
+        "ip": "data server ip",
+        "port": "data server port"
+    }
+}

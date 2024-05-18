@@ -9,6 +9,40 @@ You need to configure individual app before launch/deploy this project.
 2. [Configure python-server](python-server/README.md#configuration)
 3. [Configure server](server/README.md#configuration)
 
+### Configuration for Docker Compose
+
+If you want to deploy this project with Docker Compose, you need to put all the configuration files inside a folder `data` under the repository root.
+
+1. create a new folder `data` under this directory, and create following folder structure
+
+```
+./data
+   ├─── python-server
+   │    └─── config
+   └─── server
+        └─── config
+```
+
+You can use following commands to create all of them at once
+
+* Windows
+
+```sh
+mkdir data\python-server\config
+mkdir data\server\config
+```
+
+* MacOS & Linux
+
+```sh
+mkdir -p data/python-server/config
+mkdir -p data/server/config
+```
+
+2. Follow [steps from last section](#configuration) to configure server & python-server
+
+3. Finally, put those configuration files into `data` folder, under their dedicated config folder. **Note that, all the path in config files are path inside Docker containers, they are not the path in your host system.** The template config file ended with `.docker` already configure all the path for you. 
+
 
 ## Deploy entire project with Docker Compose (Recommend)
 

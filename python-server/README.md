@@ -4,7 +4,7 @@ A really simple python flask server for Moon-Trek client. The purpose of this se
 
 **Note: We shouldn't rely on this server, we should slowly get rid of it.**
 
-# Configure
+# Configuration
 
 you need to create a `config.py` file to run to server.
 
