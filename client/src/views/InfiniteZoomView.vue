@@ -53,7 +53,6 @@
     const MIN_SCALE = 0.1;
     const MAX_SCALE = 7;
     const CESIUM_MOVE_SPEED = 2;
-    console.log(data)
     // ***Variables to integrate with MoonTrek in the future***
     let moonCenter = {x:(data.outputImg.width)/2,y:(data.outputImg.width)/2}//{x:data.moon_circle.x,y:data.moon_circle.y}; // Center point from top left hand corner
     const nearestPoint = data.positions.nearestTObserver; // nearestPoint from Natalie's endpoints

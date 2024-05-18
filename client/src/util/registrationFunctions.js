@@ -36,7 +36,6 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
     let layerImgHandler = new ImageHandler()
     let outputImgHandler = new ImageHandler()
     try {
-        // console.log('layer attributes', layerAttributes)
         await modelImgHandler.load_from_fileobject(modelImgFile)
         await inputImgHandler.load_from_fileobject(userImgFile)
 
@@ -56,7 +55,6 @@ export const drawNLayers = async (N, algoString, layerAttributes, userImgFile, m
 
         //set default padding of circle in cropped image to 200px
         data.circleDetectVals = moon_circle;
-        console.log(data.circleDetectVals);
         const cutImgPadding = Math.ceil(moon_circle.radius * 0.15); // use 15% of radius as padding
         const croppedImgData = await cut_image_from_circle(inputImgHandler, moon_circle, cutImgPadding);
         inputImgHandler = croppedImgData[0];
@@ -126,7 +124,6 @@ const retrieveHomographyMatrixFromAPI = async (algoString, userImgFile, modelImg
         )
 
         if (response.data.ok) {
-            console.log(response.data.payload.homography_matrix)
             return response.data.payload.homography_matrix
         } else console.log(response.error)
     } catch (error) {
