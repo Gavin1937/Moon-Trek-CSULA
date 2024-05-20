@@ -4,9 +4,8 @@ from PIL import Image
 # Ranges found in: https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd/1.0.0/WMTSCapabilities.xml
 # Look at tile matrix set under the individual tilematrix heights and widths.
 zoom_ranges =[{'y':2**i, 'x':2**(i+1)} for i in range(7)]
-print(zoom_ranges)
 
-def get_overlay_tiles(overlay_name, base_path = os.getcwd(), file_type='png', zoom_level = 2):
+def get_overlay_tiles(overlay_name, base_path = '.', file_type='png', zoom_level = 2):
     """
     Gets all overlay tiles and saves each image to a directory.
 
@@ -39,7 +38,7 @@ def get_overlay_tiles(overlay_name, base_path = os.getcwd(), file_type='png', zo
             except:
                 print('Skipping: ', url)
 
-def stitch_overlay_tiles(overlay_name, base_path = os.getcwd(), file_type='png', zoom_level = 2):
+def stitch_overlay_tiles(overlay_name, base_path = '.', file_type='png', zoom_level = 2):
     """
     Gets all overlay tiles from a directory and stitches them into one png.
 
@@ -68,18 +67,32 @@ def stitch_overlay_tiles(overlay_name, base_path = os.getcwd(), file_type='png',
     if worked:
         stitched_image.save(f'{path}/{overlay_name}.{file_type}')
 
-data = None
-with open('layers.json','r') as f:
-    data = json.load(f)
-    
 def process_overlay(overlay_name,zoom_level):
     get_overlay_tiles(overlay_name,zoom_level=zoom_level)
     stitch_overlay_tiles(overlay_name,zoom_level=zoom_level)
 
-success = 0
-for layer in data:
+
+def main():
+    print(zoom_ranges)
+    
+    data = None
+    with open('layers.json','r') as f:
+        data = json.load(f)
+    
+    success = 0
+    for layer in data:
+        try:
+            process_overlay(layer["layer_id"],2)
+            success+=1
+        except Exception as e:
+            print(e)
+
+
+if __name__ == '__main__':
     try:
-        process_overlay(layer["layer_id"],2)
-        success+=1
-    except Exception as e:
-        print(e)
+        main()
+    except KeyboardInterrupt:
+        print()
+        exit()
+    except Exception as err:
+        raise err
