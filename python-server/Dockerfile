@@ -70,6 +70,12 @@ RUN ln -s /usr/lib/libopencv_core.so /lib/libopencv_core.so.409 && \
     ln -s /usr/lib/libopencv_imgproc.so /lib/libopencv_imgproc.so.409 && \
     ln -s /usr/lib/libopencv_features2d.so /lib/libopencv_features2d.so.409 && \
     ln -s /usr/lib/libopencv_xfeatures2d.so /lib/libopencv_xfeatures2d.so.409 && \
+    if [ "${MR_ENABLE_OPENCV_NONFREE}" = "ON" -o "${MR_ENABLE_OPENCV_NONFREE}" = "on" -o "${MR_ENABLE_OPENCV_NONFREE}" = "1" ] ; \
+    then \
+        ln -s /usr/lib/libopencv_xfeatures2d.so /lib/libopencv_xfeatures2d.so.409 ; \
+    else \
+        rm /usr/lib/libopencv_xfeatures2d.so ; \
+    fi && \
     pip3 install -r requirements.txt && \
     pip3 install *.whl && \
     rm /*.whl && rm /requirements.txt
@@ -80,4 +86,5 @@ COPY . .
 
 RUN cd /app && pip3 install -r requirements.txt
 
+EXPOSE 5000
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
